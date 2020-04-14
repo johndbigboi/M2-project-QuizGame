@@ -1,4 +1,4 @@
-# Interactive Centric Frontend Development Milestone Project
+# Interactive Frontend Development Milestone Project
 # Money Heist QuizGame
 ## Contents:
 * UX 
