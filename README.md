@@ -1,8 +1,48 @@
 # Interactive Centric Frontend Development Milestone Project
 # Money Heist QuizGame
 ## Contents:
-## UX User Experience
+* UX 
+    * Project Goals
+    * Target Audience Goals
+    * Site Owner Goals
+    * User Requirements and Expectations
+    * Design Choices 
+        * Fonts
+        * Icons
+        * Colours
+        * Styling
+        * Images
+        * Backgrounds
+* Wireframes 
+* Features 
+    * Features that have been developed
+    *  Features that will be implemented in the future
+* Technologies Used 
+* Testing 
+* Bugs 
+* Deployment 
+* Credits 
+
+
 ### Project Goals
+
+The Main Goal of making the project <strong>Quiz Game</strong> is to be build by using HTML, CSS, Javascript and to use api for external files for the gameplay.
+
+### Target Audience Goals
+
+The game aims to be played by all aged group.
+
+### Site Owner Goals
+
+The goal of making this project is for the users to have fun Playing the game at the same time educating the users from the informative questions. 
+
+
+### User Experience
+
+* Smooth Gameplay.
+* Challenging
+* 
+
 ### Technologies Used
 
 * <strong><a href='https://code.visualstudio.com/'>Visual Studio Code</a></strong> 
