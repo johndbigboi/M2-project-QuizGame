@@ -1,0 +1,134 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #018383;
+    font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 5.4rem;
+    color: #56a5eb;
+    margin-bottom: 5rem;
+}
+
+h1 > span {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 3.0rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* Utilities */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.container > * {
+    width: 100%;
+}
+
+.flex-column    {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Landing Page */
+
+ #game-title {
+  font-family: "bitter", cursive;
+  font-size: 10rem;
+  text-align: center;
+  color: #f5dea3;
+  text-shadow: 4px 4px #003049;
+  margin-bottom: 3rem;
+}
+
+#landing-page-menu a, span{
+  transition: all 0.5s ease-in-out;
+} 
+
+.btn {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    width: 25rem;
+    text-align: center;
+    border: 0.1rem solid #56a5eb;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    border-radius: 0.825rem;
+   color: #02a8a8;
+  background-color: #f5dea3;
+}
+
+.btn-group {
+   outline: none !important;
+   box-shadow: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
