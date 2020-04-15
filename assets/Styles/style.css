@@ -1,5 +1,16 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap');
+ */
+
+@font-face {
+    src: url('../fonts/CFAnarchy-Regular.ttf');
+    /* src: url('../fonts/GLADES-DEMO.ttf');
+     src: url('../fonts/Ocean Rush DEMO.otf');  Pretty Modern Browsers 
+   font-family: 'GLADES';
+   font-family: 'Ocean';*/
+    font-family: 'CFAnarchy';
+}
 
 * {
     box-sizing: border-box;
@@ -8,14 +19,16 @@
 }
 
 body {
-    background-color: #018383;
+    /*     background-color: #018383;*/
+    background-image: url("/assets/Image/imgonline-com-ua-ReplaceColor-dlyaC8U4aY5.jpg");
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     font-size: 62.5%;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
@@ -25,7 +38,7 @@ h1 {
     margin-bottom: 5rem;
 }
 
-h1 > span {
+h1>span {
     font-size: 2.4rem;
     font-weight: 500;
 }
@@ -46,7 +59,6 @@ p {
     margin-bottom: 0;
 }
 
-
 /* Utilities */
 
 .container {
@@ -60,11 +72,11 @@ p {
     padding: 2rem;
 }
 
-.container > * {
+.container>* {
     width: 100%;
 }
 
-.flex-column    {
+.flex-column {
     display: flex;
     flex-direction: column;
 }
@@ -86,21 +98,34 @@ p {
     display: none;
 }
 
-
 /* Landing Page */
 
- #game-title {
-  font-family: "bitter", cursive;
-  font-size: 10rem;
-  text-align: center;
-  color: #f5dea3;
-  text-shadow: 4px 4px #003049;
-  margin-bottom: 3rem;
+#game-title {
+    font-family: CFAnarchy;
+    font-size: 10rem;
+    text-align: center;
+    color: #f5dea3;
+    text-shadow: 4px 4px #003049;
+    margin-bottom: 3rem;
 }
 
-#landing-page-menu a, span{
-  transition: all 0.5s ease-in-out;
-} 
+.title-1 {
+    background-color: black;
+    padding: 10px 10px 0;
+    color: white;
+    font-size: 10rem;
+}
+
+.title-2 {
+    background-color: red;
+    padding: 10px 10px 0;
+    color: black;
+    font-size: 10rem;
+}
+
+#landing-page-menu a, span {
+    transition: all 0.5s ease-in-out;
+}
 
 .btn {
     font-size: 1.8rem;
@@ -111,13 +136,13 @@ p {
     margin-bottom: 1rem;
     text-decoration: none;
     border-radius: 0.825rem;
-   color: #02a8a8;
-  background-color: #f5dea3;
+    color: #02a8a8;
+    background-color: #f5dea3;
 }
 
 .btn-group {
-   outline: none !important;
-   box-shadow: none;
+    outline: none !important;
+    box-shadow: none;
 }
 
 .btn:hover {
