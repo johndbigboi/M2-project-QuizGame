@@ -4,12 +4,12 @@
  */
 
 @font-face {
-    src: url('../fonts/CFAnarchy-Regular.ttf');
-    /* src: url('../fonts/GLADES-DEMO.ttf');
-     src: url('../fonts/Ocean Rush DEMO.otf');  Pretty Modern Browsers 
-   font-family: 'GLADES';
-   font-family: 'Ocean';*/
-    font-family: 'CFAnarchy';
+    /*     src: url('../fonts/CFAnarchy-Regular.ttf');*/
+    /*      font-family: 'CFAnarchy';*/
+    src: url('../fonts/GLADES-DEMO.ttf');
+    font-family: 'GLADES';
+    /* src: url('../fonts/Ocean Rush DEMO.otf');
+    font-family: 'Ocean'; */
 }
 
 * {
@@ -44,7 +44,7 @@ h1>span {
 }
 
 h2 {
-    font-size: 3.0rem;
+    font-size: 2.0rem;
     margin-bottom: 4rem;
     font-weight: 700;
 }
@@ -101,7 +101,7 @@ p {
 /* Landing Page */
 
 #game-title {
-    font-family: CFAnarchy;
+    font-family: 'GLADES';
     font-size: 10rem;
     text-align: center;
     color: #f5dea3;
@@ -110,17 +110,19 @@ p {
 }
 
 .title-1 {
-    background-color: black;
-    padding: 10px 10px 0;
-    color: white;
-    font-size: 10rem;
+    border-left: 0.1rem solid #02a8a8;
+    border-top: 0.1rem solid #02a8a8;
+    border-bottom: 0.1rem solid #02a8a8;
+    padding: 28px 10px 0;
+    color: #f5dea3;
+    font-size: 8rem;
 }
 
 .title-2 {
-    background-color: red;
-    padding: 10px 10px 0;
-    color: black;
-    font-size: 10rem;
+    background-color: #f5dea3;
+    padding: 30px 10px 0;
+    color: #02a8a8;
+    font-size: 8rem;
 }
 
 #landing-page-menu a, span {
@@ -138,6 +140,7 @@ p {
     border-radius: 0.825rem;
     color: #02a8a8;
     background-color: #f5dea3;
+    color: black;
 }
 
 .btn-group {
