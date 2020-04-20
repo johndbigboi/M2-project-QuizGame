@@ -15,14 +15,25 @@
 
 <body>
     <!-- Game Page -->
-    <!-- <div class="row title-bar">
+    <div class="row title-bar">
         <p class="circle-logo col-md-4">MH</p>
-         <p class="title col-md-8">   MONEY HEIST</p>
-        
-    </div> -->
+        <p class="title col-md-8"> MONEY HEIST</p>
+
+    </div>
+    <div id="info" class="row">
+        <div class="col-lg-2 col-md-6">
+            <p id="prize" class="info-prize">Money Won!
+            </p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+            <p id="countdown-timer" class="info-timer"><span>
+                    <i class="fas fa-hourglass-half"></i></span>Timer:
+            </p>
+        </div>
+    </div>
     <div class="container">
-        <div id="game" class="justify-center">
-            <h2 id="question" class="question-case">show here</h2>
+        <div id="game" class="justify-center flex-column">
+            <h2 id="question-box" class="question-case">show here</h2>
             <div id="answers-buttons" class="btn-grid">
             </div>
             <div class="row">
@@ -47,10 +58,10 @@
                     <p class="choice-text" data-number="4">choice 4</p>
                 </div>
             </div>
-            <br>
-            <a class="btn" href="/index.html">Restart</a>
-            <a class="btn" href="/highscores.html">High Scores</a>
-
+            <div class="col-md-12 justify-center">
+                <a class="btn" href="/index.html">Restart</a>
+                <a class="btn" href="/highscores.html">High Scores</a>
+            </div>
         </div>
     </div>
     <!--<script type="text/javascript" src="assets/Js/script.js"></script>-->
