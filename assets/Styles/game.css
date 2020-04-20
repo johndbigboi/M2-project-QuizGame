@@ -96,3 +96,22 @@
 .incorrect {
     background-color: #dc3545;
 }
+
+/*  INFO */
+
+#info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-prize, .info-timer {
+    text-align: center;
+    font-size: 2rem;
+    margin: auto;
+    border: 2px solid #56a5eb;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #f5dea3;
+    width: 130px;
+    color: black;
+}   
