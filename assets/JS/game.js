@@ -1,13 +1,14 @@
 /*  const easyQuestion = ("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple");
  */
-const question = document.getElementById("question");
+const question = document.getElementById("question-box");
 /* const answerButtonsElement = document.getElementById("answer-buttons");*/
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
+const prizeText = document.getElementById('prize');
 
 let randomQuestion, CurrentQuestionIndex;
 
 
-let currentQuestion = {};
+let CurrentMoneyIndex = 0;
 let questionCounter = 0;
 let availableQuestion = [];
 
@@ -34,25 +35,25 @@ $(function () {
             questions = allQuestion.results.map(function (results) {
                 //console.log(questions);
                 //document.getElementById("question").innerHTML = results.question;
-                const formattedQuestion = { question: results.question }
+                const newQuestion = { question: results.question }
                 //console.log(formattedQuestion);
 
                 //results.incorrect_answers.push(results.correct_answer);
                 const answerChoices = [...results.incorrect_answers];
                 //console.log(answerChoices);
 
-                formattedQuestion.answer = Math.floor(Math.random() * 3) + 1;
+                newQuestion.answer = Math.floor(Math.random() * 3) + 1;
                 //console.log(formattedQuestion.answer)
 
-                answerChoices.splice(formattedQuestion.answer - 1, 0, results.correct_answer);
+                answerChoices.splice(newQuestion.answer - 1, 0, results.correct_answer);
 
                 answerChoices.forEach((choice, index) => {
-                    formattedQuestion["choice" + (index + 1)] = choice;
+                    newQuestion["choice" + (index + 1)] = choice;
 
 
                     //document.getElementById('answers-buttons').innerHTML = (`<button class="choice-text btn" >${correct_answer + "," + results.incorrect_answers}</button>`);
                 })
-                return formattedQuestion;
+                return newQuestion;
             });
         };
         startGame();
@@ -65,49 +66,46 @@ $(function () {
 
 //CONSTANT
 
-const CORRECT_BONUS = 10;
-const MAX_QUESTION = 10;
+ const  Prize = [
+     '€1',
+    '€100',
+    '€500',
+    '€1,000',
+    '€5,000',
+    '€10,000',
+    '€50,000',
+    '€100,000',
+    '€500,000',
+    '€1,000,000',
+    '€5,000,000',
+]; 
+const totalQuestion = 11;
 
 startGame = () => {
-    questionCounter = 0;
-    score = 0;
-    randomQuestion = questions.sort(() => Math.random() - 5)
-    CurrentQuestionIndex = 0
+    
+    currentQuestion = 0;
+    CurrentMoneyIndex = 0;
+    availablePrize = [...Prize];
+    randomQuestion = questions.sort(() => Math.random() - 5);
+    CurrentQuestionIndex = 0;
     availableQuestion = [...questions];
-    //console.log(availableQuestion);
+    console.log(availableQuestion);
     nextQuestion();
 
 };
 
-/* nextQuestion = () => {
-    if (availableQuestion.length === 0 || questionCounter >= MAX_QUESTION) {
-        //localStorage.setItem("mostRecentScore", score);
-        //GO TO THE END PAGE
-
-    }
-    questionCounter++;
-    const CurrentQuestionIndex = Math.floor(Math.random() * availableQuestion.length);
-    currentQuestion = availableQuestion[CurrentQuestionIndex];
-    console.log(currentQuestion);
-    question.innerText = currentQuestion.question;
-
-    answerButtonsElement.forEach(choice => {
-        const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number];
-    });
-
-    availableQuestion.splice(CurrentQuestionIndex, 1);
-
-    acceptingAnswer = true;
-}; */
 function nextQuestion() { 
     showQuestion(randomQuestion[CurrentQuestionIndex])
 };
 
 function showQuestion() {
+    CurrentQuestionIndex++;
+
     currentQuestion = availableQuestion[CurrentQuestionIndex];
-    question.innerText = currentQuestion.question;
+    console.log(availableQuestion[CurrentQuestionIndex]);
+    question.innerText = `Question : ${currentQuestion["question"]}`;
     console.log(currentQuestion);
+
     answerButtonsElement.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerText = currentQuestion["choice" + number];
@@ -134,7 +132,9 @@ answerButtonsElement.forEach(choice => {
         function setStatusClass(element, selectedAnswer) {
             clearStatusClass(element)
             if (selectedAnswer == currentQuestion.answer) {
-                element.classList.add('correct')
+                element.classList.add('correct');
+                plusWin();
+                
             } else {
                 element.classList.add('incorrect')
             }
@@ -144,5 +144,13 @@ answerButtonsElement.forEach(choice => {
             element.classList.remove('correct')
             element.classList.remove('incorrect')
         }
+        nextQuestion();
     });
 }); 
+
+function plusWin() {
+    CurrentMoneyIndex ++;
+    currentPrize = availablePrize[CurrentMoneyIndex];
+    prizeText.innerText = `Money won! ${currentPrize}`;
+    console.log(availablePrize[CurrentMoneyIndex]);
+};
