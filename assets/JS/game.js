@@ -80,8 +80,8 @@ $(function () {
     '€1,000,000',
     '€5,000,000',
 ]; 
-var timerId;
-var timer = 10;
+//var timerId;
+//var timer = 10;
 
 
 const totalQuestion = 11;
@@ -96,7 +96,6 @@ startGame = () => {
     availableQuestion = [...questions];
     console.log(availableQuestion);
     nextQuestion();
-    startTimer(); 
     
 
 };
@@ -107,18 +106,18 @@ function nextQuestion() {
 
 function showQuestion() {
     CurrentQuestionIndex++;
-    
-    currentQuestion = availableQuestion[CurrentQuestionIndex];
+    if (currentQuestion = availableQuestion[CurrentQuestionIndex]) {
+        question.innerHTML = `Question : ${currentQuestion["question"]}`;
+    }
     console.log(availableQuestion[CurrentQuestionIndex]);
-    question.innerText = `Question : ${currentQuestion["question"]}`;
     console.log(currentQuestion);
 
     answerButtonsElement.forEach(choice => {
-        const number = choice.dataset["number"];
-        choice.innerText = currentQuestion["choice" + number];
+        const number = choice.dataset["number"];  
+        choice.innerHTML = currentQuestion["choice" + number];
     });
     acceptingAnswer = true;
-    
+    startTimer();
 }
 
 answerButtonsElement.forEach(choice => {
@@ -162,6 +161,7 @@ answerButtonsElement.forEach(choice => {
             document.body.classList.remove('correct');
             document.body.classList.remove('incorrect');
             nextQuestion();
+            
         }, 1000);
     
        
@@ -181,29 +181,38 @@ function plusWin() {
 //------------------Start Timer-------------------
 
 
-function startTimer() {
+/* function startTimer() {
     timerId = setInterval(decrement, 1000);
 }
 
 function decrement() {
+    timer--;
     
+    if(count === 0) {
+    stopInterval()
+    }, 1000);
     $("#countdown-timer").html(`<span>
                     <i class="fas fa-hourglass-half"></i></span>Timer: ${timer}`);
 
-    if (timer <= 0) {
-        clearInterval(timerId);
-        //alert("times up");
+} */
+function startTimer() {
+var count = 15;
+var timer = setInterval(function() {
+  console.log(count);
+  $("#countdown-timer").html(`<span>
+                    <i class="fas fa-hourglass-half"></i></span>Timer: ${count}`);
+  count--;
+  if(count === 0) {
+    stopInterval()
+  }
+}, 1000);
 
-    } else {
-        timer -= 1;
-    }
-    return startTimer();
+var stopInterval = function() {
+  console.log('time is up!');
+  clearInterval(timer);
 }
-
-function stopTimer() {
-    clearInterval(timerId);
+                    
 }
- 
 
 
 
