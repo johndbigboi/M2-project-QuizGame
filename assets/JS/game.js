@@ -5,7 +5,8 @@ const question = document.getElementById("question-box");
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
 
-let randomQuestion, CurrentQuestionIndex;
+let randomQuestion; 
+let CurrentQuestionIndex = 0;
 
 
 let CurrentMoneyIndex = 0;
@@ -79,6 +80,10 @@ $(function () {
     '€1,000,000',
     '€5,000,000',
 ]; 
+var timerId;
+var timer = 10;
+
+
 const totalQuestion = 11;
 
 startGame = () => {
@@ -91,16 +96,18 @@ startGame = () => {
     availableQuestion = [...questions];
     console.log(availableQuestion);
     nextQuestion();
+    startTimer(); 
+    
 
 };
 
 function nextQuestion() { 
-    showQuestion(randomQuestion[CurrentQuestionIndex])
+    showQuestion(randomQuestion[CurrentQuestionIndex]);
 };
 
 function showQuestion() {
     CurrentQuestionIndex++;
-
+    
     currentQuestion = availableQuestion[CurrentQuestionIndex];
     console.log(availableQuestion[CurrentQuestionIndex]);
     question.innerText = `Question : ${currentQuestion["question"]}`;
@@ -111,6 +118,7 @@ function showQuestion() {
         choice.innerText = currentQuestion["choice" + number];
     });
     acceptingAnswer = true;
+    
 }
 
 answerButtonsElement.forEach(choice => {
@@ -126,26 +134,41 @@ answerButtonsElement.forEach(choice => {
 
  
 
-        setStatusClass(document.body, selectedAnswer)
-
+    setStatusClass(document.body, selectedAnswer)
+        
 
         function setStatusClass(element, selectedAnswer) {
-            clearStatusClass(element)
+            
             if (selectedAnswer == currentQuestion.answer) {
-                element.classList.add('correct');
+                clearStatusClass(element);
+                // use the classList API to add classes
+                element.classList.add('correct');   
                 plusWin();
                 
             } else {
-                element.classList.add('incorrect')
-            }
+                element.classList.add('incorrect')   
+                
+            } 
+            
         }
-
+        // use the classList API to remove classes
         function clearStatusClass(element) {
             element.classList.remove('correct')
             element.classList.remove('incorrect')
         }
-        nextQuestion();
+        
+        
+        setTimeout(function(){ 
+            document.body.classList.remove('correct');
+            document.body.classList.remove('incorrect');
+            nextQuestion();
+        }, 1000);
+    
+       
     });
+    
+
+        
 }); 
 
 function plusWin() {
@@ -154,3 +177,49 @@ function plusWin() {
     prizeText.innerText = `Money won! ${currentPrize}`;
     console.log(availablePrize[CurrentMoneyIndex]);
 };
+
+//------------------Start Timer-------------------
+
+
+function startTimer() {
+    timerId = setInterval(decrement, 1000);
+}
+
+function decrement() {
+    
+    $("#countdown-timer").html(`<span>
+                    <i class="fas fa-hourglass-half"></i></span>Timer: ${timer}`);
+
+    if (timer <= 0) {
+        clearInterval(timerId);
+        //alert("times up");
+
+    } else {
+        timer -= 1;
+    }
+    return startTimer();
+}
+
+function stopTimer() {
+    clearInterval(timerId);
+}
+ 
+
+
+
+ $(document).ready(function () {
+    /* $(".choice-text").click(function () {
+        $("li").eq(3 & 2).css("background-color", "red");
+
+    }); 
+     $("#menu").on('click', 'li', function () {
+         $(this).parent().find('li').css("background-color", "");
+         $(this).css("background-color", "blue");
+     }); */
+     $("#add_li").click(function () {
+         $("#menu").prepend("<li>1000</li>"),
+         $("li").eq().remove();
+     }) 
+    
+});
+
