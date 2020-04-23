@@ -4,8 +4,8 @@ const question = document.getElementById("question-box");
 /* const answerButtonsElement = document.getElementById("answer-buttons");*/
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
-
-let randomQuestion; 
+const answerButtons = document.getElementById('answer-buttons');
+let randomQuestion;
 let CurrentQuestionIndex = 0;
 
 
@@ -36,7 +36,9 @@ $(function () {
             questions = allQuestion.results.map(function (results) {
                 //console.log(questions);
                 //document.getElementById("question").innerHTML = results.question;
-                const newQuestion = { question: results.question }
+                const newQuestion = {
+                    question: results.question
+                }
                 //console.log(formattedQuestion);
 
                 //results.incorrect_answers.push(results.correct_answer);
@@ -67,8 +69,8 @@ $(function () {
 
 //CONSTANT
 
- const  Prize = [
-     '€1',
+const Prize = [
+    '€1',
     '€100',
     '€500',
     '€1,000',
@@ -79,7 +81,7 @@ $(function () {
     '€500,000',
     '€1,000,000',
     '€5,000,000',
-]; 
+];
 //var timerId;
 //var timer = 10;
 
@@ -87,7 +89,7 @@ $(function () {
 const totalQuestion = 11;
 
 startGame = () => {
-    
+
     currentQuestion = 0;
     CurrentMoneyIndex = 0;
     availablePrize = [...Prize];
@@ -96,11 +98,11 @@ startGame = () => {
     availableQuestion = [...questions];
     console.log(availableQuestion);
     nextQuestion();
-    
+
 
 };
 
-function nextQuestion() { 
+function nextQuestion() {
     showQuestion(randomQuestion[CurrentQuestionIndex]);
 };
 
@@ -113,66 +115,73 @@ function showQuestion() {
     console.log(currentQuestion);
 
     answerButtonsElement.forEach(choice => {
-        const number = choice.dataset["number"];  
+        
+        const number = choice.dataset["number"];
         choice.innerHTML = currentQuestion["choice" + number];
+        
     });
     acceptingAnswer = true;
+    
+    
     startTimer();
+    
 }
 
 answerButtonsElement.forEach(choice => {
     // console.log(answerButtonsElement)
     choice.addEventListener("click", e => {
+
         console.log(e.target)
         if (!acceptingAnswer) return;
-
+        
         acceptingAnswer = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
         console.log(selectedAnswer == currentQuestion.answer);
 
- 
 
-    setStatusClass(document.body, selectedAnswer)
-        
+
+        setStatusClass(document.body, selectedAnswer)
+
 
         function setStatusClass(element, selectedAnswer) {
-            
+
             if (selectedAnswer == currentQuestion.answer) {
                 clearStatusClass(element);
                 // use the classList API to add classes
-                element.classList.add('correct');   
+                element.classList.add('correct');
                 plusWin();
-                
+
             } else {
-                element.classList.add('incorrect')   
-                
-            } 
-            
+                element.classList.add('incorrect')
+
+            }
+
         }
         // use the classList API to remove classes
         function clearStatusClass(element) {
             element.classList.remove('correct')
             element.classList.remove('incorrect')
         }
-        
-        
-        setTimeout(function(){ 
+
+
+        setTimeout(function () {
             document.body.classList.remove('correct');
             document.body.classList.remove('incorrect');
             nextQuestion();
-            
         }, 1000);
-    
-       
-    });
-    
 
+        stopInterval();
         
-}); 
+
+    });
+
+
+
+});
 
 function plusWin() {
-    CurrentMoneyIndex ++;
+    CurrentMoneyIndex++;
     currentPrize = availablePrize[CurrentMoneyIndex];
     prizeText.innerText = `Money won! ${currentPrize}`;
     console.log(availablePrize[CurrentMoneyIndex]);
@@ -196,27 +205,34 @@ function decrement() {
 
 } */
 function startTimer() {
-var count = 15;
-var timer = setInterval(function() {
-  console.log(count);
-  $("#countdown-timer").html(`<span>
+    var count = 15;
+    var timer = setInterval(function () {
+        console.log(count);
+        $("#countdown-timer").html(`<span>
                     <i class="fas fa-hourglass-half"></i></span>Timer: ${count}`);
-  count--;
-  if(count === 0) {
-    stopInterval()
-  }
-}, 1000);
+        count--;
+        if (count <= 0) {
+            stopInterval();
+        }
+    }, 
+     1000);
 
-var stopInterval = function() {
-  console.log('time is up!');
-  clearInterval(timer);
+    var stopInterval = function () {
+        console.log('time is up!');
+        enableBtn();
+        clearInterval(timer);
+    }
+
 }
-                    
+
+function enableBtn() {
+    document.getElementById("button").disabled = false;
 }
 
 
 
- $(document).ready(function () {
+
+$(document).ready(function () {
     /* $(".choice-text").click(function () {
         $("li").eq(3 & 2).css("background-color", "red");
 
@@ -225,10 +241,9 @@ var stopInterval = function() {
          $(this).parent().find('li').css("background-color", "");
          $(this).css("background-color", "blue");
      }); */
-     $("#add_li").click(function () {
-         $("#menu").prepend("<li>1000</li>"),
-         $("li").eq().remove();
-     }) 
-    
-});
+    $("#add_li").click(function () {
+        $("#menu").prepend("<li>1000</li>"),
+            $("li").eq().remove();
+    })
 
+});
