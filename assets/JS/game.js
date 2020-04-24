@@ -1,10 +1,10 @@
 /*  const easyQuestion = ("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple");
  */
 const question = document.getElementById("question-box");
-/* const answerButtonsElement = document.getElementById("answer-buttons");*/
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
-const answerButtons = document.getElementById('answer-buttons');
+var buttons = document.querySelectorAll('.btn1');
+
 let randomQuestion;
 let CurrentQuestionIndex = 0;
 
@@ -17,7 +17,6 @@ let availableQuestion = [];
 const AIM_QUESTION = 10;
 
 
-/* //startGame ();*/
 let questions = [];
 console.log(questions);
 
@@ -98,7 +97,7 @@ startGame = () => {
     availableQuestion = [...questions];
     console.log(availableQuestion);
     nextQuestion();
-
+    
 
 };
 
@@ -115,16 +114,15 @@ function showQuestion() {
     console.log(currentQuestion);
 
     answerButtonsElement.forEach(choice => {
-        
+
         const number = choice.dataset["number"];
         choice.innerHTML = currentQuestion["choice" + number];
-        
+
     });
     acceptingAnswer = true;
-    
-    
+
     startTimer();
-    
+
 }
 
 answerButtonsElement.forEach(choice => {
@@ -133,7 +131,8 @@ answerButtonsElement.forEach(choice => {
 
         console.log(e.target)
         if (!acceptingAnswer) return;
-        
+        buttons.disabled = !buttons.disabled;
+        //buttons.disabled = true;
         acceptingAnswer = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
@@ -169,10 +168,13 @@ answerButtonsElement.forEach(choice => {
             document.body.classList.remove('correct');
             document.body.classList.remove('incorrect');
             nextQuestion();
+            buttons.forEach(button => {
+                button.disabled = true;
+                console.log(buttons);
+            });
         }, 1000);
 
-        stopInterval();
-        
+
 
     });
 
@@ -205,31 +207,38 @@ function decrement() {
 
 } */
 function startTimer() {
-    var count = 15;
+    var count = 10;
     var timer = setInterval(function () {
-        console.log(count);
-        $("#countdown-timer").html(`<span>
-                    <i class="fas fa-hourglass-half"></i></span>Timer: ${count}`);
-        count--;
-        if (count <= 0) {
-            stopInterval();
-        }
-    }, 
-     1000);
+            console.log(count);
+            const hourGlass = document.getElementById("countdown-timer");
+            hourGlass.innerHTML = `<span><i class="fas fa-hourglass-half"></i></span>Timer: ${count}`;
+            count--;
+
+            if (count < 0) {
+
+                enableBtn();
+                stopInterval();
+               
+            } 
+        },
+        1000);
 
     var stopInterval = function () {
         console.log('time is up!');
-        enableBtn();
+        document.getElementById("countdown-timer").innerHTML = "Goodluck!";
         clearInterval(timer);
     }
 
 }
 
+
 function enableBtn() {
-    document.getElementById("button").disabled = false;
+    buttons.forEach(button => {
+            button.disabled = false;
+        console.log(buttons);
+        }
+    );
 }
-
-
 
 
 $(document).ready(function () {
