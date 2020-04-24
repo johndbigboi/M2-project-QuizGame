@@ -3,6 +3,7 @@
 const question = document.getElementById("question-box");
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
+const animateTimer= document.querySelector('.info-timer');
 var buttons = document.querySelectorAll('.btn1');
 
 let randomQuestion;
@@ -172,6 +173,7 @@ answerButtonsElement.forEach(choice => {
                 button.disabled = true;
                 console.log(buttons);
             });
+            animateTimer.classList.remove('animated', 'bounceOutLeft');
         }, 1000);
 
 
@@ -211,6 +213,7 @@ function startTimer() {
     var timer = setInterval(function () {
             console.log(count);
             const hourGlass = document.getElementById("countdown-timer");
+            
             hourGlass.innerHTML = `<span><i class="fas fa-hourglass-half"></i></span>Timer: ${count}`;
             count--;
 
@@ -218,14 +221,15 @@ function startTimer() {
 
                 enableBtn();
                 stopInterval();
-               
+                animateTimer.classList.add('animated', 'bounceOutLeft');
+                
             } 
         },
         1000);
 
     var stopInterval = function () {
         console.log('time is up!');
-        document.getElementById("countdown-timer").innerHTML = "Goodluck!";
+        document.getElementById("countdown-timer").innerHTML = "GOODLUCK!";
         clearInterval(timer);
     }
 
