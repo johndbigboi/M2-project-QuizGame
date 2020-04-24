@@ -1,12 +1,12 @@
 .title-bar {
     display: flex;
-    max-width: 100%;
+    justify-content: flex-start;
     margin-top: 60px;
     background-color: #f5dea3;
 }
 
 .title {
-    left: 50px;
+    left: 170px;
     height: 8rem;
     text-align: center;
     font-size: 5rem;
@@ -15,7 +15,7 @@
 
 .circle-logo {
     position: absolute;
-    top: -15px;
+    top: 40px;
     margin-left: 50px;
     font-size: 5rem;
     max-width: 11rem;
@@ -101,7 +101,8 @@
 
 #info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-top: 10%;
 }
 
 .info-prize, .info-timer {
