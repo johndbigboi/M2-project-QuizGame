@@ -109,7 +109,7 @@ function nextQuestion() {
 function showQuestion() {
     CurrentQuestionIndex++;
     if (currentQuestion = availableQuestion[CurrentQuestionIndex]) {
-        question.innerHTML = `<h2>Question :</h2><br>${currentQuestion["question"]} `;
+        question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><br><h4>${currentQuestion["question"]}</h4> `;
     }
     console.log(availableQuestion[CurrentQuestionIndex]);
     console.log(currentQuestion);
