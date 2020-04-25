@@ -56,6 +56,9 @@ h3 {
     font-weight: 500;
 }
 
+h4 {
+    background-color: RGBA(245, 222, 163, 0.5);
+}
 p {
     margin-top: 0;
     margin-bottom: 0;
@@ -133,7 +136,7 @@ p {
 .btn {
     font-size: 1.8rem;
     padding: 1rem 0;
-    width: 25rem;
+    width: 18rem;
     text-align: center;
     border: 0.1rem solid #56a5eb;
     margin-bottom: 1rem;
