@@ -109,7 +109,7 @@ function nextQuestion() {
 function showQuestion() {
     CurrentQuestionIndex++;
     if (currentQuestion = availableQuestion[CurrentQuestionIndex]) {
-        question.innerHTML = `Question : <br>${currentQuestion["question"]}`;
+        question.innerHTML = `<h2>Question :</h2><br>${currentQuestion["question"]} `;
     }
     console.log(availableQuestion[CurrentQuestionIndex]);
     console.log(currentQuestion);
@@ -148,6 +148,7 @@ answerButtonsElement.forEach(choice => {
 
             if (selectedAnswer == currentQuestion.answer) {
                 clearStatusClass(element);
+                console.log(element);
                 // use the classList API to add classes
                 element.classList.add('correct');
                 plusWin();
