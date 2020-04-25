@@ -20,14 +20,17 @@
 
 body {
     /*     background-color: #018383;*/
-    /* height: auto; */
+    height: 100vh;
     /* width: 100vw; */
     background-image: url("/assets/Image/MH.jpg");
     background-position: center;
-    background-size: 100%;
+    background-size: 100vh;
     position: relative;
     font-size: 62.5%;
-} 
+     border: 20mm ridge red;
+}     
+
+
 
 /* h1, h2, h3, h4 {
     margin-bottom: 1rem;
@@ -67,7 +70,7 @@ p {
 /* Utilities */
 
 .container {
-    width: 100vw;
+    /* width: 100vw; */
     /* display: flex; */
     justify-content: center;
     align-items: center;
