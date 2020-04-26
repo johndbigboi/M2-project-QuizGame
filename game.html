@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/all-animation.css">
     <link rel="stylesheet" href="/assets/Styles/style.css">
     <link rel="stylesheet" href="/assets/Styles/game.css">
 
@@ -20,15 +22,20 @@
         <div class="container">
             <div class="title-bar d-flex flex-row bd-highlight">
                 <div class="p-2 d-inline animated bounceInLeft">
-                    <img class="circle-logo" src="/assets/Image/clowntransparent.png" alt="play image" />
+                    <img class="circle-logo pulse" src="/assets/Image/clowntransparent.png" alt="play image" />
                 </div>
                 <div class="p-2 bd-highlight title animated bounce"> MONEY<span>HEIST</span></div>
             </div>
             <div id="info" class="justify-center flex-column">
                 <div class="row info-box">
-                    <p id="prize" class="info-prize animated infinite swing">YOUR BANK MONEY €0</p>
+                    <p id="prize" class="info-prize animated infinite swing">
+                        <img src="/assets/Image/euro.png"></img>
+                        YOUR BANK MONEY €0
+                       <!--  <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a
+                                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+                    </p>
                     <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
-                            <i class="fas fa-hourglass-half"></i></span>Timer:
+                            <i class="fas fa-hourglass-half fa-spin"></i></span> Timer:
                     </p>
                 </div>
             </div>
@@ -39,13 +46,13 @@
                 </div>
                 <!-- <div id="button"> -->
                 <div class="row choice-box">
-                    <div class="choice-container btn-group shadow-none">
-                        <button class="choice-prefix shadow-none">A</button>
+                    <div class="choice-container btn-group shadow-none shake-little">
+                        <p class="choice-prefix">A</p>
                         <button type="button" class="btn1 choice-text shadow-none" data-number="1" disabled>choice
                             1</button>
                     </div>
 
-                    <div class="choice-container  ">
+                    <div class="choice-container shake-little">
                         <p class="choice-prefix">B</p>
                         <!-- <p class="choice-text" data-number="2">choice 2 </p> -->
                         <button type="button" class="btn1 choice-text shadow-none" data-number="2" disabled>choice
@@ -53,13 +60,13 @@
                     </div>
                 </div>
                 <div class="row choice-box">
-                    <div class="choice-container ">
+                    <div class="choice-container shake-little">
                         <p class="choice-prefix">C</p>
                         <!-- <p class="choice-text" data-number="3">choice 3</p> -->
                         <button type="button" class="btn1 choice-text shadow-none" data-number="3" disabled>choice
                             3</button>
                     </div>
-                    <div class="choice-container ">
+                    <div class="choice-container shake-little">
                         <p class="choice-prefix">D</p>
                         <!-- <p class="choice-text" data-number="4">choice 4</p> -->
                         <button type="button" class="btn1 choice-text shadow-none" data-number="4" disabled>choice
