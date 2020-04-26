@@ -1,9 +1,17 @@
+#gamepage{
+    background: url("/assets/Image/MH.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+
 .title-bar {
     width: 100%;
     justify-content: space-between;
+    letter-spacing: 5px;
     /* margin-top: 60px; */
-    /* background-color: #f5dea3; */
-    
+/*     background-color: #f5dea3;
+ */    
 }
 
 .title {
@@ -14,6 +22,7 @@
     font-weight: 500;
     /* margin: 0 20px 0; */
     margin-left: 6rem;
+    
     color: #fefefe;
     /* background-color: rgb(5, 1 , 0, 0.5); */
 }
@@ -25,7 +34,7 @@
 
 .circle-logo {
     position: absolute;
-    top: 12px;
+    top: -12px;
     margin-left: 3rem;
     font-size: 5rem;
     width: 11rem;
@@ -36,10 +45,10 @@
     white-space: nowrap;
     vertical-align: baseline;
     border-radius: 50%;
-    background-color: #C81912;
+    background-color: transparent;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254 ,254, 1);
     color: white;
-    border: 0;
+    border: 1px solid red;
 }
 
 #question-box{
@@ -83,7 +92,7 @@
     -webkit-border-radius: 300px;
     -moz-border-radius: 300px;
     border-radius: 300px;
-    /*     border-radius: 0.825rem;*/
+    /* border-radius: 0.825rem;*/
     background-color: #fefefe;
 }
 
@@ -100,7 +109,7 @@
     border-bottom-left-radius: 0.825rem; */
     border-radius: 18.75rem;
     background-color: #C81912;
-      color: #050100;
+    color: #050100;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 0.5);
     border: 0;
 }
@@ -111,9 +120,8 @@
     background-color: transparent;
     border-top-right-radius: 0.825rem;
     border-bottom-right-radius: 0.825rem;
-    border: 0;
-     
-    color: #050100;
+    border: 0;  
+    /* color: #050100; */
 }
 
 .correct {
