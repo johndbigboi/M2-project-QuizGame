@@ -2,7 +2,8 @@
     width: 100%;
     justify-content: space-between;
     /* margin-top: 60px; */
-    background-color: #f5dea3;
+    /* background-color: #f5dea3; */
+    
 }
 
 .title {
@@ -10,15 +11,22 @@
     height: 8rem;
     text-align: center;
     font-size: 5rem;
+    font-weight: 500;
     /* margin: 0 20px 0; */
-    margin-left: 5rem;
+    margin-left: 6rem;
+    color: #fefefe;
+    /* background-color: rgb(5, 1 , 0, 0.5); */
+}
+
+.title span {
     color: #050100;
+    background-color: #C81912;
 }
 
 .circle-logo {
     position: absolute;
     top: 12px;
-    margin-left: 4rem;
+    margin-left: 3rem;
     font-size: 5rem;
     width: 11rem;
     height: 11rem;
