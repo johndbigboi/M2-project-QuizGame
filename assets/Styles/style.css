@@ -20,14 +20,14 @@
 
 body {
     /*     background-color: #018383;*/
-    height: 104vh;
+    /* height: 104vh; */
     /* width: 100vw; */
     background-image: url("/assets/Image/MH.jpg");
     background-position: center;
-    background-size: 100vh;
+    background-size: 100%;
     position: relative;
     font-size: 62.5%;
-     border: 20mm ridge red;
+    /*  border: 20mm ridge red; */
 }     
 
 
