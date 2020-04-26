@@ -188,7 +188,7 @@ answerButtonsElement.forEach(choice => {
 function plusWin() {
     CurrentMoneyIndex++;
     currentPrize = availablePrize[CurrentMoneyIndex];
-    prizeText.innerText = `Money won! ${currentPrize}`;
+    prizeText.innerHTML = `<img src="/assets/Image/euro.png"></img>Money Heist! ${currentPrize}<n/> <img src="/assets/Image/redthief.png"></img>`;
     console.log(availablePrize[CurrentMoneyIndex]);
 };
 
@@ -215,14 +215,14 @@ function startTimer() {
             console.log(count);
             const hourGlass = document.getElementById("countdown-timer");
             
-            hourGlass.innerHTML = `<span><i class="fas fa-hourglass-half"></i></span>Timer: ${count}`;
+            hourGlass.innerHTML = `<span><i class="fas fa-hourglass-half"></i></span>Timer : ${count}`;
             count--;
 
             if (count < 0) {
 
                 enableBtn();
                 stopInterval();
-                animateTimer.classList.add('animated', 'bounceOutLeft');
+                //animateTimer.classList.add('animated', 'bounceOutLeft');
                 
             } 
         },
