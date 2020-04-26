@@ -46,6 +46,7 @@
     width: 100%;
     text-align: center;
     margin-bottom: 3rem;
+    
 }
 
 .question-case {
@@ -68,6 +69,7 @@
     width: 100%;
     justify-content: space-evenly;
     margin-left: 0;
+    
 }
 
 .choice-container {
@@ -82,7 +84,7 @@
     -moz-border-radius: 300px;
     border-radius: 300px;
     /*     border-radius: 0.825rem;*/
-    background-color: #f5dea3;
+    background-color: #fefefe;
 }
 
 .choice-container:hover {
@@ -97,8 +99,9 @@
     /* border-top-left-radius: 0.825rem;
     border-bottom-left-radius: 0.825rem; */
     border-radius: 18.75rem;
-    background-color: #56a5eb;
-    color: white;
+    background-color: #C81912;
+      color: #050100;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 0.5);
     border: 0;
 }
 
@@ -109,6 +112,8 @@
     border-top-right-radius: 0.825rem;
     border-bottom-right-radius: 0.825rem;
     border: 0;
+     
+    color: #050100;
 }
 
 .correct {
