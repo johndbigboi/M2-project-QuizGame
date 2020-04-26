@@ -20,13 +20,10 @@
 
 body {
     /*     background-color: #018383;*/
-    /* height: 104vh; */
+    /*  */height: 104vh;
     /* width: 100vw; */
-    background-image: url("/assets/Image/MH.jpg");
-    background-position: center;
-    background-size: 100%;
     position: relative;
-    font-size: 62.5%;
+    font-size: 62.5%; 
     /*  border: 20mm ridge red; */
 }     
 
@@ -68,6 +65,14 @@ p {
 }
 
 /* Utilities */
+
+#landing-page {
+    background: url("/assets/Image/money-heist-netflix-background-8.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+    
+}
 
 .container {
     /* width: 100vw; */
