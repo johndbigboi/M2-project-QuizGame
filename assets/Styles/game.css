@@ -1,4 +1,4 @@
-#gamepage{
+#gamepage {
     background: url("/assets/Image/MH.jpg") no-repeat center center fixed;
     background-size: cover;
     height: auto;
@@ -10,8 +10,8 @@
     justify-content: space-between;
     letter-spacing: 5px;
     /* margin-top: 60px; */
-/*     background-color: #f5dea3;
- */    
+    /*     background-color: #f5dea3;
+ */
 }
 
 .title {
@@ -22,7 +22,6 @@
     font-weight: 500;
     /* margin: 0 20px 0; */
     margin-left: 6rem;
-    
     color: #fefefe;
     /* background-color: rgb(5, 1 , 0, 0.5); */
 }
@@ -46,12 +45,12 @@
     vertical-align: baseline;
     border-radius: 50%;
     background-color: transparent;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254 ,254, 1);
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
     color: white;
     border: 1px solid red;
 }
 
-#question-box{
+#question-box {
     width: 100%;
     text-align: center;
     margin-bottom: 3rem;
@@ -61,7 +60,8 @@
 .question-case {
     text-align: center;
     width: 50%;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.7);
+   box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
+   
 }
 
 .answer-choice {
@@ -78,7 +78,6 @@
     width: 100%;
     justify-content: space-evenly;
     margin-left: 0;
-    
 }
 
 .choice-container {
@@ -116,17 +115,17 @@
 
 .choice-text {
     padding: 1.5rem;
-   /*  width: 100%; */
+    /*  width: 100%; */
     background-color: transparent;
     border-top-right-radius: 0.825rem;
     border-bottom-right-radius: 0.825rem;
-    border: 0;  
+    border: 0;
     /* color: #050100; */
 }
 
 .correct {
     /* background-color: #28a745; */
-     border: 20mm ridge green;
+    border: 20mm ridge green;
 }
 
 .incorrect {
@@ -150,15 +149,21 @@
     text-align: center;
     width: 22rem;
     font-size: 2rem;
-    border: 2px solid #56a5eb;
+    border: 0.1rem solid #C81912;
     padding: 5px;
     border-radius: 10px;
-    background-color: #f5dea3; 
+    background-color: #f5dea3;
     color: black;
     animation-duration: 12s;
     animation-delay: 1s;
     animation-iteration-count: infinite;
-}   
+    
+}
+
+.info-prize img {
+    height: 40px;
+    width: 40px;
+}
 
 .info-timer {
     display: flex;
@@ -167,7 +172,7 @@
     width: 13rem;
     font-size: 2rem;
     height: 4rem;
-    border: 2px solid #56a5eb;
+    border: 0.1rem solid #C81912;
     padding: 5px;
     border-radius: 10px;
     background-color: #f5dea3;
@@ -177,7 +182,14 @@
     animation-iteration-count: infinite;
 }
 
+.fa-hourglass-half {
+    color: #C81912;
+    -webkit-animation: fa-spin 2s linear infinite;
+    animation: fa-spin 2s linear infinite;
+}
+
 .options-btn {
     margin: 1rem;
     justify-content: space-evenly;
+    
 }
