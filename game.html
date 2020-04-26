@@ -16,57 +16,61 @@
 
 <body>
     <!-- Game Page -->
-    <div class="container">
-        <div class="title-bar d-flex flex-row bd-highlight">
-            <div class="p-2 d-inline circle-logo animated bounceInLeft">MH</div>
-            <div class="p-2 bd-highlight title animated bounce"> MONEY<span>HEIST</span></div>
-        </div>
-        <div id="info" class="justify-center flex-column">
-            <div class="row info-box">
-                <p id="prize" class="info-prize animated infinite swing">YOUR BANK MONEY €0</p>
-                <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
-                        <i class="fas fa-hourglass-half"></i></span>Timer:
-                </p>
+    <div id="gamepage">
+        <div class="container">
+            <div class="title-bar d-flex flex-row bd-highlight">
+                <div class="p-2 d-inline animated bounceInLeft">
+                    <img class="circle-logo" src="/assets/Image/clowntransparent.png" alt="play image" />
+                </div>
+                <div class="p-2 bd-highlight title animated bounce"> MONEY<span>HEIST</span></div>
             </div>
-        </div>
+            <div id="info" class="justify-center flex-column">
+                <div class="row info-box">
+                    <p id="prize" class="info-prize animated infinite swing">YOUR BANK MONEY €0</p>
+                    <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
+                            <i class="fas fa-hourglass-half"></i></span>Timer:
+                    </p>
+                </div>
+            </div>
 
-        <div id="game" class="justify-center flex-column">
-            <h2 id="question-box" class="question-case">show here</h2>
-            <div id="answers-buttons" class="btn-grid">
-            </div>
-            <!-- <div id="button"> -->
-            <div class="row choice-box">
-                <div class="choice-container btn-group shadow-none">
-                    <button class="choice-prefix shadow-none">A</button>
-                    <button type="button" class="btn1 choice-text shadow-none" data-number="1" disabled>choice
-                        1</button>
+            <div id="game" class="justify-center flex-column">
+                <h2 id="question-box" class="question-case">show here</h2>
+                <div id="answers-buttons" class="btn-grid">
                 </div>
+                <!-- <div id="button"> -->
+                <div class="row choice-box">
+                    <div class="choice-container btn-group shadow-none">
+                        <button class="choice-prefix shadow-none">A</button>
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="1" disabled>choice
+                            1</button>
+                    </div>
 
-                <div class="choice-container  ">
-                    <p class="choice-prefix">B</p>
-                    <!-- <p class="choice-text" data-number="2">choice 2 </p> -->
-                    <button type="button" class="btn1 choice-text shadow-none" data-number="2" disabled>choice
-                        2</button>
+                    <div class="choice-container  ">
+                        <p class="choice-prefix">B</p>
+                        <!-- <p class="choice-text" data-number="2">choice 2 </p> -->
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="2" disabled>choice
+                            2</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row choice-box">
-                <div class="choice-container ">
-                    <p class="choice-prefix">C</p>
-                    <!-- <p class="choice-text" data-number="3">choice 3</p> -->
-                    <button type="button" class="btn1 choice-text shadow-none" data-number="3" disabled>choice
-                        3</button>
+                <div class="row choice-box">
+                    <div class="choice-container ">
+                        <p class="choice-prefix">C</p>
+                        <!-- <p class="choice-text" data-number="3">choice 3</p> -->
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="3" disabled>choice
+                            3</button>
+                    </div>
+                    <div class="choice-container ">
+                        <p class="choice-prefix">D</p>
+                        <!-- <p class="choice-text" data-number="4">choice 4</p> -->
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="4" disabled>choice
+                            4</button>
+                    </div>
                 </div>
-                <div class="choice-container ">
-                    <p class="choice-prefix">D</p>
-                    <!-- <p class="choice-text" data-number="4">choice 4</p> -->
-                    <button type="button" class="btn1 choice-text shadow-none" data-number="4" disabled>choice
-                        4</button>
+                <!-- </div> -->
+                <div class="row options-btn">
+                    <a class="btn" href="/index.html">Restart</a>
+                    <a class="btn" href="/highscores.html">High Scores</a>
                 </div>
-            </div>
-            <!-- </div> -->
-            <div class="row options-btn">
-                <a class="btn" href="/index.html">Restart</a>
-                <a class="btn" href="/highscores.html">High Scores</a>
             </div>
         </div>
     </div>
