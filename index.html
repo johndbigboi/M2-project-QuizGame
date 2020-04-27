@@ -21,7 +21,8 @@
         <div class="container">
             <div id="landing-page-menu" class="flex-center flex-column">
                 <h1 id="game-title"><span class="title-1">MONEY</span><span class="title-2">HEIST</span></h1>
-                <a id="playButton" href="/game.html" class="mainbutton hvr-rectangle-out gradient-border">
+                <a id="playButton" href="/game.html" class="mainbutton hvr-rectangle-out gradient-border"
+                data-toggle="modal" data-target="#exampleModalCenter">
                     <span>PLAY</span>
                 </a>
                 <a href="#" class="mainbutton hvr-rectangle-out">
@@ -31,11 +32,85 @@
                     <span>DIFFICULTY</span>
                 </a>
             </div>
-            <footer class="fixed-bottom ml-2 mb-2">
+            <footer class="fixed-bottom row ml-2 mb-2">
                 <div id="footer-text">FOR EDUCATIONAL PURPOSE ONLY © JOHNDBIGBOI 2020</div>
+                    <button>where to buy?</button>
             </footer>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="heading"><h5>Modal title</h5></p>
+                </div>
+                <div class="modal-header d-flex justify-content-center">
+                    <div  id="exampleModalLongTitle">
+                        <p class="modal-title">“In this world, everything is governed by balance. There’s what you stand to gain and what you stand to lose. And when
+                        you think you’ve got nothing to lose, you become overconfident.”</p>
+                        
+                    </div>          
+                    
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <p><strong>Professor: Importante! I need to hide your identity to start the game!</strong></p>
+                        <input class="form-control" type="text" placeholder="Code-name" id="playerName" autofocus>
+                        <p id="missingName" class="text-danger mb-2"></p>
+                        
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="/assets/Image/professor.jpg" class="img-fluid" alt="">
+                            </div>
+                        
+                            <div class="col-7">
+                                <p><strong>Professor: Importante! I need to hide your identity to start the game!</strong></p>
+                                <p>Mission: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia reprehenderit tempore delectus nisi accusamus maiores velit, perspiciatis sed sit ea.</p>
+                                <button type="button" class="btn-info btn-md">Read more</button>
+                        
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col-md-4">.col-md-4</div>
+                            <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+                            <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                Level 1: .col-sm-9
+                                <div class="row">
+                                    <div class="col-8 col-sm-6">
+                                        Level 2: .col-8 .col-sm-6
+                                    </div>
+                                    <div class="col-4 col-sm-6">
+                                        Level 2: .col-4 .col-sm-6
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            <div class="modal-footer justify-content-center">
+                <a type="button" href="/game.html" class="btn-primary waves-effect waves-light">Start Game
+                    <i class="fa fa-paper-plane ml-1"></i>
+                </a>
+                <a type="button" class="btn-outline-primary waves-effect" data-dismiss="modal">Exit</a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script type="text/javascript" src="assets/Js/game.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
