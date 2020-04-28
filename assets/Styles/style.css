@@ -223,8 +223,10 @@ p {
 /*----------------------------------------------Hover*/
 
 .hvr-rectangle-out:before {
-    background-color: rgba(201, 25, 19, 0.8);
+    /* background-color: rgba(201, 25, 19, 0.8); */
+    background: linear-gradient(60deg, black, #C81912, black);
     border-radius: 0.825rem;
+    border: none;
     width: 18rem;
     
 }
