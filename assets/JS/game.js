@@ -222,7 +222,7 @@ function startTimer() {
 
                 enableBtn();
                 stopInterval();
-                //animateTimer.classList.add('animated', 'bounceOutLeft');
+                animateTimer.classList.add('animated', 'bounceOutLeft');
                 
             } 
         },
