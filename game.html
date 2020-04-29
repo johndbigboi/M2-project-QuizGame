@@ -17,9 +17,102 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div id="nameModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="modal-title">
+                        <h5>The Royal Mint of Spain</h5>
+                    </p>
+    
+                </div>
+                <div class="modal-header d-flex justify-content-center">
+                    <div id="exampleModalLongTitle">
+                        <p class="modal-qoute">“In this world, everything is governed by balance. There’s what you stand
+                            to gain and what you stand to lose. And when
+                            you think you’ve got nothing to lose, you become overconfident.”</p>
+    
+                    </div>
+    
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <!-- <form action="/game.html" method="GET">
+                                                <label for="codeName">
+                                                    <p><strong>Professor: Importante! I need to hide your identity to start the
+                                                            game!</strong></p>
+                                                </label>
+                                                <input type="text" class="form-control" name="codeName" id="codeName" placeholder="Code-name" required>
+                                               <div class="invalid-tooltip">Por favor!tu nombre</div>
+                                                <p id="abort" class="text-danger mb-2"></p>
+                    
+                                                <div class="row">
+                                                    <div class="col-5">
+                                                        <img src="/assets/Image/professor.jpg" class="img-fluid" alt="">
+                                                    </div>
+                    
+                                                    <div class="col-7">
+                                                        <p><strong>Professor: Importante! I need to hide your identity to start the
+                                                                game!</strong></p>
+                                                        <p>Mission: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+                                                            reprehenderit tempore delectus nisi accusamus maiores velit, perspiciatis
+                                                            sed sit ea.</p>
+                                                        <button type="button" class="btn-info btn-md">Read more</button>
+                                                    </div>
+                                                </div>
+                                                First Name: <input type="text" id="myText" value="Mickey">
+                                                <div class="modal-footer justify-content-center">
+                                                    <button class="submit" id="startGameButton" onclick="myFunction()">Start Game
+                                                         <a type="button" href="/game.html" id="startGameButton"
+                                                            class="btn-primary waves-effect waves-light">
+                                                            <i class="fa fa-paper-plane ml-1"></i>
+                                                        </a> 
+                                                    </button>
+                                                    <a type="button" class="btn-outline-primary waves-effect" data-dismiss="modal">Exit</a>
+                                                </div>
+                                            </form> -->
+                        <!-- <div class="row">
+                                                <div class="col-md-4">.col-md-4</div>
+                                                <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+                                                <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    Level 1: .col-sm-9
+                                                    <div class="row">
+                                                        <div class="col-8 col-sm-6">
+                                                            Level 2: .col-8 .col-sm-6
+                                                        </div>
+                                                        <div class="col-4 col-sm-6">
+                                                            Level 2: .col-4 .col-sm-6
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                        First Name: <input type="text" id="myText" value="Mickey">
+    
+                        <p>Click the button to display the value of the value attribute of the text field.</p>
+    
+                        <!--  <button href="/game.html" onclick="myFunction()">Try it</button> -->
+                        <a id="nameModalexit" class="btn btn-primary" role="button" onClick="myFunction()">button</a>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
     <!-- Game Page -->
     <div id="gamepage">
         <div class="container">
+           
             <div class="title-bar d-flex flex-row bd-highlight">
                 <div class="p-2 d-inline animated bounceInLeft">
                     <img class="circle-logo pulse" src="/assets/Image/clowntransparent.png" alt="play image" />
@@ -31,16 +124,27 @@
                     <p id="prize" class="info-prize animated infinite swing">
                         <img src="/assets/Image/euro.png"></img>
                         YOUR BANK MONEY €0
+                        
+                        <!-- Name: <span id="result"></span> -->
+                        
                        <!--  <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a
                                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
                     </p>
+                    
+
                     <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
                             <i class="fas fa-hourglass-half fa-spin"></i></span> Timer:
                     </p>
+
+                    
                 </div>
             </div>
-
+            <div>
+            <p id="demo" class="codename justify-center"></img>
+            </p>
+            </div>
             <div id="game" class="justify-center flex-column">
+                
                 <h2 id="question-box" class="question-case">show here</h2>
                 <div id="answers-buttons" class="btn-grid">
                 </div>
@@ -82,7 +186,7 @@
             <footer class="fixed-bottom ml-2 mb-2">
                 <div id="footer-text">FOR EDUCATIONAL PURPOSE ONLY © JOHNDBIGBOI 2020</div>
                     <button>where to buy</button>
-               
+                   
 
             </footer>
         </div>
