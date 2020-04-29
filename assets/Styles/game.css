@@ -156,6 +156,8 @@
     margin-top: 6%;
     margin-bottom: 6%;
 }
+
+/*----------------------------------------------Prize*/
 #prize {
     width: 200px;
    display: block;
@@ -165,11 +167,11 @@
 }
 #prize::after {
     content: "";
-    background: url('/assets/Image/moneybank.png') center;
+    background: url('/assets/Image/moneystack.jpg') center;
      background-repeat: no-repeat;
      background-size: 200px;
      border-radius: 10px;
-    opacity: 0.5;
+    opacity: 0.9;
     top: 0;
     left: 0;
     bottom: 0;
@@ -235,3 +237,11 @@
 
 /*----------------------------------------------Modal*/
 
+.modal-backdrop {
+    background: url("/assets/Image/congratulation.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
