@@ -4,6 +4,10 @@ const question = document.getElementById("question-box");
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
 const animateTimer= document.querySelector('.info-timer');
+/* const nameModal = document.getElementById('nameModal'); */
+const gamepage = document.getElementById('gamepage');
+/* const codeName = document.getElementById('codeName');
+console.log(codeName);*/
 var buttons = document.querySelectorAll('.btn1');
 
 let randomQuestion;
@@ -59,7 +63,7 @@ $(function () {
                 return newQuestion;
             });
         };
-        startGame();
+        
     };
 
     xmlhttp.open("GET", baseURL, true);
@@ -97,8 +101,10 @@ startGame = () => {
     CurrentQuestionIndex = 0;
     availableQuestion = [...questions];
     console.log(availableQuestion);
+    myFunction()
     nextQuestion();
-    
+    /* gamepage.classList.remove("hidden"); */
+    /* nameModal.classList.add("hidden"); */
 
 };
 
@@ -174,7 +180,7 @@ answerButtonsElement.forEach(choice => {
                 button.disabled = true;
                 console.log(buttons);
             });
-            animateTimer.classList.remove('animated', 'bounceOutLeft');
+            //animateTimer.classList.remove('animated', 'bounceOutLeft');
         }, 1000);
 
 
@@ -222,7 +228,7 @@ function startTimer() {
 
                 enableBtn();
                 stopInterval();
-                animateTimer.classList.add('animated', 'bounceOutLeft');
+                //animateTimer.classList.add('animated', 'bounceOutLeft');
                 
             } 
         },
@@ -246,7 +252,47 @@ function enableBtn() {
 }
 
 
+
+
+ /* function addName() {
+     modalGameButton = document.getElementById('startGameButton');
+    modalGameButton.addEventListener("click", e => {
+    var myName = document.getElementById('codeName').value;
+    document.getElementById("result").innerHTML = myName;
+    });
+     myName = document.getElementById('codeName');
+    if (myName === 0 ) {
+        document.getElementById("abort").innerHTML = `Por favor!tu nombre`;
+    } else {
+         document.getElementById("result").innerHTML = myName.value;
+         console.log(result);
+    } 
+
+} */
+
+function myFunction() {
+    var x = document.getElementById("myText").value;
+    document.getElementById("demo").innerHTML = `<img src="/assets/Image/bellaciao2.jpg">Hola! ${x}<img src="/assets/Image/clown2.jpg">`;
+    console.log(x);
+}
+
+/* $(window).load(function () {
+    $('#nameModal').modal('show');
+}); */
+
+
 $(document).ready(function () {
+      $('#nameModal').modal('show');
+    $('#gamepage').hide();
+      $("#nameModalexit").on('click', function () {
+          $('#nameModal').modal('hide');
+          /* alert("inside onclick"); */
+           $('#gamepage').show();
+           startGame();
+
+          /* window.location = "http://www.google.com"; */
+      });
+    /* onclick = "$('#nameModalexit').hide()"; */
     /* $(".choice-text").click(function () {
         $("li").eq(3 & 2).css("background-color", "red");
 
@@ -255,9 +301,9 @@ $(document).ready(function () {
          $(this).parent().find('li').css("background-color", "");
          $(this).css("background-color", "blue");
      }); */
-    $("#add_li").click(function () {
+    /* $("#add_li").click(function () {
         $("#menu").prepend("<li>1000</li>"),
             $("li").eq().remove();
-    })
+    }) */
 
 });
