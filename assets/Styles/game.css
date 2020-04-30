@@ -171,7 +171,7 @@
      background-repeat: no-repeat;
      background-size: 200px;
      border-radius: 10px;
-    opacity: 0.9;
+    opacity: .8;
     top: 0;
     left: 0;
     bottom: 0;
@@ -192,7 +192,7 @@
     border: 0.1rem solid #C81912;
     padding: 5px;
     border-radius: 10px;
-    background-color: #f5dea3;
+   background-color: #f5dea3;
    color: black;
     animation-duration: 12s;
     animation-delay: 1s;
@@ -237,6 +237,28 @@
 
 /*----------------------------------------------Modal*/
 
+.modal-content {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
+    background: linear-gradient(to right, #C81912, #050100);
+    
+}
+
+.modal-open {
+    background-color: rebeccapurple;
+}
+
+.modal-header {
+        background-color: rgba(5, 1, 0, 0.9);
+    border: 0.1rem solid #C81912;
+    color: white;
+}
+
+.modal-body {
+    background-color: rgba(5, 1, 0, 0.9);
+    color: white;
+    border: 0.1rem solid #C81912;
+}
+
 .modal-backdrop {
     background: url("/assets/Image/congratulation.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -244,4 +266,14 @@
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
+    
+}
+.modal-codename {
+    font-size: 1rem;
+    margin-bottom: ;
+}
+
+#myText {
+    width: auto;
+    margin-top: 5px;
 }
