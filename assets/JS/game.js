@@ -3,7 +3,7 @@
 const question = document.getElementById("question-box");
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
-const animateTimer= document.querySelector('.info-timer');
+const animateTimer = document.querySelector('.info-timer');
 /* const nameModal = document.getElementById('nameModal'); */
 const gamepage = document.getElementById('gamepage');
 /* const codeName = document.getElementById('codeName');
@@ -63,7 +63,7 @@ $(function () {
                 return newQuestion;
             });
         };
-        
+
     };
 
     xmlhttp.open("GET", baseURL, true);
@@ -101,7 +101,7 @@ startGame = () => {
     CurrentQuestionIndex = 0;
     availableQuestion = [...questions];
     console.log(availableQuestion);
-    myFunction()
+    // myFunction();
     nextQuestion();
     /* gamepage.classList.remove("hidden"); */
     /* nameModal.classList.add("hidden"); */
@@ -201,26 +201,12 @@ function plusWin() {
 //------------------Start Timer-------------------
 
 
-/* function startTimer() {
-    timerId = setInterval(decrement, 1000);
-}
-
-function decrement() {
-    timer--;
-    
-    if(count === 0) {
-    stopInterval()
-    }, 1000);
-    $("#countdown-timer").html(`<span>
-                    <i class="fas fa-hourglass-half"></i></span>Timer: ${timer}`);
-
-} */
 function startTimer() {
     var count = 10;
     var timer = setInterval(function () {
             console.log(count);
             const hourGlass = document.getElementById("countdown-timer");
-            
+
             hourGlass.innerHTML = `<span><i class="fas fa-hourglass-half"></i></span>Timer : ${count}`;
             count--;
 
@@ -229,8 +215,8 @@ function startTimer() {
                 enableBtn();
                 stopInterval();
                 //animateTimer.classList.add('animated', 'bounceOutLeft');
-                
-            } 
+
+            }
         },
         1000);
 
@@ -245,16 +231,15 @@ function startTimer() {
 
 function enableBtn() {
     buttons.forEach(button => {
-            button.disabled = false;
+        button.disabled = false;
         console.log(buttons);
-        }
-    );
+    });
 }
 
 
 
 
- /* function addName() {
+/* function addName() {
      modalGameButton = document.getElementById('startGameButton');
     modalGameButton.addEventListener("click", e => {
     var myName = document.getElementById('codeName').value;
@@ -272,38 +257,31 @@ function enableBtn() {
 
 function myFunction() {
     var x = document.getElementById("myText").value;
-    document.getElementById("demo").innerHTML = `<img src="/assets/Image/bellaciao2.jpg">Hola! ${x}<img src="/assets/Image/clown2.jpg">`;
+    document.getElementById("codename").innerHTML = `<img src="/assets/Image/bellaciao2.jpg">Hola! ${x}<img src="/assets/Image/clown2.jpg">`;
     console.log(x);
-}
+    $("#nameModalexit").on('click', function () {
+            if (x.length === 0) {
+                document.getElementById("noName").innerHTML = `<div style="border: 0.1rem solid #C81912; background: white;">Por favor! Tu nombre / Please! enter your codename</div>`;
+               // document.getElementById("noName").innerHTML.classList.add('#noName');
+                //$('#noName').text('Por favor!tu nombre / Please! enter your codename');
+            } else {
+                $('#nameModal').modal('hide');
+                alert("inside onclick");
+                $('#gamepage').show();
 
-/* $(window).load(function () {
-    $('#nameModal').modal('show');
-}); */
+                setTimeout(() => {
+                    startGame();
+                }, 2000);
+            }
+    });
+}
 
 
 $(document).ready(function () {
-      $('#nameModal').modal('show');
+    $('#nameModal').modal('show');
     $('#gamepage').hide();
-      $("#nameModalexit").on('click', function () {
-          $('#nameModal').modal('hide');
-          /* alert("inside onclick"); */
-           $('#gamepage').show();
-           startGame();
-
-          /* window.location = "http://www.google.com"; */
-      });
-    /* onclick = "$('#nameModalexit').hide()"; */
-    /* $(".choice-text").click(function () {
-        $("li").eq(3 & 2).css("background-color", "red");
-
-    }); 
-     $("#menu").on('click', 'li', function () {
-         $(this).parent().find('li').css("background-color", "");
-         $(this).css("background-color", "blue");
-     }); */
-    /* $("#add_li").click(function () {
-        $("#menu").prepend("<li>1000</li>"),
-            $("li").eq().remove();
-    }) */
+    //if (myName.length === 0) {
+    // $('#noName').text('Por favor!tu nombre / Please! enter your codename');
+    // } else {}
 
 });
