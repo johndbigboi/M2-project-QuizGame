@@ -234,6 +234,11 @@
 
 /*----------------------------------------------Modal*/
 
+.modal-title {
+    font-size: 1.5rem;
+    fon
+}
+
 .modal-content {
     box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
     background: linear-gradient(to right, #C81912, #050100);
@@ -244,9 +249,13 @@
 }
 
 .modal-header {
-    background-color: rgba(5, 1, 0, 0.9);
+    background-color: rgba(5, 1, 0, 0.5);
     border: 0.1rem solid #C81912;
     color: white;
+}
+
+.modal-mission{
+    font-size: 15px;
 }
 
 .modal-body {
@@ -280,6 +289,9 @@
     font-weight: 500;
 }
 
+.modal-qoute{
+    padding: 10px;
+}
 .modal-btn{
     display:inline-block;
     padding:0.7em 1.7em;
