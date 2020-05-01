@@ -163,6 +163,8 @@
     width: 200px;
     display: block;
     position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #prize::after {
@@ -205,6 +207,8 @@
 .info-timer {
     display: flex;
     justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
     /* margin: auto; */
     /* margin-left: 20px; */
     text-align: center;
@@ -250,18 +254,16 @@
 
 .modal-header {
     background-color: rgba(5, 1, 0, 0.5);
-    border: 0.1rem solid #C81912;
     color: white;
 }
 
-.modal-mission{
+.modal-mission {
     font-size: 15px;
 }
 
 .modal-body {
     background-color: rgba(5, 1, 0, 0.9);
     color: white;
-    border: 0.1rem solid #C81912;
 }
 
 .modal-backdrop {
@@ -289,30 +291,29 @@
     font-weight: 500;
 }
 
-.modal-qoute{
+.modal-qoute {
+    margin-top: 10px;
     padding: 10px;
 }
-.modal-btn{
-    display:inline-block;
-    padding:0.7em 1.7em;
-    margin:0 0.5em 0.3em 0;
-    border-radius:0.2em;
+
+.modal-btn {
+    display: inline-block;
+    padding: 0.7em 1.7em;
+    margin: 0 0.5em 0.3em 0;
+    border-radius: 0.2em;
     box-sizing: border-box;
-    background-color:#3369ff;
-    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
-    text-align:center;
-    position:relative;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    text-align: center;
+    position: relative;
 }
 
- a.modal-btn:active {
+a.modal-btn:active {
     box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
 }
 
 @media all and (max-width:30em) {
-    a.modal-btn,
-    a.modal-btn-exit {
+    a.modal-btn, a.modal-btn-exit {
         display: block;
         margin: 0.4em auto;
     }
@@ -326,9 +327,7 @@
     box-sizing: border-box;
     color: #FFFFFF;
     background-color: #C81912;
-    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-        inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
     text-align: center;
     position: relative;
 }
