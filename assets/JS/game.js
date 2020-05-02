@@ -9,10 +9,12 @@ const gamepage = document.getElementById('gamepage');
 const answercount = document.getElementById("answercount");
 /* const codeName = document.getElementById('codeName');
 console.log(codeName);*/
+
+//------------------Top Heist-------------------
 const topScore = localStorage.getItem('topScore');
-/* const playerScore = document.getElementById('playerScore');
+const playerScore = document.getElementById('playerScore');
 playerScore.innerHTML = topScore;
- */
+ 
 var buttons = document.querySelectorAll('.btn1');
 
 let randomQuestion;
@@ -77,7 +79,7 @@ $(function () {
 });
 
 //CONSTANT
-
+//------------------MOney Prize in Array-------------------
 const Prize = [
     '€1',
     '€100',
@@ -112,11 +114,13 @@ startGame = () => {
     /* nameModal.classList.add("hidden"); */
 
 };
-
+//------------------Show next questions-------------------
+/* Function on how to get/load the next Question from the API */
 function nextQuestion() {
     showQuestion(randomQuestion[CurrentQuestionIndex]);
 };
-
+//------------------Show the Questions-------------------
+/* Function on how to load the next question from the API Array */
 function showQuestion() {
     
     if (availableQuestion.length === 0 || CurrentQuestionIndex >= totalQuestion) {
@@ -140,7 +144,8 @@ function showQuestion() {
     startTimer();
 
 }
-
+//------------------ Multiple choice -------------------
+/* Function on how to place the answer and show correct/incorrect choice from the API  */
 answerButtonsElement.forEach(choice => {
     // console.log(answerButtonsElement)
     choice.addEventListener("click", e => {
@@ -201,14 +206,16 @@ answerButtonsElement.forEach(choice => {
 
 
 });
-
+//------------------Total Prize Won-------------------
+/* Function on how to get the Prize from  correct answers */
 function plusWin() {
     CurrentMoneyIndex++;
     currentPrize = availablePrize[CurrentMoneyIndex];
     prizeText.innerHTML = `<img src="/assets/Image/euro.png"></img>Money Heist! ${currentPrize}<n/> <img src="/assets/Image/redthief.png"></img>`;
     console.log(availablePrize[CurrentMoneyIndex]);
 };
-
+//------------------Wrong Answer-------------------
+/* Function on how to get 3 wrong answer and show game over modal */
 function strikeOut() {
     answer ++;
     console.log(answer);
@@ -220,8 +227,7 @@ function strikeOut() {
 }
 
 //------------------Start Timer-------------------
-
-
+/* Function for Timed Questions */
 function startTimer() {
     var count = 10;
     var timer = setInterval(function () {
@@ -249,7 +255,8 @@ function startTimer() {
 
 }
 
-
+//------------------Timed Buttons-------------------
+/* Function to show disabled/hide Buttons */
 function enableBtn() {
     buttons.forEach(button => {
         button.disabled = false;
@@ -257,7 +264,8 @@ function enableBtn() {
     });
 }
 
-
+//------------------Players Name-------------------
+/* Function to print the name of the Player*/
 function getName() {
     let playerName = document.getElementById("myText").value;
     document.getElementById("codename").innerHTML = `<img src="/assets/Image/bellaciao2.jpg">Hola! ${playerName}<img src="/assets/Image/clown2.jpg">`;
@@ -276,13 +284,15 @@ function getName() {
     });
 }
 
-function gameOver() {
-     /* function gameOver() {
-            } else if (selectedAnswer = 1) {
-               $('#gameOverModal').modal('show');
-        }*/
-}
+//------------------Best Robber Score-------------------
+/* Function to save top Score*/
+function topHeist() {
+    if (prize >= 3) {
 
+    }
+}
+//------------------The End Game-------------------
+/* Function for the modal to show for the bravest and wisest of them all */
 function endGame() {
     let playerName = document.getElementById("myText").value;
     document.getElementById("playerWin").innerHTML = `${playerName} €2.4 billion`;
@@ -292,7 +302,8 @@ function endGame() {
 
 }
 
-
+//------------------Player Name Modal-------------------
+/* Function to load Modal for Players name when the game loads*/
 $(document).ready(function () {
     $('#nameModal').modal('show');
     //$('#nameModal').modal('hide');
