@@ -17,7 +17,8 @@
 </head>
 
 <body>
-    <!-- Modal -->
+    <!-- -------------------------- Name Modal --------------------------  -->
+
     <div id="nameModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -56,14 +57,14 @@
                             <!-- <button type="button" class="btn-info btn-md">Read more</button> -->
                         </div>
                     </div>
-                    <a id="nameModalexit" class="modal-btn" role="button" onClick="myFunction()">PLAY</a>
+                    <a id="nameModalexit" class="modal-btn" role="button" onClick="getName()">PLAY</a>
                     <a type="button" href="/index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Game Page -->
+    <!-- -------------------------- Game Page --------------------------  -->
 
     <div id="gamepage">
         <div class="container">
@@ -81,14 +82,19 @@
                         <!--  <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a
                                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
                     </p>
-                    <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
-                            <i class="fas fa-hourglass-half fa-spin"></i></span> Timer:
-                    </p>
+                    <div class="two-info">
+                        <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
+                                <i class="fas fa-hourglass-half fa-spin"></i></span> Timer:
+                        </p>
+                        <p id="answercount" class="info-out">3 Strikes and you're out!</p>
+                    </div>
                 </div>
             </div>
             <div>
-                <p id="codename" class="codename justify-center"></img>
-                </p>
+
+            </div>
+            <div>
+                <p id="codename" class="codename justify-center"></p>
             </div>
             <div id="game" class="justify-center flex-column">
                 <h2 id="question-box" class="question-case">GET READY!</h2>
@@ -98,14 +104,14 @@
                 <div class="row choice-box">
                     <div class="choice-container btn-group shadow-none shake-little">
                         <p class="choice-prefix">A</p>
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="1" disabled>choice
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="1">choice
                             1</button>
                     </div>
 
                     <div class="choice-container shake-little">
                         <p class="choice-prefix">B</p>
                         <!-- <p class="choice-text" data-number="2">choice 2 </p> -->
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="2" disabled>choice
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="2">choice
                             2</button>
                     </div>
                 </div>
@@ -113,13 +119,13 @@
                     <div class="choice-container shake-little">
                         <p class="choice-prefix">C</p>
                         <!-- <p class="choice-text" data-number="3">choice 3</p> -->
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="3" disabled>choice
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="3">choice
                             3</button>
                     </div>
                     <div class="choice-container shake-little">
                         <p class="choice-prefix">D</p>
                         <!-- <p class="choice-text" data-number="4">choice 4</p> -->
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="4" disabled>choice
+                        <button type="button" class="btn1 choice-text shadow-none" data-number="4">choice
                             4</button>
                     </div>
                 </div>
@@ -135,6 +141,92 @@
             </footer>
         </div>
     </div>
+
+    <!-- -------------------------- Game Over Modal --------------------------  -->
+
+    <div id="gameOverModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="modal-title">
+                        Busted!!!
+                    </p>
+                </div>
+                <div class="modal-header d-flex justify-content-center">
+                    <div class="modal-mission">
+                        <p><strong>better luck next time!</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div id="playerScore" class="modal-codename mb-4">
+                            <p><strong></strong></p>
+                        </div>
+                        <div class="modal-info row mb-4">
+                            <div class="col-5">
+                                <img src="/assets/Image/professor.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="modal-qoute-box col-7">
+                                <p class="modal-qoute">“In this world, everything is governed by balance. There’s what
+                                    you stand
+                                    to gain and what you stand to lose. And when
+                                    you think you’ve got nothing to lose, you become overconfident.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a id="nameModalexit" class="modal-btn" role="button" onClick="saveScore()">PLAY AGAIN</a>
+                    <a type="button" href="/index.html" class="modal-btn-exit">Exit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------- Win Modal --------------------------  -->
+
+    <div id="winModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="modal-title">
+                        Congratulations!!!
+                    </p>
+                </div>
+                <div class="modal-header d-flex justify-content-center">
+                    <div class="modal-mission">
+                        <p><strong> You succesfully answered 10 questions and get away with €2.4 billion.</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="modal-codename mb-4">
+                            <p id="playerWin"></p>
+                            <!-- Name: <input type="text" id="myGameScore" class="myScore" placeholder="name">
+                            <p class="mt-2" id="noName"></p> -->
+                        </div>
+                        <!-- <div class="modal-info row mb-4">
+                            <div class="col-5">
+                                <img src="/assets/Image/professor.jpg" class="img-fluid" alt="">
+                            </div>
+                            <div class="modal-qoute-box col-7">
+                                <p class="modal-qoute">“In this world, everything is governed by balance. There’s what
+                                    you stand
+                                    to gain and what you stand to lose. And when
+                                    you think you’ve got nothing to lose, you become overconfident.”</p>
+                            </div>
+                        </div> -->
+                    </div>
+                    <a id="nameModalexit" class="modal-btn" href="/index.html" role="button" onClick="saveScore()">PLAY
+                        AGAIN</a>
+                    <!-- <a type="button" href="/index.html" class="modal-btn-exit">Exit</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--<script type="text/javascript" src="assets/Js/script.js"></script>-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
