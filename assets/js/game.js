@@ -268,7 +268,15 @@ function enableBtn() {
 /* Function to print the name of the Player*/
 function getName() {
     let playerName = document.getElementById("myText").value;
-    document.getElementById("codename").innerHTML = `<img src="../images/bellaciao2.jpg"></img>Hola! ${playerName}<img src="./images/clown2.jpg."></img><img src="/images/euro.png"></img><img src="images/euro.png"></img>`;
+    document.getElementById("codename").innerHTML = 
+    `<img src="../images/bellaciao2.jpg"></img>
+    Hola! ${playerName}
+    <img src="./images/clown2.jpg"></img>
+    <img src="/images/euro.png"></img>
+    <img src="images/euro.png"></img>
+    <img src="images/redthief.png"/>
+    `;
+
     console.log(playerName);
     $("#nameModalexit").on('click', function () {
         if (playerName.length === 0) {
