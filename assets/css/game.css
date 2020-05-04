@@ -169,7 +169,7 @@
 
 #prize::after {
     content: "";
-    background: url('/assets/images/moneystack.jpg') center;
+    background: url('../images/moneystack.jpg') center;
     background-repeat: no-repeat;
     background-size: 200px;
     border-radius: 10px;
