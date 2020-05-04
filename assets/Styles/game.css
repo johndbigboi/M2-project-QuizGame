@@ -1,5 +1,5 @@
 #gamepage {
-    background: url("/assets/Image/MH.jpg") no-repeat center center fixed;
+    background: url("./assets/Image/MH.jpg") no-repeat center center fixed;
     background-size: cover;
     height: auto;
     overflow: auto;
