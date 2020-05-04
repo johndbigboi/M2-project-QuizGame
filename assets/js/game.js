@@ -211,7 +211,7 @@ answerButtonsElement.forEach(choice => {
 function plusWin() {
     CurrentMoneyIndex++;
     currentPrize = availablePrize[CurrentMoneyIndex];
-    prizeText.innerHTML = `<img src="/assets/Image/euro.png"></img>Money Heist! ${currentPrize}<n/> <img src="/assets/Image/redthief.png"></img>`;
+    prizeText.innerHTML = `<img src="/assets/images/euro.png"></img>Money Heist! ${currentPrize}<n/> <img src="/assets/images/redthief.png"></img>`;
     console.log(availablePrize[CurrentMoneyIndex]);
 };
 //------------------Wrong Answer-------------------
@@ -268,7 +268,7 @@ function enableBtn() {
 /* Function to print the name of the Player*/
 function getName() {
     let playerName = document.getElementById("myText").value;
-    document.getElementById("codename").innerHTML = `<img src="/assets/Image/bellaciao2.jpg">Hola! ${playerName}<img src="/assets/Image/clown2.jpg">`;
+    document.getElementById("codename").innerHTML = `<img src="/assets/images/bellaciao2.jpg">Hola! ${playerName}<img src="/assets/images/clown2.jpg">`;
     console.log(playerName);
     $("#nameModalexit").on('click', function () {
         if (playerName.length === 0) {
