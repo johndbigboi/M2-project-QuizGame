@@ -211,7 +211,7 @@ answerButtonsElement.forEach(choice => {
 function plusWin() {
     CurrentMoneyIndex++;
     currentPrize = availablePrize[CurrentMoneyIndex];
-    prizeText.innerHTML = `<img src="/images/euro.png"></img>Money Heist! ${currentPrize}<n/> <img src="images/redthief.png"></img>`;
+    prizeText.innerHTML = `<img src="/images/euro.png"></img>Money Heist! ${currentPrize}<n/><img src="assets/images/redthief.png"/>`;
     console.log(availablePrize[CurrentMoneyIndex]);
 };
 //------------------Wrong Answer-------------------
