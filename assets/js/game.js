@@ -272,9 +272,6 @@ function getName() {
     `<img src="assets/images/bellaciao2.jpg"></img>
     Hola! ${playerName}
     <img src="assets/images/clown2.jpg"></img>
-    <img src="assets/images/euro.png"></img>
-    <img src="assets/images/euro.png"></img>
-    <img src="assets/images/redthief.png"/>
     `;
 
     console.log(playerName);
