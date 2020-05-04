@@ -11,9 +11,9 @@ const answercount = document.getElementById("answercount");
 console.log(codeName);*/
 
 //------------------Top Heist-------------------
-const topScore = localStorage.getItem('topScore');
+/* const topScore = localStorage.getItem('topScore');
 const playerScore = document.getElementById('playerScore');
-playerScore.innerHTML = topScore;
+playerScore.innerHTML = topScore; */
  
 var buttons = document.querySelectorAll('.btn1');
 
@@ -286,11 +286,11 @@ function getName() {
 
 //------------------Best Robber Score-------------------
 /* Function to save top Score*/
-function topHeist() {
+/* function topHeist() {
     if (prize >= 3) {
 
     }
-}
+} */
 //------------------The End Game-------------------
 /* Function for the modal to show for the bravest and wisest of them all */
 function endGame() {
