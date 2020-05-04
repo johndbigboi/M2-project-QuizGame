@@ -1,5 +1,5 @@
 #gamepage {
-    background: url("./assets/Image/MH.jpg") no-repeat center center fixed;
+    background: url("../images/MH.jpg") no-repeat center center fixed;
     background-size: cover;
     height: auto;
     overflow: auto;
@@ -169,7 +169,7 @@
 
 #prize::after {
     content: "";
-    background: url('/assets/Image/moneystack.jpg') center;
+    background: url('/assets/image/moneystack.jpg') center;
     background-repeat: no-repeat;
     background-size: 200px;
     border-radius: 10px;
@@ -294,7 +294,7 @@
 }
 
 .modal-backdrop {
-    background: url("/assets/Image/congratulation.jpg") no-repeat center center fixed;
+    background: url("../images/congratulation.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

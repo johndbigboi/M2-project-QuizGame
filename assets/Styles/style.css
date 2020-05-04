@@ -68,7 +68,7 @@ p {
 /* Utilities */
 
 #landing-page {
-    background: url("../assets/image/Bldg.jpg") no-repeat center center fixed;
+    background: url("../images/Bldg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -177,7 +177,7 @@ p {
     color: black;
 }
 .mainbutton:hover {
-    cursor: url('../assets/image/cursor.cur'),
+    cursor: url('../images/cursor.cur'),
     default;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 1);
     transform: translateY(-0.1rem);
@@ -207,7 +207,7 @@ p {
 
 
 .btn:hover {
-    cursor: url('../assets/image/cursor.cur'),
+    cursor: url('../images/cursor.cur'),
     default;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
     transform: translateY(-0.1rem);
