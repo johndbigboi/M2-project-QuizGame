@@ -11,10 +11,10 @@ const answercount = document.getElementById("answercount");
 console.log(codeName);*/
 
 //------------------Top Heist-------------------
-/* const topScore = localStorage.getItem('topScore');
-const playerScore = document.getElementById('playerScore');
-playerScore.innerHTML = topScore; */
- 
+//const latestScore = localStorage.getItem('latestScore');
+const topScores = JSON.parse(localStorage.getItem("topScores")) || [];
+
+
 var buttons = document.querySelectorAll('.btn1');
 
 let randomQuestion;
@@ -30,11 +30,10 @@ const AIM_QUESTION = 10;
 
 let answer = 0;
 let questions = [];
-console.log(questions);
 
 $(function () {
     var xmlhttp = new XMLHttpRequest();
-    const baseURL = "https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple";
+    const baseURL = "https://opentdb.com/api.php?amount=12&category=9&difficulty=easy&type=multiple";
 
 
 
@@ -42,30 +41,21 @@ $(function () {
         if (this.readyState == 4 && this.status == 200) {
             var allQuestion = JSON.parse(this.responseText);
 
-            //console.log(allQuestion);
-
             questions = allQuestion.results.map(function (results) {
-                //console.log(questions);
-                //document.getElementById("question").innerHTML = results.question;
+
                 const newQuestion = {
                     question: results.question
                 }
-                //console.log(formattedQuestion);
 
-                //results.incorrect_answers.push(results.correct_answer);
                 const answerChoices = [...results.incorrect_answers];
-                //console.log(answerChoices);
 
                 newQuestion.answer = Math.floor(Math.random() * 3) + 1;
-                //console.log(formattedQuestion.answer)
+
 
                 answerChoices.splice(newQuestion.answer - 1, 0, results.correct_answer);
 
                 answerChoices.forEach((choice, index) => {
                     newQuestion["choice" + (index + 1)] = choice;
-
-
-                    //document.getElementById('answers-buttons').innerHTML = (`<button class="choice-text btn" >${correct_answer + "," + results.incorrect_answers}</button>`);
                 })
                 return newQuestion;
             });
@@ -97,8 +87,9 @@ const Prize = [
 //var timer = 10;
 
 //Total amount of questions
-const totalQuestion = 9;
-const totalWrongAnswer = 3;
+const totalQuestion = 4;
+const totalWrongAnswer = 1;
+var playerName;
 
 startGame = () => {
     answer = 0;
@@ -122,15 +113,16 @@ function nextQuestion() {
 //------------------Show the Questions-------------------
 /* Function on how to load the next question from the API Array */
 function showQuestion() {
-    
+
     if (availableQuestion.length === 0 || CurrentQuestionIndex >= totalQuestion) {
+        endGame();
     }
 
     CurrentQuestionIndex++;
     if (currentQuestion = availableQuestion[CurrentQuestionIndex]) {
         question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><br><h4>${currentQuestion["question"]}</h4> `;
     }
-    console.log(availableQuestion[CurrentQuestionIndex]);
+    //console.log(availableQuestion[CurrentQuestionIndex]);
     console.log(currentQuestion);
 
     answerButtonsElement.forEach(choice => {
@@ -141,7 +133,7 @@ function showQuestion() {
     });
     acceptingAnswer = true;
 
-    startTimer();
+    //startTimer();
 
 }
 //------------------ Multiple choice -------------------
@@ -149,8 +141,7 @@ function showQuestion() {
 answerButtonsElement.forEach(choice => {
     // console.log(answerButtonsElement)
     choice.addEventListener("click", e => {
-        console.log(choice);
-        console.log(e.target)
+
         if (!acceptingAnswer) return;
         buttons.disabled = !buttons.disabled;
         buttons.disabled = true;
@@ -169,14 +160,14 @@ answerButtonsElement.forEach(choice => {
 
             if (selectedAnswer == currentQuestion.answer) {
                 clearStatusClass(element);
-                console.log(element);
+                //console.log(element);
                 // use the classList API to add classes
                 element.classList.add('correct');
                 plusWin();
 
             } else {
                 element.classList.add('incorrect')
-                strikeOut();
+                endGame();
             }
 
         }
@@ -185,19 +176,18 @@ answerButtonsElement.forEach(choice => {
             element.classList.remove('correct');
             element.classList.remove('incorrect');
         }
-        
-       
+
+
 
         setTimeout(function () {
-        document.body.classList.remove('correct');
-        document.body.classList.remove('incorrect');
-        nextQuestion();
-        buttons.forEach(button => {
-            button.disabled = true;
-             console.log(buttons);
-         });
-        animateTimer.classList.remove('animated', 'bounceOutLeft');
-          }, 1000);
+            document.body.classList.remove('correct');
+            document.body.classList.remove('incorrect');
+            nextQuestion();
+            buttons.forEach(button => {
+                // button.disabled = true;
+            });
+            //animateTimer.classList.remove('animated', 'bounceOutLeft');
+        }, 1000);
 
 
 
@@ -211,21 +201,24 @@ answerButtonsElement.forEach(choice => {
 function plusWin() {
     CurrentMoneyIndex++;
     currentPrize = availablePrize[CurrentMoneyIndex];
-    prizeText.innerHTML = `<img src="/images/euro.png"></img>Money Heist! ${currentPrize}<n/><img src="assets/images/redthief.png"/>`;
+    prizeText.innerHTML = `<img src="assets/images/euro.png"></img>Money Heist! ${currentPrize}<n/><img src="assets/images/redthief.png"/>`;
     console.log(availablePrize[CurrentMoneyIndex]);
 };
 //------------------Wrong Answer-------------------
 /* Function on how to get 3 wrong answer and show game over modal */
-function strikeOut() {
-    answer ++;
+/* function strikeOut() {
+    answer++;
     console.log(answer);
-        if (answer >= totalWrongAnswer) {
-            $('#gameOverModal').modal('show');
-            $('#gamepage').hide();
-        }
-    answercount.innerHTML = `Strike ${ answer} out of ${totalWrongAnswer}`;
-}
+    if (answer >= totalWrongAnswer) {
 
+        $('#gameOverModal').modal('show');
+        $('#gamepage').hide();
+        topHeist();
+    }
+    answercount.innerHTML = `Strike ${ answer} out of ${totalWrongAnswer}`;
+
+}
+ */
 //------------------Start Timer-------------------
 /* Function for Timed Questions */
 function startTimer() {
@@ -259,21 +252,19 @@ function startTimer() {
 /* Function to show disabled/hide Buttons */
 function enableBtn() {
     buttons.forEach(button => {
-        button.disabled = false;
-        console.log(buttons);
+        // button.disabled = false;
     });
 }
 
 //------------------Players Name-------------------
 /* Function to print the name of the Player*/
 function getName() {
-    let playerName = document.getElementById("myText").value;
-    document.getElementById("codename").innerHTML = 
-    `<img src="assets/images/bellaciao2.jpg"></img>
+    playerName = document.getElementById("myText").value;
+    document.getElementById("codename").innerHTML =
+        `<img src="assets/images/bellaciao2.jpg"></img>
     Hola! ${playerName}
     <img src="assets/images/clown2.jpg"></img>
     `;
-
     console.log(playerName);
     $("#nameModalexit").on('click', function () {
         if (playerName.length === 0) {
@@ -291,20 +282,46 @@ function getName() {
 
 //------------------Best Robber Score-------------------
 /* Function to save top Score*/
-/* function topHeist() {
-    if (prize >= 3) {
-
+function saveTopScore() {
+    const score = {
+        name: playerName,
+        money: currentPrize,
     }
-} */
+
+    topScores.push(score);
+    topScores.sort((a, b) => b.score - a.score);
+    topScores.splice(10);
+
+    localStorage.setItem("topScores", JSON.stringify(topScores));
+}
+
+
+
+
+
 //------------------The End Game-------------------
 /* Function for the modal to show for the bravest and wisest of them all */
 function endGame() {
-    let playerName = document.getElementById("myText").value;
-    document.getElementById("playerWin").innerHTML = `${playerName} €2.4 billion`;
+    //let playerName = document.getElementById("myText").value;
     console.log(playerName);
-   $('#winModal').modal('show');
-   $('#gamepage').hide();
+    answer++;
+    console.log(answer);
 
+    if (CurrentQuestionIndex >= totalQuestion) {
+        document.getElementById("playerWin").innerHTML = `Well done ${playerName}!`;
+        $('#winModal').modal('show');
+        $('#gamepage').hide();
+    } else if (answer >= totalWrongAnswer) {
+        $('#gameOverModal').modal('show');
+        $('#gamepage').hide();
+        document.getElementById("playerScoreName").innerHTML = `<h5>${playerName}!</h5>`;
+        if (currentPrize != 0 ) {
+         document.getElementById("playerScore").innerHTML = `Total Money Heist ${currentPrize}`;
+        }
+    }
+    
+    answercount.innerHTML = `Strike ${ answer} out of ${totalWrongAnswer}`;
+    saveTopScore();
 }
 
 //------------------Player Name Modal-------------------
@@ -315,3 +332,11 @@ $(document).ready(function () {
     $('#gamepage').hide();
     //$('#gameOverModal').modal('show');
 });
+
+const richList = document.getElementById('richList');
+richList.innerHTML = topScores
+
+    .map(score => {
+        return `<li class="high-score">${score.name} - ${score.money}</li>`;
+    })
+    .join("");
