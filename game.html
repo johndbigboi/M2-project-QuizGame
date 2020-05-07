@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
     <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/all-animation.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet"  type="text/css" href="assets/css/game.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/game.css">
 
     <title>Quiz</title>
 </head>
@@ -57,7 +57,7 @@
                             <!-- <button type="button" class="btn-info btn-md">Read more</button> -->
                         </div>
                     </div>
-                    <a id="nameModalexit" class="modal-btn" role="button" onClick="getName()">PLAY</a>
+                    <a id="nameModalexit" class="modal-btn" onClick="getName()">PLAY</a>
                     <a type="button" href="index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
@@ -155,14 +155,13 @@
                 </div>
                 <div class="modal-header d-flex justify-content-center">
                     <div class="modal-mission">
-                        <p><strong>better luck next time!</strong></p>
+                        <p><strong>better luck next time</strong></p>
+                        <p id="playerScoreName"><strong></strong></p>
+                        <p id="playerScore"></p>
                     </div>
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div id="playerScore" class="modal-codename mb-4">
-                            <p><strong></strong></p>
-                        </div>
                         <div class="modal-info row mb-4">
                             <div class="col-5">
                                 <img src="assets/images/professor.jpg" class="img-fluid" alt="">
@@ -175,7 +174,7 @@
                             </div>
                         </div>
                     </div>
-                    <a id="nameModalexit" class="modal-btn" role="button" onClick="saveScore()">PLAY AGAIN</a>
+                    <a id="nameModalexit" href="/game.html" class="modal-btn" role="button" onClick="">PLAY AGAIN</a>
                     <a type="button" href="/index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
@@ -218,13 +217,14 @@
                             </div>
                         </div> -->
                     </div>
-                    <a id="nameModalexit" class="modal-btn" href="/index.html" role="button" onClick="saveScore()">PLAY
-                        AGAIN</a>
-                    <!-- <a type="button" href="/index.html" class="modal-btn-exit">Exit</a> -->
+                    <a type="button" href="/index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
