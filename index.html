@@ -28,8 +28,9 @@
                 <a href="#" class="mainbutton hvr-rectangle-out">
                     <span>TUTORIAL</span>
                 </a>
-                <a href="#" class="mainbutton hvr-rectangle-out">
-                    <span>DIFFICULTY</span>
+                <a href="#" class="mainbutton hvr-rectangle-out" data-toggle="modal" data-target="#topscoreModal">
+                <span>TOP SCORE</span>
+             
                 </a>
             </div>
             <footer class="fixed-bottom row ml-2 mb-2">
@@ -40,6 +41,31 @@
         </div>
     </div>
 
+    <!-- -------------------------- Top Score Modal --------------------------  -->
+    
+    <div id="topscoreModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="modal-title">
+                        Top Money Heist
+                    </p>
+                </div>
+                <div class="modal-header d-flex justify-content-center">
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div id="topMoney" class="modal-codename mb-4">
+                            <ul id="richList"></ul>
+                        </div>
+                    </div>
+                    <a id="nameModalexit" class="modal-btn" href="/index.html" role="button">Exit</a>
+                    <!-- <a type="button" href="/index.html" class="modal-btn-exit">Exit</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     
