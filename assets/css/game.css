@@ -143,7 +143,7 @@
 }
 
 .incorrect {
-    /* background-color: #dc3545; */
+    /*background-color: #dc3545;*/   
     border: 20mm ridge red;
 }
 
@@ -265,9 +265,17 @@
 
 /*----------------------------------------------Modal*/
 
+#topscoreModal {
+background: url("../images/topscore.jpg") no-repeat center center fixed;
+-webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   overflow: hidden;
+}
+
 .modal-title {
     font-size: 1.5rem;
-
 }
 
 .modal-content {
@@ -304,7 +312,6 @@
 
 .modal-codename {
     font-size: 1rem;
-    
 }
 
 #myText {
@@ -333,6 +340,7 @@
     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
     text-align: center;
     position: relative;
+    color: #FFFFFF;
 }
 
 a.modal-btn:active {
@@ -366,4 +374,10 @@ a {
 a:hover {
     box-shadow: 0 0.2rem 1rem 0 rgba(254, 254, 254, 1);
     color: white;
+}
+
+.modal-body-topscore {
+    color: white;
+    margin: 2rem 7rem 2rem;
+    font-size: 0.8rem;
 }
