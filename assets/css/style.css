@@ -25,6 +25,7 @@ body {
     height: 100%;
     position: relative;
     font-size: 62.5%; 
+    overflow: hidden;
     /*  border: 20mm ridge red; */
 }     
 
