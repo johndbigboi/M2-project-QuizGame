@@ -8,7 +8,6 @@ const gamepage = document.getElementById('gamepage');
 const answercount = document.getElementById("answercount");
 
 //------------------Top Heist-------------------
-//const latestScore = localStorage.getItem('latestScore');
 const topScores = JSON.parse(localStorage.getItem("topScores")) || [];
 
 var buttons = document.querySelectorAll('.btn1');
@@ -84,6 +83,7 @@ const Prize = [
 const jackPot = 9;
 const totalQuestion = 10;
 const totalWrongAnswer = 3;
+
 var playerName;
 var timer;
 var timerMusic = new Audio('assets/sounds/suspense.wav');
@@ -113,7 +113,8 @@ function nextQuestion() {
 //------------------Show the Questions-------------------
 /* Function on how to load the next question from the API Array */
 function showQuestion() {
-    if (availableQuestion.length === 0 || CurrentQuestionIndex === totalQuestion) {
+    if (answeredCorrect === totalQuestion) {
+        console.log(answeredCorrect === totalQuestion);
         stopMusic();
         endGame();
     }
@@ -133,7 +134,7 @@ function showQuestion() {
     timerMusic.play();
     acceptingAnswer = true;
     enableBtn();
-
+    return;
 
 }
 //------------------ Multiple choice -------------------
@@ -167,7 +168,7 @@ answerButtonsElement.forEach(choice => {
                 element.classList.add('incorrect');
                 incorrectMusic.play();
                 strikeOut();
-                
+
             }
 
         }
@@ -194,18 +195,21 @@ function plusWin() {
     CurrentMoneyIndex++;
     answeredCorrect++;
     if (answeredCorrect >= jackPot) {
-        prizeText.innerHTML = `<img src="assets/images/euro.png"></img>
+        prizeText.innerHTML = `
     Money Heist! ${currentPrize}<n/>
     <br>
-    <p>LAST QUESTION!</p>`;
+    <p class="info-prize-jackpot">THE LAST QUESTION!</p>`;
+    } else {
+        currentPrize = availablePrize[CurrentMoneyIndex];
+        prizeText.innerHTML = 
+        `
+         Money Heist! ${currentPrize}<n/>
+        <br>
+        <p> <span class="info-prize-correct">
+        ${answeredCorrect}</span>
+        correct answer!</p>`;
     }
-    currentPrize = availablePrize[CurrentMoneyIndex];
-    prizeText.innerHTML = `<img src="assets/images/euro.png"></img>
-    Money Heist! ${currentPrize}<n/>
-    <br>
-    <p>${answeredCorrect} correct answer!</p>`;
-    console.log(availablePrize[CurrentMoneyIndex]);
-    
+
 };
 //------------------Wrong Answer-------------------
 /* Function on how to get 3 wrong answer and show game over modal */
@@ -217,12 +221,13 @@ function strikeOut() {
         endMusic.play();
         $('#gameOverModal').modal('show');
         $('#gamepage').hide();
+         stopMusic();
         if (currentPrize != 0) {
             document.getElementById("playerScore").innerHTML = `Total Money Heist ${currentPrize}`;
         }
         saveTopScore();
     }
-    answercount.innerHTML = `Strike ${ answer} out of ${totalWrongAnswer}`;
+    answercount.innerHTML = `Strike <span class="info-strike">${answer}</span> out of <span class="info-strike">${totalWrongAnswer}</span>!`;
 }
 //------------------Start Timer-------------------
 /* Function for Timed Questions */
@@ -237,8 +242,17 @@ function startTimer() {
 
             if (count < 0) {
                 clearInterval(timer);
+                endMusic.play();
                 stopInterval();
-                animateTimer.classList.add('animated', 'bounceOutLeft');
+                strikeOut();
+                setTimeout(function () {
+                    nextQuestion();
+                    buttons.forEach(button => {
+                        button.disabled = true;
+                    });
+                    //animateTimer.classList.remove('animated', 'bounceOutLeft');
+                }, 8000);
+                //animateTimer.classList.add('animated', 'bounceOutLeft');
             }
         },
         1000);
@@ -301,23 +315,12 @@ function endGame() {
     console.log(playerName);
     //answer++;
     if (CurrentQuestionIndex >= totalQuestion) {
+        stopMusic();
         document.getElementById("playerWin").innerHTML = `Well done ${playerName}!`;
         $('#winModal').modal('show');
         $('#gamepage').hide();
-        
-    } 
-    //else if (answer === totalWrongAnswer) {
-     //   $('#gameOverModal').modal('show');
-     //   $('#gamepage').hide();
-     //   endMusic.play();
-     //   document.getElementById("playerScoreName").innerHTML = `<h5>${playerName}!</h5>`;
-        //document.getElementById("playerScore").innerHTML = `Total Money Heist ${currentPrize}`;
-        //if (currentPrize != 0) {document.getElementById("playerScore").innerHTML = `Total Money Heist ${currentPrize}`;}
-
-   // }
-
-   // answercount.innerHTML = `Strike ${ answer} out of ${totalWrongAnswer}`;
-   // saveTopScore();
+         saveTopScore();
+    }
 }
 
 
