@@ -10,8 +10,7 @@
     justify-content: space-between;
     letter-spacing: 5px;
     /* margin-top: 60px; */
-    /*     background-color: #f5dea3;
- */
+
 }
 
 .title {
@@ -128,22 +127,20 @@
 }
 
 .choice-text {
+    text-align: left;
     padding: 1.5rem;
-    /*  width: 100%; */
+    width: 100%;
     background-color: transparent;
     border-top-right-radius: 0.825rem;
     border-bottom-right-radius: 0.825rem;
     border: 0;
-    /* color: #050100; */
 }
 
 .correct {
-    /* background-color: #28a745; */
     border: 20mm ridge green;
 }
 
 .incorrect {
-    /*background-color: #dc3545;*/   
     border: 20mm ridge red;
 }
 
@@ -154,7 +151,7 @@
     justify-content: space-evenly;
     margin-left: 0;
     margin-top: 6%;
-    margin-bottom: 6%;
+    margin-bottom: 5%;
 }
 
 /*----------------------------------------------Prize*/
@@ -171,9 +168,9 @@
     content: "";
     background: url('../images/moneystack.jpg') center;
     background-repeat: no-repeat;
-    background-size: 200px;
+    background-size: cover;
     border-radius: 10px;
-    opacity: .8;
+    opacity: .6;
     top: 0;
     left: 0;
     bottom: 0;
@@ -183,20 +180,15 @@
 }
 
 .info-prize {
-    /*  display: flex; */
     margin-left: 20px;
-    margin-bottom: 20px;
     text-align: center;
-    /* height: 146px; */
     font-size: 2rem;
     border: 0.1rem solid #C81912;
-    padding: 5px;
     border-radius: 10px;
-    background-color: #f5dea3;
-    color: black;
+    color: #fefefe;
+    text-shadow: 2px 2px 5px red;
     animation-duration: 12s;
     animation-delay: 1s;
-    animation-iteration-count: infinite;
 }
 
 .info-prize img {
@@ -204,18 +196,25 @@
     width: 40px;
 }
 
+.info-prize-correct {
+    padding: 0.25rem 0.85rem;
+    border-radius: 18.75rem;
+    background-color: green;
+    border: 0;
+}
+
+.info-prize-jackpot {
+    color: red;
+}
+
 .two-info {
     padding: 10px;
+    margin: inherit;
 }
 
 .info-timer {
-    /* display: flex; */
     justify-content: center;
-    margin-bottom: 10px;
-    /* margin-top: auto;
-    margin-bottom: auto; */
-    /* margin: auto; */
-    /* margin-left: 20px; */
+    margin-bottom: 15px;
     text-align: center;
     width: 13rem;
     font-size: 2rem;
@@ -231,17 +230,11 @@
 }
 
 .info-out {
-    display: flex;
+    
     justify-content: center;
-    margin-top: 10px;
-    /* margin-top: auto;*/
-    /* margin-bottom: auto; */
-    /* margin: auto; */
-    /* margin-left: 20px; */
+    margin-top: 15px;
     text-align: center;
-    width: 13rem;
     font-size: 1.2rem;
-    height: 4rem;
     border: 0.1rem solid #C81912;
     padding: 5px;
     border-radius: 10px;
@@ -250,6 +243,13 @@
     animation-duration: 12s;
     animation-delay: 1s;
     animation-iteration-count: infinite;
+}
+
+.info-strike{
+    padding: 0.25rem 0.85rem;
+    border-radius: 18.75rem;
+    background-color: #C81912;
+    border: 0;
 }
 
 .fa-hourglass-half {
@@ -266,12 +266,12 @@
 /*----------------------------------------------Modal*/
 
 #topscoreModal {
-background: url("../images/topscore.jpg") no-repeat center center fixed;
--webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   overflow: hidden;
+    background: url("../images/topscore.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .modal-title {
