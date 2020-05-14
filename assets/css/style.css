@@ -31,10 +31,6 @@ body {
 
 
 
-/* h1, h2, h3, h4 {
-    margin-bottom: 1rem;
-} */
-
 h1 {
     font-size: 5.4rem;
     color: #56a5eb;
@@ -134,9 +130,6 @@ p {
 }
 
 .title-1 {
-   /*  border-left: 0.1rem solid #02a8a8;
-    border-top: 0.1rem solid #02a8a8;
-    border-bottom: 0.1rem solid #02a8a8; */
     padding: 28px 10px 0;
     color: #fefefe;
     font-size: 8rem;
@@ -144,7 +137,6 @@ p {
 
 .title-2 {
     background-color: #C81912;
-    /* text-shadow: 4px 4px #fefefe; */
     padding: 27px 10px 0;
     color: #050100;
     font-size: 8rem;
@@ -224,7 +216,6 @@ p {
 /*----------------------------------------------Hover*/
 
 .hvr-rectangle-out:before {
-    /* background-color: rgba(201, 25, 19, 0.8); */
     background: linear-gradient(60deg, black, #C81912, black);
     border-radius: 0.825rem;
     border: none;

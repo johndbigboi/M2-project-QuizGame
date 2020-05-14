@@ -140,7 +140,6 @@ function showQuestion() {
 //------------------ Multiple choice -------------------
 /* Function on how to place the answer and show correct/incorrect choice from the API  */
 answerButtonsElement.forEach(choice => {
-    // console.log(answerButtonsElement)
     choice.addEventListener("click", e => {
         stopMusic();
         if (!acceptingAnswer) return;
@@ -185,7 +184,7 @@ answerButtonsElement.forEach(choice => {
             buttons.forEach(button => {
                 button.disabled = true;
             });
-            //animateTimer.classList.remove('animated', 'bounceOutLeft');
+            animateTimer.classList.remove('animated', 'bounceOutLeft');
         }, 1000);
     });
 });
@@ -250,9 +249,9 @@ function startTimer() {
                     buttons.forEach(button => {
                         button.disabled = true;
                     });
-                    //animateTimer.classList.remove('animated', 'bounceOutLeft');
+                    animateTimer.classList.remove('animated', 'bounceOutLeft');
                 }, 8000);
-                //animateTimer.classList.add('animated', 'bounceOutLeft');
+                animateTimer.classList.add('animated', 'bounceOutLeft');
             }
         },
         1000);
@@ -325,30 +324,6 @@ function endGame() {
 
 
 //------------------Player Name Modal-------------------
-/* class audioControl {
-    constructor() {
-        this.gameMusic = new Audio('assets/sounds/bensound-instinct.mp3');
-        this.gameoverSound = new Audio('assets/sounds/card-flip.wav');
-        this.victorySound = new Audio('assets/sounds/matchedSound.wav');
-    }
-    startMusic() {
-        this.gameMusic = 0;
-        this.gameMusic.play();
-    }
-
-    stopMusic() {
-        this.gameMusic.pause();
-    }
-
-    endGameSound() {
-        this.gameoverSound.play();
-    }
-
-    winnerSound() {
-        this.victorySound.play();
-    }
-
-} */
 function stopMusic() {
     timerMusic.pause();
     timerMusic.currentTime = 0;
