@@ -142,6 +142,12 @@ p {
     font-size: 8rem;
 }
 
+.landingbuttons {
+    display: flex;
+    flex-direction: column;
+}
+
+
 #landing-page-menu a, span {
     transition: all 0.5s ease-in-out;
     text-decoration: none;
@@ -298,5 +304,71 @@ p {
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+/*  @ Media Queries */
+
+/* small/meduim devices (phones, 767px and down) */
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+    #landing-page-menu {
+        margin-top: 5rem;
+ 
+    }
+    #game-title {
+       display: contents;
+    }
+    
+    .title-1 {
+        font-size: 6rem;
+    }
+    .title-2 {
+        font-size: 6rem;
+    }
+    .landingbuttons {
+        margin-top: 4rem;
+    }
+}
+
+/* Small  tablets (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+
+    #landing-page-menu {
+        margin-top: 19rem;
+    }
+    
+    
+    #game-title {
+        width: max-content;
+        word-spacing: -41px;
+    }
+    
+    .title-1 {
+        font-size: 6.5rem;
+    }
+
+    .title-2 {
+        font-size: 6.5rem;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    #landing-page-menu {
+        margin-top: 19rem;
+    }
+
+
+    #game-title {
+        width: max-content;
+        word-spacing: -41px;
+    }
+
+    .title-1 {
+        font-size: 8rem;
+    }
+
+    .title-2 {
+        font-size: 8rem;
     }
 }
