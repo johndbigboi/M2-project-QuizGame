@@ -1,68 +1,15 @@
-/*  const easyQuestion = ("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple");
- */
+//CONSTANT
 const question = document.getElementById("question-box");
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
 const animateTimer = document.querySelector('.info-timer');
 const gamepage = document.getElementById('gamepage');
 const answercount = document.getElementById("answercount");
-
-//------------------Top Heist-------------------
 const topScores = JSON.parse(localStorage.getItem("topScores")) || [];
-
-var buttons = document.querySelectorAll('.btn1');
-
-let randomQuestion;
-let CurrentQuestionIndex = 0;
-
-
-let CurrentMoneyIndex = 0;
-let availableQuestion = [];
-
-
-const AIM_QUESTION = 10;
-
-let answer = 0;
-let questions = [];
-
-$(function () {
-    var xmlhttp = new XMLHttpRequest();
-    const baseURL = "https://opentdb.com/api.php?amount=13&difficulty=easy&type=multiple";
-
-
-
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            var allQuestion = JSON.parse(this.responseText);
-
-            questions = allQuestion.results.map(function (results) {
-
-                const newQuestion = {
-                    question: results.question
-                }
-
-                const answerChoices = [...results.incorrect_answers];
-
-                newQuestion.answer = Math.floor(Math.random() * 3) + 1;
-
-
-                answerChoices.splice(newQuestion.answer - 1, 0, results.correct_answer);
-
-                answerChoices.forEach((choice, index) => {
-                    newQuestion["choice" + (index + 1)] = choice;
-                })
-                return newQuestion;
-            });
-        };
-
-    };
-
-    xmlhttp.open("GET", baseURL, true);
-    xmlhttp.send();
-
-});
-
-//CONSTANT
+const buttons = document.querySelectorAll('.btnchoice');
+const jackPot = 9;
+const totalQuestion = 10;
+const totalWrongAnswer = 3;
 //------------------MOney Prize in Array-------------------
 const Prize = [
     '€0',
@@ -79,19 +26,68 @@ const Prize = [
 ];
 
 
-//Total amount of questions
-const jackPot = 9;
-const totalQuestion = 10;
-const totalWrongAnswer = 3;
+let CurrentQuestionIndex = 0;
+let CurrentMoneyIndex = 0;
+let answer = 0;
+let questions = [];
+let availableQuestion = [];
+let randomQuestion;
+let playerName;
+let timer;
+let sound = true;
+let timerMusic = new Audio('assets/sounds/suspense.wav');
+let gameMusic = new Audio('assets/sounds/gamesound.mp3');
+let endMusic = new Audio('assets/sounds/police.wav');
+let correctMusic = new Audio('assets/sounds/correct.wav');
+let incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
+let victoryMusic = new Audio('assets/sounds/victorymusic.wav');
 
-var playerName;
-var timer;
-var timerMusic = new Audio('assets/sounds/suspense.wav');
-var gameMusic = new Audio('assets/sounds/gamesound.mp3');
-var endMusic = new Audio('assets/sounds/police.wav');
-var correctMusic = new Audio('assets/sounds/correct.wav');
-var incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
-var victoryMusic = new Audio('assets/sounds/victorymusic.wav');
+$(document).ready(function () {
+    gameMusic.play();
+    $('#nameModal').modal('show');
+    $('#gamepage').hide();
+
+    //background music on/off
+    $('#soundButton').click(() => {
+        let soundOn = sound;
+        soundOn ? stopGameMusic() : startGameMusic();
+    });
+
+    function stopGameMusic() {
+        sound = false;
+        $('#soundButton').addClass('soundOff');
+        $('#soundButton').removeClass('soundOn');
+        gameMusic.pause();
+    }
+
+    function startGameMusic() {
+        sound = true;
+        $('#soundButton').addClass('soundOn');
+        $('#soundButton').removeClass('soundOff');
+        gameMusic.play();
+    }
+
+});
+
+fetch("https://opentdb.com/api.php?amount=13&difficulty=easy&type=multiple")
+    .then((resp) => resp.json())
+    .then((allQuestions) => {
+        questions = allQuestions.results.map(function (results) {
+            const newQuestion = {
+                question: results.question,
+            };
+            const multipleAnswer = [...results.incorrect_answers];
+            newQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            multipleAnswer.splice(newQuestion.answer - 1, 0, results.correct_answer);
+            multipleAnswer.forEach((choice, index) => {
+                newQuestion["choice" + (index + 1)] = choice;
+            });
+            return newQuestion;
+        });
+    })
+    .catch(err => {
+        console.error(err);
+    });
 
 startGame = () => {
     answeredCorrect = 0;
@@ -107,20 +103,21 @@ startGame = () => {
 
 //------------------Show next questions-------------------
 /* Function on how to get/load the next Question from the API */
-function nextQuestion() {
+nextQuestion = () => {
     showQuestion(randomQuestion[CurrentQuestionIndex]);
 };
 //------------------Show the Questions-------------------
 /* Function on how to load the next question from the API Array */
-function showQuestion() {
+showQuestion = () => {
     if (answeredCorrect === totalQuestion) {
         console.log(answeredCorrect === totalQuestion);
         stopMusic();
         endGame();
+        return;
     }
     CurrentQuestionIndex++;
     if (currentQuestion = availableQuestion[CurrentQuestionIndex]) {
-        question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><br><h4>${currentQuestion["question"]}</h4> `;
+        question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><h2>${currentQuestion["question"]}</h2> `;
 
     }
     console.log(currentQuestion);
@@ -131,7 +128,12 @@ function showQuestion() {
         choice.innerHTML = currentQuestion["choice" + number];
 
     });
-    timerMusic.play();
+    
+    if (sound === false) {
+    timerMusic.pause();
+    } else {
+        timerMusic.play();
+    }
     acceptingAnswer = true;
     enableBtn();
     return;
@@ -148,33 +150,32 @@ answerButtonsElement.forEach(choice => {
         acceptingAnswer = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset["number"];
-        console.log(selectedAnswer == currentQuestion.answer);
-        console.log(selectedAnswer);
 
 
         setStatusClass(document.body, selectedAnswer)
 
-        function setStatusClass(element, selectedAnswer) {
+        function setStatusClass(htmlElement, selectedAnswer) {
 
             if (selectedAnswer == currentQuestion.answer) {
-                clearStatusClass(element);
+                clearStatusClass(htmlElement);
                 // use the classList API to add classes
-                element.classList.add('correct');
+                htmlElement.classList.add('correct');
                 plusWin();
                 correctMusic.play();
 
             } else {
-                element.classList.add('incorrect');
+                htmlElement.classList.add('incorrect');
                 incorrectMusic.play();
                 strikeOut();
 
             }
+            return;
 
         }
         // use the classList API to remove classes
-        function clearStatusClass(element) {
-            element.classList.remove('correct');
-            element.classList.remove('incorrect');
+        function clearStatusClass(htmlElement) {
+            htmlElement.classList.remove('correct');
+            htmlElement.classList.remove('incorrect');
         }
 
         setTimeout(function () {
@@ -184,24 +185,24 @@ answerButtonsElement.forEach(choice => {
             buttons.forEach(button => {
                 button.disabled = true;
             });
-            animateTimer.classList.remove('animated', 'bounceOutLeft');
+            //animateTimer.classList.remove('animated', 'bounceOutLeft');
         }, 1000);
     });
 });
 //------------------Total Prize Won-------------------
 /* Function on how to get the Prize from  correct answers */
-function plusWin() {
+plusWin = () => {
     CurrentMoneyIndex++;
     answeredCorrect++;
+    currentPrize = availablePrize[CurrentMoneyIndex];
     if (answeredCorrect >= jackPot) {
         prizeText.innerHTML = `
     Money Heist! ${currentPrize}<n/>
     <br>
     <p class="info-prize-jackpot">THE LAST QUESTION!</p>`;
     } else {
-        currentPrize = availablePrize[CurrentMoneyIndex];
-        prizeText.innerHTML = 
-        `
+        prizeText.innerHTML =
+            `
          Money Heist! ${currentPrize}<n/>
         <br>
         <p> <span class="info-prize-correct">
@@ -212,7 +213,7 @@ function plusWin() {
 };
 //------------------Wrong Answer-------------------
 /* Function on how to get 3 wrong answer and show game over modal */
-function strikeOut() {
+strikeOut = () => {
     answer++;
     console.log(answer);
     if (answer >= totalWrongAnswer) {
@@ -220,17 +221,18 @@ function strikeOut() {
         endMusic.play();
         $('#gameOverModal').modal('show');
         $('#gamepage').hide();
-         stopMusic();
+        stopMusic();
         if (currentPrize != 0) {
             document.getElementById("playerScore").innerHTML = `Total Money Heist ${currentPrize}`;
         }
         saveTopScore();
     }
+
     answercount.innerHTML = `Strike <span class="info-strike">${answer}</span> out of <span class="info-strike">${totalWrongAnswer}</span>!`;
 }
 //------------------Start Timer-------------------
 /* Function for Timed Questions */
-function startTimer() {
+startTimer = () => {
 
     var count = 10;
     timer = setInterval(function () {
@@ -249,23 +251,23 @@ function startTimer() {
                     buttons.forEach(button => {
                         button.disabled = true;
                     });
-                    animateTimer.classList.remove('animated', 'bounceOutLeft');
+                    //animateTimer.classList.remove('animated', 'bounceOutLeft');
                 }, 8000);
-                animateTimer.classList.add('animated', 'bounceOutLeft');
+                animateTimer.classList.add('animated', 'flip');
             }
         },
         1000);
 
     var stopInterval = function () {
         console.log('time is up!');
-        document.getElementById("countdown-timer").innerHTML = "GOODLUCK!";
+        document.getElementById("countdown-timer").innerHTML = "time is up!";
     }
 }
 
 
 //------------------Timed Buttons-------------------
 /* Function to show disabled/hide Buttons */
-function enableBtn() {
+enableBtn = () => {
     var delay = 5;
     var buttonsTimer = setInterval(() => {
         console.log(delay);
@@ -277,7 +279,7 @@ function enableBtn() {
                 button.disabled = false;
             });
             clearInterval(buttonsTimer);
-            startTimer();
+            //startTimer();
         } else {
             clearTimeout(delay, 1000);
         }
@@ -286,30 +288,32 @@ function enableBtn() {
 
 //------------------Players Name-------------------
 /* Function to print the name of the Player*/
-function getName() {
+
+
+document.getElementById("nameModalexit").addEventListener("click", function () {
     playerName = document.getElementById("myText").value;
+    if (playerName.length === 0) {
+        document.getElementById("noName").innerHTML = `<div style="border: 0.1rem solid #C81912; background: white;">Por favor! Tu nombre / Please! enter your codename</div>`;
+    } else {
+        gameMusic.pause();
+        $('#nameModal').modal('hide');
+        $('#gamepage').show();
+        setTimeout(() => {
+            startGame();
+        }, 2000);
+    }
+
     document.getElementById("codename").innerHTML =
-        `<img src="assets/images/bellaciao2.jpg"></img>
+        `<img src="assets/images/codename1.png"></img>
          Hola! ${playerName}
-         <img src="assets/images/clown2.jpg"></img>
+         <img src="assets/images/codename1.png"></img>
          `;
-    $("#nameModalexit").on('click', function () {
-        if (playerName.length === 0) {
-            document.getElementById("noName").innerHTML = `<div style="border: 0.1rem solid #C81912; background: white;">Por favor! Tu nombre / Please! enter your codename</div>`;
-        } else {
-            gameMusic.pause();
-            document.getElementById('nameModal').style.display = "none"
-            document.getElementById('gamepage').style.display = "block";
-            setTimeout(() => {
-                startGame();
-            }, 2000);
-        }
-    });
-}
+});
+
 
 //------------------The End Game-------------------
 /* Function for the modal to show for the bravest and wisest of them all */
-function endGame() {
+endGame = () => {
     victoryMusic.play();
     console.log(playerName);
     //answer++;
@@ -318,28 +322,54 @@ function endGame() {
         document.getElementById("playerWin").innerHTML = `Well done ${playerName}!`;
         $('#winModal').modal('show');
         $('#gamepage').hide();
-         saveTopScore();
+        saveTopScore();
     }
+
+}
+stopMusic = () => {
+    timerMusic.pause();
+    
 }
 
+document.getElementById("soundTimer").addEventListener("click", function () {
+    console.log("stop the music");
+ 
+  
+   timerSoundOn = sound;
+    
+  
+        timerSoundOn ? stopSound() : startSound();
+    
+
+    function stopSound() {
+        sound = false;
+        $('#soundTimer').addClass('soundOff');
+        $('#soundTimer').removeClass('soundOn');
+        timerMusic.pause();
+    }
+
+    function startSound() {
+        sound = true;
+        $('#soundTimer').addClass('soundOn');
+        $('#soundTimer').removeClass('soundOff');
+        timerMusic.play();
+    }
+});
+ 
 
 //------------------Player Name Modal-------------------
-function stopMusic() {
-    timerMusic.pause();
-    timerMusic.currentTime = 0;
-}
 
-window.onload = function () {
+/*window.onload = function () {
     gameMusic.play();
     document.getElementById('nameModal').style.display = "block";
     document.getElementById('nameModal').style.background = "url(assets/images/blur3.png) no-repeat center center fixed";
     document.getElementById('nameModal').style.backgroundSize = "cover";
     document.getElementById('gamepage').style.display = "none";
-};
+};*/
 
 //------------------Best Robber Score-------------------
 /* Function to save top Score*/
-function saveTopScore() {
+saveTopScore = () => {
     const score = {
         name: playerName,
         money: currentPrize,
@@ -359,3 +389,8 @@ richList.innerHTML = topScores
         return `<li class="high-score">${score.name} - ${score.money}</li>`;
     })
     .join("");
+
+
+
+
+ 
