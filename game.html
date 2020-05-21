@@ -19,8 +19,8 @@
 <body>
     <!-- -------------------------- Name Modal --------------------------  -->
 
-    <div id="nameModal" class="modal show fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div id="nameModal" class="p-0 modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="nameModalTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="modal-header d-flex justify-content-center">
@@ -41,23 +41,23 @@
                         <div class="modal-codename mb-4">
                             <p><strong>Professor: Importante! I need to hide your identity to start the
                                     game!</strong></p>
-                            Code Name: <input type="text" id="myText" class="myName" placeholder="codename">
+                            <img src="assets/images/codename2.png" class="img-fluid" alt="">
+                            <p>Code Name: <input type="text" id="myText" class="myName" placeholder="codename"></p>
                             <p class="mt-2" id="noName"></p>
                         </div>
                         <div class="modal-info row mb-4">
-                            <div class="col-5">
+                            <div class="col-6">
                                 <img src="assets/images/professor.jpg" class="img-fluid" alt="">
                             </div>
-                            <div class="modal-qoute-box col-7">
+                            <div class="modal-qoute-box col-6">
                                 <p class="modal-qoute">“In this world, everything is governed by balance. There’s what
                                     you stand
                                     to gain and what you stand to lose. And when
                                     you think you’ve got nothing to lose, you become overconfident.”</p>
                             </div>
-                            <!-- <button type="button" class="btn-info btn-md">Read more</button> -->
                         </div>
                     </div>
-                    <a id="nameModalexit" class="modal-btn" onClick="getName()">PLAY</a>
+                    <a id="nameModalexit" class="modal-btn">PLAY</a>
                     <a type="button" href="index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 <div class="p-2 d-inline animated bounceInLeft">
                     <img class="circle-logo pulse" src="assets/images/clowntransparent.png" alt="play image" />
                 </div>
-                <div class="p-2 bd-highlight title animated bounce"> MONEY<span>HEIST</span></div>
+                <div class="bd-highlight title animated bounce"> MONEY<span>HEIST</span></div>
             </div>
             <div id="info" class="justify-center flex-column">
                 <div class="row info-box">
@@ -82,6 +82,13 @@
                         <!--  <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a
                                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
                     </p>
+                    <button type="button" class="sound soundOn" id="soundTimer"></button>
+                    <!-- <div>
+                        <button id="button_play" class="first" type="button">
+                            <i class="glyphicon glyphicon-volume-up"></i></button>
+                        <button id="button_pause" class="second" type="button">
+                            <i class="glyphicon glyphicon-volume-off"></i></button>
+                    </div> -->
                     <div class="two-info">
                         <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
                                 <i class="fas fa-hourglass-half fa-spin"></i></span> Timer:
@@ -97,54 +104,50 @@
                 <p id="codename" class="codename justify-center"></p>
             </div>
             <div id="game" class="justify-center flex-column">
-                <h2 id="question-box" class="question-case">GET READY!</h2>
+                <div id="question-box" class="question-case"><h2>GET READY!</h2></div>
                 <div id="answers-buttons" class="btn-grid">
                 </div>
                 <!-- <div id="button"> -->
                 <div class="row choice-box">
-                    <div class="choice-container btn-group shadow-none shake-little">
+                    <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">A</p>
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="1" disabled>choice
+                        <button type="button" class="btnchoice choice-text shadow-none" data-number="1" disabled>choice
                             1</button>
                     </div>
 
-                    <div class="choice-container shake-little">
+                    <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">B</p>
                         <!-- <p class="choice-text" data-number="2">choice 2 </p> -->
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="2" disabled>choice
+                        <button type="button" class="btnchoice choice-text shadow-none" data-number="2" disabled>choice
                             2</button>
                     </div>
                 </div>
                 <div class="row choice-box">
-                    <div class="choice-container shake-little">
+                    <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">C</p>
                         <!-- <p class="choice-text" data-number="3">choice 3</p> -->
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="3" disabled>choice
+                        <button type="button" class="btnchoice choice-text shadow-none" data-number="3" disabled>choice
                             3</button>
                     </div>
-                    <div class="choice-container shake-little">
+                    <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">D</p>
                         <!-- <p class="choice-text" data-number="4">choice 4</p> -->
-                        <button type="button" class="btn1 choice-text shadow-none" data-number="4" disabled>choice
+                        <button type="button" class="btnchoice choice-text shadow-none" data-number="4" disabled>choice
                             4</button>
                     </div>
                 </div>
                 <!-- </div> -->
-                <div class="row options-btn mb-5">
-                    <a class="btn" href="index.html">Restart</a>
+                <div class="row col-sm-12 mt-2">
+                    <a class="options-btn" href="index.html">Restart</a>
                 </div>
             </div>
-            <footer class="fixed-bottom ml-2 mb-2">
-                <div id="footer-text">FOR EDUCATIONAL PURPOSE ONLY © JOHNDBIGBOI 2020</div>
-                <button>where to buy</button>
-            </footer>
         </div>
     </div>
 
     <!-- -------------------------- Game Over Modal --------------------------  -->
 
     <div id="gameOverModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        aria-labelledby="gameOverModalTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="modal-header d-flex justify-content-center">
@@ -162,16 +165,16 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="modal-info row mb-4">
-                            <div class="col-5">
+                            <div class="col-6">
                                 <img src="assets/images/bellaciao.jpg" class="img-fluid" alt="Thank you">
                             </div>
-                            <div class="modal-qoute-box col-7">
+                            <div class="modal-qoute-box col-6">
                                 <p class="modal-qoute">“Weakness is not in us, it is in what we have outside.”</p>
                                 <p class="modal-qoute">“All the decisions we made in the past leads us inexorably into the future.”</p>
                             </div>
                         </div>
                     </div>
-                    <a id="nameModalexit" href="game.html" class="modal-btn" role="button" onClick="">PLAY AGAIN</a>
+                    <a id="nameModalexit" href="game.html" class="modal-btn" role="button">PLAY AGAIN</a>
                     <a type="button" href="index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
@@ -181,7 +184,7 @@
     <!-- -------------------------- Win Modal --------------------------  -->
 
     <div id="winModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        aria-labelledby="winModalTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="modal-header d-flex justify-content-center">
@@ -201,10 +204,10 @@
                             <p id="playerWin"></p>
                         </div>
                         <div class="modal-info row mb-4">
-                            <div class="col-5">
+                            <div class="col-6">
                                 <img src="assets/images/victory.jpg" class="img-fluid" alt="">
                             </div>
-                            <div class="modal-qoute-box col-7">
+                            <div class="modal-qoute-box col-6">
                                 <p class="modal-qoute">“Dear, in the end, love is what makes us see life in another color, and lately, you have only seen everything black.”</p>
                             </div>
                         </div>
