@@ -1,8 +1,3 @@
-/* Google Fonts */
-
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Open+Sans&display=swap');
- 
-
 @font-face {
     /*     src: url('../fonts/CFAnarchy-Regular.ttf');*/
     /*      font-family: 'CFAnarchy';*/
@@ -19,19 +14,21 @@
 }
 
 body {
-    /*     background-color: #018383;*/
-    /* height: 104vh;*/
+    background-color: black;
+    /* height: 100vh;*/
     /* width: 100vw; */
-    height: 100%;
+    /* height: 100%; */
+    /*  height: 100vh;
+    max-height: 100vh;
     position: relative;
-    font-size: 62.5%; 
-    overflow: hidden;
+    font-size: 50%;
+    overflow: hidden; */
     /*  border: 20mm ridge red; */
-}     
+}
 
 
 
-h1 {
+/* h1 {
     font-size: 5.4rem;
     color: #56a5eb;
     margin-bottom: 5rem;
@@ -40,23 +37,15 @@ h1 {
 h1>span {
     font-size: 2.4rem;
     font-weight: 500;
-}
+} */
 
 h2 {
-    font-size: 2.0rem;
-    font-weight: 700;
-    padding: 1rem;
+    font-size: 1.5rem;
+    padding: 0.625rem;
     background-color: RGBA(245, 222, 163, 0.5);
+    margin: 1rem;
 }
 
-h3 {
-    font-size: 2.8rem;
-    font-weight: 500;
-}
-
-h4 {
-    background-color: RGBA(245, 222, 163, 0.5);
-}
 p {
     margin-top: 0;
     margin-bottom: 0;
@@ -71,10 +60,10 @@ p {
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
-    
+
 }
 
-#landing-page-menu{
+#landing-page-menu {
     margin-top: 8rem;
 }
 
@@ -82,17 +71,18 @@ p {
     /* width: 100vw; */
     /* display: flex; */
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+    /*justify-content: center;
+    align-items: center; */
     /* max-width: 80rem; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     padding: 2rem;
+    border: 5px solid red;
 }
 
-.container>* {
+/* .container>* {
     width: 100%;
 }
-
+ */
 .flex-column {
     display: flex;
     flex-direction: column;
@@ -120,6 +110,7 @@ p {
 #game-title {
     font-family: 'GLADES';
     font-size: 9rem;
+    word-spacing: -3.125rem;
     height: 155px;
     text-align: center;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
@@ -148,17 +139,55 @@ p {
 }
 
 
-#landing-page-menu a, span {
+#landing-page-menu a,
+span {
     transition: all 0.5s ease-in-out;
     text-decoration: none;
     color: #fefefe;
 }
+.two-button{
+    margin: auto;
+}
+#soundButton,
+#soundTimer {
+    background-size: cover;
+    border: 0.2rem solid #C81912;
+}
+
+.sound,
+.information {
+    
+    border-radius: 2rem;
+    background-color: rgba(5, 1, 0, 0.8);
+    margin: auto 1rem;
+    height: 3rem;
+    width: 3rem;
+
+}
+
+.soundOn {
+    background-image: url('../images/audio.png');
+}
+
+.soundOff {
+    background-image: url('../images/noaudio.png');
+}
+
+#infoButton {
+    background-size: cover;
+    background-image: url('../images/info.png');
+     border: 0.1rem solid #C81912;
+}
 
 #footer-text {
-    margin-left: 1rem;
     font-size: 1rem;
-    width: 35rem;
-    border: 0.1rem solid #C81912;
+    width: 28rem;
+   /*  border: 0.1rem solid #C81912; */
+    margin: auto;
+/*     box-shadow: 0 0rem 1.4rem 1rem rgba(254, 254, 254, 1);
+ */    box-shadow: 0 0.5rem 2rem 0rem rgba(254, 254, 254, 1);
+    color: white;
+    text-align: center;
 }
 
 .mainbutton {
@@ -175,9 +204,10 @@ p {
     background-color: rgba(5, 1, 0, 0.8);
     color: black;
 }
+
 .mainbutton:hover {
     cursor: url('../images/cursor.cur'),
-    default;
+        default;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 1);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
@@ -207,7 +237,7 @@ p {
 
 .btn:hover {
     cursor: url('../images/cursor.cur'),
-    default;
+        default;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
@@ -226,7 +256,7 @@ p {
     border-radius: 0.825rem;
     border: none;
     width: 18rem;
-    
+
 }
 
 /* ----------------------------------------------
@@ -313,20 +343,48 @@ p {
 @media only screen and (min-width: 200px) and (max-width: 767px) {
     #landing-page-menu {
         margin-top: 5rem;
- 
+
     }
+
     #game-title {
-       display: contents;
+        display: contents;
+
     }
-    
+
     .title-1 {
         font-size: 6rem;
     }
+
     .title-2 {
         font-size: 6rem;
     }
+
     .landingbuttons {
         margin-top: 4rem;
+    }
+
+    .title-bar img {
+        margin-left: 2rem;
+        position: inherit;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: transparent;
+        box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
+        color: white;
+        border: 1px solid red;
+
+    }
+
+    .title-bar .title {
+        margin: auto;
+        padding: 0;
+        width: auto;
+        display: grid;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 500;
+        box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
     }
 }
 
@@ -336,13 +394,12 @@ p {
     #landing-page-menu {
         margin-top: 19rem;
     }
-    
-    
+
+
     #game-title {
         width: max-content;
-        word-spacing: -41px;
     }
-    
+
     .title-1 {
         font-size: 6.5rem;
     }
