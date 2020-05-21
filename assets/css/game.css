@@ -1,38 +1,55 @@
 #gamepage {
-    background: url("../images/MH.jpg") no-repeat center center fixed;
-    background-size: cover;
-    height: auto;
-    overflow: auto;
+    /* background: url("../images/MH2.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+    
+    background-image: url("../images/MH.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100vw 100vh;
+    /* background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 100vh;
+    max-width: 100vw; */
 }
 
 .title-bar {
-    width: 100%;
-    justify-content: space-between;
+    /* width: 100%;
+    justify-content: space-between; */
     letter-spacing: 5px;
+    justify-content: center;
+    margin-top: 3rem;
     /* margin-top: 60px; */
-
 }
 
 .title {
-    width: 100%;
-    height: 8rem;
-    text-align: center;
-    font-size: 5rem;
+    /* width: 100%; */
+    /*  height: 8rem; */
+    /* text-align: center; */
+    font-size: 4rem;
     font-weight: 500;
     /* margin: 0 20px 0; */
-    margin-left: 6rem;
+    /*  margin-left: 6rem; */
     color: #fefefe;
     /* background-color: rgb(5, 1 , 0, 0.5); */
+            box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
+            padding: 0.5rem 0rem 0.5rem 1rem;
+    line-height: 3.8rem;
 }
 
 .title span {
     color: #050100;
     background-color: #C81912;
+    padding: 0 0.7rem;
 }
 
 .circle-logo {
     position: absolute;
     top: -12px;
+    right: 5rem;
     margin-left: 3rem;
     font-size: 5rem;
     width: 11rem;
@@ -40,8 +57,8 @@
     padding: 0;
     line-height: 160px;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
+    /* white-space: nowrap;
+    vertical-align: baseline; */
     border-radius: 50%;
     background-color: transparent;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
@@ -51,22 +68,23 @@
 
 #codename {
     text-align: center;
-    color: white;
-    margin-bottom: 3rem;
-    font-size: 3rem;
+    color: #050100;
+    margin-bottom: 1rem;
+    font-size: 2rem;
     -webkit-box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
     -moz-box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
     box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
+    background: radial-gradient(circle, rgba(254, 254, 254, 1) 28%, rgba(5, 1, 0, 1) 80%);
 }
 
 .codename img {
-    height: 4rem;
+    height: 3rem;
 }
 
 #question-box {
     width: 100%;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.7rem;
     color: white;
     background: linear-gradient(to right, #C81912, #050100);
 }
@@ -82,7 +100,12 @@
     margin: 0;
 }
 
-.button:active, button:active, .button:focus, button:focus, .button:hover, button:hover {
+.button:active,
+button:active,
+.button:focus,
+button:focus,
+.button:hover,
+button:hover {
     border: none !important;
     outline: none !important;
 }
@@ -90,17 +113,18 @@
 .choice-box {
     width: 100%;
     justify-content: space-evenly;
-    margin-left: 0;
+    margin: auto;
 }
 
 .choice-container {
     display: flex;
     margin-left: 20px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     padding-left: 0;
     width: 25rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    line-height: 0.5rem;
     -webkit-border-radius: 300px;
     -moz-border-radius: 300px;
     border-radius: 300px;
@@ -116,7 +140,7 @@
 }
 
 .choice-prefix {
-    padding: 1.5rem 2.5rem;
+    padding: 1.5rem 1.5rem;
     /* border-top-left-radius: 0.825rem;
     border-bottom-left-radius: 0.825rem; */
     border-radius: 18.75rem;
@@ -124,16 +148,25 @@
     color: #050100;
     box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 0.5);
     border: 0;
+    background: radial-gradient(circle, rgba(200, 25, 18, 1) 44%, rgba(5, 1, 0, 1) 100%);
 }
 
 .choice-text {
     text-align: left;
-    padding: 1.5rem;
+    padding: 0.5rem 1rem;
+    line-height: 1rem;
     width: 100%;
     background-color: transparent;
     border-top-right-radius: 0.825rem;
     border-bottom-right-radius: 0.825rem;
     border: 0;
+}
+
+button:disabled,
+button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
+    color: red;
 }
 
 .correct {
@@ -144,15 +177,6 @@
     border: 20mm ridge red;
 }
 
-/*  INFO */
-
-.info-box {
-    /*  max-width: 90%; */
-    justify-content: space-evenly;
-    margin-left: 0;
-    margin-top: 6%;
-    margin-bottom: 5%;
-}
 
 /*----------------------------------------------Prize*/
 
@@ -160,8 +184,9 @@
     width: 200px;
     display: block;
     position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
+    /* margin-top: auto;
+    margin-bottom: auto; */
+    margin: 3%;
 }
 
 #prize::after {
@@ -179,10 +204,18 @@
     z-index: -1;
 }
 
+/*  INFO */
+
+.info-box {
+    /*  max-width: 90%; */
+    justify-content: center;
+    margin: 9px 0;
+}
+
 .info-prize {
     margin-left: 20px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     border: 0.1rem solid #C81912;
     border-radius: 10px;
     color: #fefefe;
@@ -209,7 +242,7 @@
 
 .two-info {
     padding: 10px;
-    margin: inherit;
+    margin: 1%;
 }
 
 .info-timer {
@@ -217,8 +250,8 @@
     margin-bottom: 15px;
     text-align: center;
     width: 13rem;
-    font-size: 2rem;
-    height: 4rem;
+    font-size: 1rem;
+    /*  height: 4rem; */
     border: 0.1rem solid #C81912;
     padding: 5px;
     border-radius: 10px;
@@ -230,11 +263,10 @@
 }
 
 .info-out {
-    
     justify-content: center;
     margin-top: 15px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border: 0.1rem solid #C81912;
     padding: 5px;
     border-radius: 10px;
@@ -245,7 +277,7 @@
     animation-iteration-count: infinite;
 }
 
-.info-strike{
+.info-strike {
     padding: 0.25rem 0.85rem;
     border-radius: 18.75rem;
     background-color: #C81912;
@@ -259,8 +291,18 @@
 }
 
 .options-btn {
-    margin: 1rem;
-    justify-content: space-evenly;
+    
+    margin: auto;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    text-align: center;
+    border: 0.1rem solid #56a5eb;
+    text-decoration: none;
+    border-radius: 0.825rem;
+    background-color: #f5dea3;
+    color: black;
+    border: 1px solid red;
+
 }
 
 /*----------------------------------------------Modal*/
@@ -314,6 +356,14 @@
     font-size: 1rem;
 }
 
+.modal-codename img {
+   height: 5rem;
+}
+
+.modal-info img {
+     box-shadow: 0 0 1rem 0 rgba(254, 254, 254, 1);
+}
+
 #myText {
     width: auto;
     margin-top: 5px;
@@ -328,19 +378,45 @@
 .modal-qoute {
     margin-top: 10px;
     padding: 10px;
+    font-size: 70%;
+}
+
+.modal-btn-topscore-exit {
+    display: inline-block;
+    padding: 0.7em 2.5em;
+    /*  margin: 0 0.5em 0.3em 0; */
+    border-radius: 0.2em;
+    /* box-sizing: border-box; */
+    background-color: #fefefe;
+    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+        inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    /* text-align: center; */
+    /* position: relative; */
+    color: #050100;
+    font-weight: 600;
+    font-size: 12px;
+    background: rgb(254, 254, 254);
+    background: radial-gradient(circle, rgba(254, 254, 254, 1) 32%, rgba(5, 1, 0, 1) 100%);
 }
 
 .modal-btn {
+    font-weight: 600;
+    font-size: 12px;
     display: inline-block;
-    padding: 0.7em 1.7em;
-    margin: 0 0.5em 0.3em 0;
-    border-radius: 0.2em;
-    box-sizing: border-box;
-    background-color: #3369ff;
-    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
-    text-align: center;
-    position: relative;
-    color: #FFFFFF;
+    padding: 0.7em 2.5em;
+    margin: 0 1em 0.3em 0;
+    /* border-radius: 0.2em;
+    box-sizing: border-box; */
+    background-color: #C81912;
+    /* box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+        inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+        inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    text-align: center; */
+    /* position: relative; */
+    color: #fefefe;
+    background: rgb(200, 25, 18);
+    background: radial-gradient(circle, rgba(200, 25, 18, 1) 58%, rgba(5, 1, 0, 1) 100%);
 }
 
 a.modal-btn:active {
@@ -348,23 +424,29 @@ a.modal-btn:active {
 }
 
 @media all and (max-width:30em) {
-    a.modal-btn, a.modal-btn-exit {
+
+    a.modal-btn,
+    a.modal-btn-exit {
         display: block;
         margin: 0.4em auto;
     }
 }
 
 .modal-btn-exit {
-    display: inline-block;
-    padding: 0.7em 1.7em;
-    margin: 0 0.3em 0.3em 0;
-    border-radius: 0.2em;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    background-color: #C81912;
-    box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    /*  display: inline-block; */
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0.7em 2.5em;
+    margin: 0 1em 0.3em 0;
+    /* border-radius: 0.2em;
+    box-sizing: border-box; */
+    color: #050100;
+    background-color: #fefefe;
+    background: rgb(254, 254, 254);
+    background: radial-gradient(circle, rgba(254, 254, 254, 1) 58%, rgba(5, 1, 0, 1) 100%);
+    /*     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
     text-align: center;
-    position: relative;
+    position: relative;*/
 }
 
 a {
@@ -373,11 +455,56 @@ a {
 
 a:hover {
     box-shadow: 0 0.2rem 1rem 0 rgba(254, 254, 254, 1);
-    color: white;
+    color: black;
 }
 
 .modal-body-topscore {
     color: white;
     margin: 2rem 7rem 2rem;
     font-size: 0.8rem;
+}
+
+
+/* @media only screen and (min-device-width: ) and (max-device-width: 1023px) {
+
+    #gamepage {
+        background: url("../images/smscreen.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        overflow: hidden;
+    }
+}
+ */
+@media only screen and (min-width: 768px) and (max-width: 1025px) {
+
+    #gamepage {
+        background: url("../images/smscreen.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+       
+
+    }
+
+    .info-box {
+         margin-bottom: 2rem;
+        justify-content: space-between;
+    }
+
+    .title-bar, .title-bar img, .title{
+        margin-top: 19rem;
+        display: none;
+    }
+
+    #prize {
+        width: 215px;
+        height: 85px;
+        display: block;
+        position: relative;
+        margin-top: auto;
+        margin-bottom: 2rem;
+    }
 }
