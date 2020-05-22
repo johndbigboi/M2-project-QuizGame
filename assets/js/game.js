@@ -1,16 +1,21 @@
-//CONSTANT
+/**
+ * Global CONSTANT
+ **/
 const question = document.getElementById("question-box");
-const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const prizeText = document.getElementById('prize');
-const animateTimer = document.querySelector('.info-timer');
 const gamepage = document.getElementById('gamepage');
 const answercount = document.getElementById("answercount");
-const topScores = JSON.parse(localStorage.getItem("topScores")) || [];
+const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
+const animateTimer = document.querySelector('.info-timer');
 const buttons = document.querySelectorAll('.btnchoice');
+const topName = JSON.parse(localStorage.getItem("topScores")) || [];
 const jackPot = 9;
 const totalQuestion = 10;
 const totalWrongAnswer = 3;
-//------------------MOney Prize in Array-------------------
+
+/**
+ * Money Prize in Array
+ **/
 const Prize = [
     '€0',
     '€100,000',
@@ -24,7 +29,9 @@ const Prize = [
     '€1,000,000,000',
     '€2,400,000,000',
 ];
-
+/**
+ * Global let 
+ **/
 
 let CurrentQuestionIndex = 0;
 let CurrentMoneyIndex = 0;
@@ -42,12 +49,17 @@ let correctMusic = new Audio('assets/sounds/correct.wav');
 let incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
 let victoryMusic = new Audio('assets/sounds/victorymusic.wav');
 
+/**
+ * function when the page loads 
+ **/
 $(document).ready(function () {
     gameMusic.play();
     $('#nameModal').modal('show');
     $('#gamepage').hide();
 
-    //background music on/off
+    /**
+     * button toggle when click music on/off
+     **/
     $('#soundButton').click(() => {
         let soundOn = sound;
         soundOn ? stopGameMusic() : startGameMusic();
@@ -67,8 +79,39 @@ $(document).ready(function () {
         gameMusic.play();
     }
 
-});
+    document.getElementById("soundTimer").addEventListener("click", function () {
+        console.log("stop the music");
+        timerSoundOn = sound;
 
+        timerSoundOn ? stopSound() : startSound();
+
+        function stopSound() {
+            sound = false;
+            $('#soundTimer').addClass('soundOff');
+            $('#soundTimer').removeClass('soundOn');
+            timerMusic.pause();
+        }
+
+        function startSound() {
+            sound = true;
+            $('#soundTimer').addClass('soundOn');
+            $('#soundTimer').removeClass('soundOff');
+            timerMusic.play();
+        }
+    });
+
+});
+/** 
+ * Function on how to stop the music 
+ **/
+stopMusic = () => {
+    timerMusic.pause();
+
+}
+
+/**
+ * function to get question from API source
+ **/
 fetch("https://opentdb.com/api.php?amount=13&difficulty=easy&type=multiple")
     .then((resp) => resp.json())
     .then((allQuestions) => {
@@ -89,6 +132,9 @@ fetch("https://opentdb.com/api.php?amount=13&difficulty=easy&type=multiple")
         console.error(err);
     });
 
+/**
+ * function for the game to start
+ **/
 startGame = () => {
     answeredCorrect = 0;
     answer = 0;
@@ -101,13 +147,17 @@ startGame = () => {
     nextQuestion();
 };
 
-//------------------Show next questions-------------------
-/* Function on how to get/load the next Question from the API */
+
+/** 
+ * Function on how to get and load the next Question from the API 
+ **/
 nextQuestion = () => {
     showQuestion(randomQuestion[CurrentQuestionIndex]);
 };
-//------------------Show the Questions-------------------
-/* Function on how to load the next question from the API Array */
+
+/**
+ *Function on how to load the next question from the API Array 
+ **/
 showQuestion = () => {
     if (answeredCorrect === totalQuestion) {
         console.log(answeredCorrect === totalQuestion);
@@ -128,19 +178,19 @@ showQuestion = () => {
         choice.innerHTML = currentQuestion["choice" + number];
 
     });
-    
+
     if (sound === false) {
-    timerMusic.pause();
+        timerMusic.pause();
     } else {
         timerMusic.play();
     }
     acceptingAnswer = true;
     enableBtn();
     return;
-
 }
-//------------------ Multiple choice -------------------
-/* Function on how to place the answer and show correct/incorrect choice from the API  */
+/**
+ *Function on how to place the answer and show correct/incorrect choice from the API 
+ **/
 answerButtonsElement.forEach(choice => {
     choice.addEventListener("click", e => {
         stopMusic();
@@ -189,8 +239,10 @@ answerButtonsElement.forEach(choice => {
         }, 1000);
     });
 });
-//------------------Total Prize Won-------------------
-/* Function on how to get the Prize from  correct answers */
+
+/** 
+ * Function on how to get the Prize from  correct answers 
+ **/
 plusWin = () => {
     CurrentMoneyIndex++;
     answeredCorrect++;
@@ -211,8 +263,10 @@ plusWin = () => {
     }
 
 };
-//------------------Wrong Answer-------------------
-/* Function on how to get 3 wrong answer and show game over modal */
+
+/** 
+ * Function on how to get 3 wrong answer and show game over modal
+ **/
 strikeOut = () => {
     answer++;
     console.log(answer);
@@ -230,8 +284,10 @@ strikeOut = () => {
 
     answercount.innerHTML = `Strike <span class="info-strike">${answer}</span> out of <span class="info-strike">${totalWrongAnswer}</span>!`;
 }
-//------------------Start Timer-------------------
-/* Function for Timed Questions */
+
+/** 
+ * Function for Timed Questions 
+ **/
 startTimer = () => {
 
     var count = 10;
@@ -264,9 +320,9 @@ startTimer = () => {
     }
 }
 
-
-//------------------Timed Buttons-------------------
-/* Function to show disabled/hide Buttons */
+/**
+ *  Function to show disabled/hide Buttons 
+ **/
 enableBtn = () => {
     var delay = 5;
     var buttonsTimer = setInterval(() => {
@@ -286,10 +342,9 @@ enableBtn = () => {
     }, 1000);
 }
 
-//------------------Players Name-------------------
-/* Function to print the name of the Player*/
-
-
+/** 
+ * Function to print the name of the Player in the Gamepage
+ **/
 document.getElementById("nameModalexit").addEventListener("click", function () {
     playerName = document.getElementById("myText").value;
     if (playerName.length === 0) {
@@ -310,9 +365,9 @@ document.getElementById("nameModalexit").addEventListener("click", function () {
          `;
 });
 
-
-//------------------The End Game-------------------
-/* Function for the modal to show for the bravest and wisest of them all */
+/** 
+ * Function for the modal to show for the bravest and wisest of them all 
+ **/
 endGame = () => {
     victoryMusic.play();
     console.log(playerName);
@@ -326,49 +381,10 @@ endGame = () => {
     }
 
 }
-stopMusic = () => {
-    timerMusic.pause();
-    
-}
 
-document.getElementById("soundTimer").addEventListener("click", function () {
-    console.log("stop the music");
- 
-  
-   timerSoundOn = sound;
-    
-  
-        timerSoundOn ? stopSound() : startSound();
-    
-
-    function stopSound() {
-        sound = false;
-        $('#soundTimer').addClass('soundOff');
-        $('#soundTimer').removeClass('soundOn');
-        timerMusic.pause();
-    }
-
-    function startSound() {
-        sound = true;
-        $('#soundTimer').addClass('soundOn');
-        $('#soundTimer').removeClass('soundOff');
-        timerMusic.play();
-    }
-});
- 
-
-//------------------Player Name Modal-------------------
-
-/*window.onload = function () {
-    gameMusic.play();
-    document.getElementById('nameModal').style.display = "block";
-    document.getElementById('nameModal').style.background = "url(assets/images/blur3.png) no-repeat center center fixed";
-    document.getElementById('nameModal').style.backgroundSize = "cover";
-    document.getElementById('gamepage').style.display = "none";
-};*/
-
-//------------------Best Robber Score-------------------
-/* Function to save top Score*/
+/** 
+ * Function to save top Score
+ **/
 saveTopScore = () => {
     const score = {
         name: playerName,
@@ -382,15 +398,20 @@ saveTopScore = () => {
     localStorage.setItem("topScores", JSON.stringify(topScores));
 }
 
-const richList = document.getElementById('richList');
-richList.innerHTML = topScores
-
-    .map(score => {
-        return `<li class="high-score">${score.name} - ${score.money}</li>`;
+document.getElementById("richList").innerHTML = topName.map(score => {
+        return `<li>${score.name} - ${score.money}</li>`;
     })
     .join("");
 
 
 
 
- 
+//------------------Player Name Modal-------------------
+
+/*window.onload = function () {
+    gameMusic.play();
+    document.getElementById('nameModal').style.display = "block";
+    document.getElementById('nameModal').style.background = "url(assets/images/blur3.png) no-repeat center center fixed";
+    document.getElementById('nameModal').style.backgroundSize = "cover";
+    document.getElementById('gamepage').style.display = "none";
+};*/
