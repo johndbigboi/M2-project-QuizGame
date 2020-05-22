@@ -15,15 +15,15 @@
 
 body {
     background-color: black;
-    /* height: 100vh;*/
+    /* height: 100vh; */
     /* width: 100vw; */
-    /* height: 100%; */
-    /*  height: 100vh;
+/*      height: 100%;
+ */  /*  height: 100vh;
     max-height: 100vh;
     position: relative;
     font-size: 50%;
     overflow: hidden; */
-    /*  border: 20mm ridge red; */
+    /* border: 20mm ridge red; */
 }
 
 
@@ -53,7 +53,8 @@ p {
 
 /* Utilities */
 
-#landing-page {
+#landing-page,
+#tutorialModal {
     background: url("../images/bldg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -70,13 +71,14 @@ p {
 .container {
     /* width: 100vw; */
     /* display: flex; */
-    height: 100vh;
     /*justify-content: center;
     align-items: center; */
     /* max-width: 80rem; */
     /* margin: 0 auto; */
     padding: 2rem;
-    border: 5px solid red;
+   /*  border: 5px solid red; */
+        height: 100vh;
+
 }
 
 /* .container>* {
