@@ -9,6 +9,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100vw 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: -webkit-fill-available;
+    height: -moz-available;
     /* background-size: cover;
     overflow: hidden;
     height: 100vh;
@@ -171,10 +176,12 @@ button[disabled] {
 
 .correct {
     border: 20mm ridge green;
+    height: 100vh;
 }
 
 .incorrect {
     border: 20mm ridge red;
+    height: 100vh;
 }
 
 
