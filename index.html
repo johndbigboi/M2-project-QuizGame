@@ -28,7 +28,7 @@
                     <a id="playButton" href="game.html" class="mainbutton hvr-rectangle-out gradient-border">
                         <span>PLAY</span>
                     </a>
-                    <a href="#" class="mainbutton hvr-rectangle-out">
+                    <a href="#" class="mainbutton hvr-rectangle-out" data-toggle="modal" data-target="#tutorialModal">
                         <span>TUTORIAL</span>
                     </a>
                     <a href="#" class="mainbutton hvr-rectangle-out" data-toggle="modal" data-target="#topscoreModal">
@@ -44,6 +44,39 @@
             <footer class="fixed-bottom">
                 <div id="footer-text">FOR EDUCATIONAL PURPOSE ONLY © JOHNDBIGBOI 2020</div>
             </footer>
+        </div>
+    </div>
+
+    <!-- -------------------------- Tutorial Modal --------------------------  -->
+
+    <div id="tutorialModal" class="p-0 modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tutorialTitle"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header d-flex justify-content-center">
+                    <p class="modal-title">
+                        The Money Heist Quiz Game
+                    </p>
+                </div>
+                <div class="modal-header d-flex justify-content-center">
+                    <div class="modal-tutorial">
+                       <p><strong> Answer 10 questions succesfully to achieve the greatest heist of all time worth €2.4
+                                billion.
+                            </strong>
+                        </p> 
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="modal-tutorial modal-info  mb-4">
+                            <p><strong>GAME RULES</strong></p>
+                            <br>
+                            <img src="assets/images/tutorial.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a id="tutorialModalexit" class="modal-btn-topscore-exit" href="index.html" role="button">Exit</a>
+                </div>
+            </div>
         </div>
     </div>
 
