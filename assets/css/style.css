@@ -343,10 +343,16 @@ span {
 
 /* small/meduim devices (phones, 767px and down) */
 @media only screen and (min-width: 200px) and (max-width: 767px) {
-    #landing-page-menu {
-        margin-top: 5rem;
-
+   
+    .container{
+        height: auto;
+        padding: 0;
     }
+
+     #landing-page-menu {
+         margin-top: 1rem;
+         margin-bottom: 1.5rem ;
+     }
 
     #game-title {
         display: contents;
@@ -387,6 +393,11 @@ span {
         font-size: 2rem;
         font-weight: 500;
         box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
+    }
+
+    #footer-text {
+        width: auto;
+        font-size: 80%;
     }
 }
 
