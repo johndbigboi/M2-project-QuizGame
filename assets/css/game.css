@@ -125,7 +125,8 @@ button:hover {
     display: flex;
     margin-left: 20px;
     margin-bottom: 1rem;
-    padding-left: 0;
+    /* padding-left: 0; */
+    padding: 0;
     width: 25rem;
     text-align: center;
     font-size: 1rem;
@@ -177,11 +178,23 @@ button[disabled] {
 .correct {
     border: 20mm ridge green;
     height: 100vh;
+
+}
+
+.correctanswer{
+    background-color: green;
+    border-radius: 0 300px 300px 0;
+   /*  width: 100%; */
 }
 
 .incorrect {
     border: 20mm ridge red;
     height: 100vh;
+}
+
+.incorrectanswer {
+    background-color: red;
+    border-radius: 0 300px 300px 0;
 }
 
 
