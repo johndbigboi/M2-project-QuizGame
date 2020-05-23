@@ -191,30 +191,44 @@ showQuestion = () => {
 /**
  *Function on how to place the answer and show correct/incorrect choice from the API 
  **/
-answerButtonsElement.forEach(choice => {
-    choice.addEventListener("click", e => {
+answerButtonsElement.forEach(answerButtons => {
+    answerButtons.addEventListener("click", e => {
         stopMusic();
         if (!acceptingAnswer) return;
         buttons.disabled = !buttons.disabled;
         buttons.disabled = true;
         acceptingAnswer = false;
-        const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset["number"];
+        const chosenAnswer = e.target;
+        const finalAnswer = chosenAnswer.dataset["number"];
 
 
-        setStatusClass(document.body, selectedAnswer)
+        setStatusClass(document.body, finalAnswer)
 
-        function setStatusClass(htmlElement, selectedAnswer) {
+        function setStatusClass(htmlElement, finalAnswer) {
 
-            if (selectedAnswer == currentQuestion.answer) {
+            if (finalAnswer == currentQuestion.answer) {
                 clearStatusClass(htmlElement);
                 // use the classList API to add classes
+                // the viewport is at least 900 pixels wide
+                if (matchMedia("(max-width: 767px)").matches) {
+                     htmlElement.classList.add('correct');
+                   $('.correct').css("height", "153vh");
+                    chosenAnswer.classList.add('correctanswer');
+                } else {
                 htmlElement.classList.add('correct');
+                chosenAnswer.classList.add('correctanswer');
+                }
                 plusWin();
                 correctMusic.play();
-
             } else {
+                if (matchMedia("(max-width: 767px)").matches) {
+                    htmlElement.classList.add('incorrect');
+                    $('.incorrect').css("height", "153vh");
+                    chosenAnswer.classList.add('incorrectanswer');
+                } else {
                 htmlElement.classList.add('incorrect');
+                chosenAnswer.classList.add('incorrectanswer');
+                }
                 incorrectMusic.play();
                 strikeOut();
 
@@ -231,6 +245,11 @@ answerButtonsElement.forEach(choice => {
         setTimeout(function () {
             document.body.classList.remove('correct');
             document.body.classList.remove('incorrect');
+            chosenAnswer.classList.remove('correctanswer');
+            chosenAnswer.classList.remove('incorrectanswer');
+            if (matchMedia("(max-width: 767px)").matches) {
+                 $('body').css("height", "120vh");
+            }
             nextQuestion();
             buttons.forEach(button => {
                 button.disabled = true;
@@ -290,7 +309,7 @@ strikeOut = () => {
  **/
 startTimer = () => {
 
-    var count = 10;
+    var count = 15;
     timer = setInterval(function () {
             console.log(count);
             const hourGlass = document.getElementById("countdown-timer");
