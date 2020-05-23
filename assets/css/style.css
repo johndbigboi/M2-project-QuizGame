@@ -61,6 +61,7 @@ p {
     -o-background-size: cover;
     background-size: cover;
     overflow: hidden;
+    height: 100vh;
 
 }
 
@@ -344,6 +345,10 @@ span {
 /* small/meduim devices (phones, 767px and down) */
 @media only screen and (min-width: 200px) and (max-width: 767px) {
    
+     #landing-page {
+        overflow: auto;
+     }
+
     .container{
         height: auto;
         padding: 0;
@@ -399,6 +404,7 @@ span {
         width: auto;
         font-size: 80%;
     }
+
 }
 
 /* Small  tablets (portrait tablets and large phones, 600px and up) */
@@ -420,6 +426,8 @@ span {
     .title-2 {
         font-size: 6.5rem;
     }
+
+   
 
 }
 
