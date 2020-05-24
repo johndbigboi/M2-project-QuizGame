@@ -212,7 +212,7 @@ answerButtonsElement.forEach(answerButtons => {
                 // the viewport is at least 900 pixels wide
                 if (matchMedia("(max-width: 767px)").matches) {
                      htmlElement.classList.add('correct');
-                   $('.correct').css("height", "153vh");
+                   $('.correct').css("height", "100%");
                     chosenAnswer.classList.add('correctanswer');
                 } else {
                 htmlElement.classList.add('correct');
@@ -223,7 +223,7 @@ answerButtonsElement.forEach(answerButtons => {
             } else {
                 if (matchMedia("(max-width: 767px)").matches) {
                     htmlElement.classList.add('incorrect');
-                    $('.incorrect').css("height", "153vh");
+                    $('.incorrect').css("height", "100%");
                     chosenAnswer.classList.add('incorrectanswer');
                 } else {
                 htmlElement.classList.add('incorrect');
