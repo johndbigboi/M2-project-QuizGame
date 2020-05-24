@@ -54,7 +54,8 @@ p {
 /* Utilities */
 
 #landing-page,
-#tutorialModal {
+#tutorialModal,
+#infoModal {
     background: url("../images/bldg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -166,6 +167,21 @@ span {
     height: 3rem;
     width: 3rem;
 
+}
+
+.map-container {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-container iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 .soundOn {
