@@ -3,7 +3,7 @@
 
 [The live site can be viewed here](https://johndbigboi.github.io/QuizGame/index.html)
 
-![Mutli Device Screenshot]<img src="../assets/images/multidevice.png"/>
+![Mutli Device Screenshot](https://github.com/johndbigboi/MoneyHeist-QuizGame/blob/master/assets/wireframes/multidevice.png)
 
 Money Heist quiz game is an interactive game i created using HTML, CSS and Javascript. For the requirement of Interactive Frontend Development Milestone Project.
 
