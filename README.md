@@ -128,8 +128,9 @@ All background and images were taken from [Artstation](https://www.artstation.co
 
 I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette from coolors.co. The four colours was the four dominant colors on the Money Heist robber costumes.
 
-#### #fefefe`#fefefe`(White):
+#### #fefefe(White):
 
+![#fefefe](https://via.placeholder.com/15/fefefe/000000?text=+) `#fefefe`
 - Font colour of the game title on the landing page
 - Font colour of the button on the landing page
 - Font colour of all the game modals 
@@ -137,20 +138,23 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 - Background colour for answer buttons
 - Font colour of the question box
 
-#### #b61739`#b61739`(Cardinal Red):
+#### #b61739(Cardinal Red):
 
+![#b61739](https://via.placeholder.com/15/b61739/000000?text=+) `#b61739`
 - Font colour of the game title on the landing page
 - Hover colour of the button on the landing page
 - Background colour of all the game modals
 - Background colour of the game title on the game page
 - Background colour of question box
 
-#### #f5dea3`#f5dea3`(Peach):
+#### #f5dea3(Peach):
 
+![#f5dea3](https://via.placeholder.com/15/f5dea3/000000?text=+) `#f5dea3`
 - Background colour of info box and restart button
 
-#### #050100`#050100`(Rich Black):
+#### #050100(Rich Black):
 
+![#050100](https://via.placeholder.com/15/050100/000000?text=+) `#050100`
 - Font colour of the game title on the landing page
 - Background colour button on the landing page
 - Background colour of the game title on the game page
@@ -159,7 +163,9 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 
 ## Wireframes:
 
-All wireframes were designed and produced using [Balsamiq Mockups 3](https://balsamiq.com/).  [here](). 
+The development of the game was modeled based from the user stories and theme of the Money Heist Tv show.
+All wireframes were designed and produced using [Balsamiq Mockups 3](https://balsamiq.com/). link to my [Wireframes]().
+
 
 ## Technologies Used:
 
@@ -265,4 +271,4 @@ On the process of developing this project builds up my confidence on solving log
 
 ## Disclaimer:
 
-This site is intended for educational purposes only, and is not intended for use in any other capacity
+This game is developed for educational purposes only, and is not intended for use in any other capacity
