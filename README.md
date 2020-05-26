@@ -43,15 +43,15 @@ Thank you for visiting my Github page and playing my project I hope you enjoy re
   * [Closing Notes](#closing-Notes)
   * [Disclaimer](#disclaimer)
 
-## UX (User Experience)
+## UX (User Experience):
 
-### Project Goals
+### Project Goals:
 
 The goal of this project is from the concept of the tv show Money Heist giving the user an interactive, challenging and suspense feel of a quiz game. The project is aimed towards the general knowledge questions suitable for all ages. The game needs to be visually close to the design of the show to encourage the user more interaction generating interest for continued use of the game whilst also providing a good User Experience.
 
 The main goal of making the project <strong>Quiz Game</strong> is to be build by using HTML, CSS, Javascript and to use API for external files for the gameplay.
 
-#### Target Audience Goals
+#### Target Audience Goals:
 
 The game aims to be played by all aged group.
 
@@ -68,17 +68,16 @@ The game aims to be played by all aged group.
 #### User Stories:
 
 ##### Mr Browne: 
-<em>"As a fan of the show, I want to feel the story and suspense of the show in a game."</em>
+* <em>"As a fan of the show, I want to feel the story and suspense of the show in a game."</em>
 
 ##### Mr Hildebrandt: 
-<em>"As a experienced gamer, I want a continuous challenge on every level of the game."</em>
+* <em>"As a experienced gamer, I want a continuous challenge on every level of the game."</em>
 
 ##### Mr Michael: 
-<em>"As a user, I want a game which informative and applicable to daily lives."</em>
+* <em>"As a user, I want a game which informative and applicable to daily lives."</em>
 
 ##### Mr James: 
-<em>"As a user on the go using mobile to desktop, I want the game to display correctly on any
-   screen size."</em>
+* <em>"As a user on the go using mobile to desktop, I want the game to display correctly on any screen size."</em>
 
 #### Site Owner Goals:
 
@@ -89,7 +88,7 @@ I made this project during the COVID-19 pandemic lockdown. People where encourag
 * add more functionality and features for future expansion of the game.
 * Make the quiz game progress in to more themes.
 
-### User Requirements and Expectations
+## User Requirements and Expectations:
 
 #### Requirements:
 
@@ -109,27 +108,27 @@ I made this project during the COVID-19 pandemic lockdown. People where encourag
 * Landing page to see the topscore list
 * Users option to start the game without starting from the landing page
 
-### Design Choices:
+## Design Choices:
 
 The overall theme of the game was based on the Money Heist tv show.
 
-#### Fonts
+#### Fonts:
 
 I used the font <a href="https://www.dafont.com/glades.font?af=on&text=MONEY+HEIST">Glades</a> as it showcases the rebel style of the overall series of the Money Heist design. Used in the main title of the game.
 
-#### Icons
+#### Icons:
 
 All icons used in the Money Heist quiz game were taken from  Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from 3<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
 
-#### Images
+#### Images:
 
 All background and images were taken from [Artstation](https://www.artstation.com/). I used the [Pixlr](https://pixlr.com/)  to edit the images for their own purposes.
 
-#### Colours
+#### Colours:
 
 I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette from coolors.co. The four colours was the four dominant colors on the Money Heist robber costumes.
 
-#### #fefefe (White):
+#### #fefefe`#fefefe`(White):
 
 - Font colour of the game title on the landing page
 - Font colour of the button on the landing page
@@ -138,7 +137,7 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 - Background colour for answer buttons
 - Font colour of the question box
 
-#### #b61739 (Cardinal Red):
+#### #b61739`#b61739`(Cardinal Red):
 
 - Font colour of the game title on the landing page
 - Hover colour of the button on the landing page
@@ -146,11 +145,11 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 - Background colour of the game title on the game page
 - Background colour of question box
 
-#### #f5dea3 (Peach):
+#### #f5dea3`#f5dea3`(Peach):
 
 - Background colour of info box and restart button
 
-#### #050100 (Rich Black):
+#### #050100`#050100`(Rich Black):
 
 - Font colour of the game title on the landing page
 - Background colour button on the landing page
@@ -158,11 +157,11 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 - Background colour of the game logo
 - Background colour of the player name
 
-### Wireframes
+## Wireframes:
 
 All wireframes were designed and produced using [Balsamiq Mockups 3](https://balsamiq.com/).  [here](). 
 
-### Technologies Used:
+## Technologies Used:
 
 #### Languages:
 
@@ -185,7 +184,7 @@ All wireframes were designed and produced using [Balsamiq Mockups 3](https://bal
 * <a href="https://elrumordelaluz.github.io/csshake/">csshake</a>
 
 
-### Testing:
+## Testing:
 
 As i develop this game project using Javascript and API, My testing was making sure every line of the code properly functioning, looking for errors and adjusting until the code ran without any issues. This process allowed me to learn more in depth on how to work codes with Javascript and API. 
 
@@ -210,7 +209,7 @@ As i develop this game project using Javascript and API, My testing was making s
 I asked my family, friends and fellow students on slack using #peer-code-review for any issues they can find and what the page looks to their mobile and desktop devices. All the issues they found was already fix and tested again.
 
 
-### Deployment:
+## Deployment:
 
 Money Heist Quiz Game was developed in Visual Studio Code, while git and GitHub were used for version control and to host the repository respectively.
 
@@ -236,10 +235,10 @@ Money Heist Quiz Game was developed in Visual Studio Code, while git and GitHub 
 * Navigate to your desired file location. 
 * Copy the following <strong>code</strong> and input it into your terminal to clone MoneyHeist QuizGame.
  
- ```git
+ ```
   git clone https://github.com/johndbigboi/MoneyHeist-QuizGame.git
    ```
-### Bugs:
+## Bugs:
 
 When the browser first load the page an error message is logged to the console stating (in Promise) that the play() failed in load request. The user needs to interact with the page first for the autoplay function triggers and the sound will play. 
 
@@ -247,7 +246,7 @@ Error messages are logged to the console when the game start for the high scores
 
 All the errors does not affect in any way the user experience game play.
 
-### Credits: 
+## Credits: 
 
 * I received inspiration for this project from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw/featured) build a quiz app
 * Image for README.md multi device layouts taken from [techsini](https://techsini.com/multi-mockup/index.php)
@@ -259,11 +258,11 @@ All the errors does not affect in any way the user experience game play.
 * for css animation[Animate.css](https://animate.style/) and [CSS Gradient](https://cssgradient.io/)
 * Big Thanks to my mentor Mr. Simen Deahlin
 
-### Closing Notes
+## Closing Notes:
 
 On the process of developing this project builds up my confidence on solving logical problems around JavaScript and API's pushing my knowledge further and help me understand how the codes work. 
 
 
-### Disclaimer
+## Disclaimer:
 
 This site is intended for educational purposes only, and is not intended for use in any other capacity
