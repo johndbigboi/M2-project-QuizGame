@@ -3,7 +3,7 @@
 
 [The live site can be viewed here](https://johndbigboi.github.io/QuizGame/index.html)
 
-![Mutli Device Screenshot](https://github.com/johndbigboi/MoneyHeist-QuizGame/blob/master/assets/wireframes/multidevice.png)
+![Mutli Device Screenshot](https://github.com/johndbigboi/MoneyHeist-QuizGame/blob/master/wireframes/multidevice.png)
 
 Money Heist quiz game is an interactive game i created using HTML, CSS and Javascript. For the requirement of Interactive Frontend Development Milestone Project.
 
@@ -68,16 +68,16 @@ The game aims to be played by all aged group.
 #### User Stories:
 
 ##### Mr Browne: 
-* <em>"As a fan of the show, I want to feel the story and suspense of the show in a game."</em>
+* <em>"As a user and fan of the show, I want to feel the story and suspense of the show in a game."</em>
 
 ##### Mr Hildebrandt: 
-* <em>"As a experienced gamer, I want a continuous challenge on every level of the game."</em>
+* <em>"As user and experienced gamer, I want a continuous challenge on every level of the game."</em>
 
 ##### Mr Michael: 
 * <em>"As a user, I want a game which informative and applicable to daily lives."</em>
 
 ##### Mr James: 
-* <em>"As a user on the go using mobile to desktop, I want the game to display correctly on any screen size."</em>
+* <em>"As a user, on the go using mobile to desktop, I want the game to display correctly on any screen size."</em>
 
 #### Site Owner Goals:
 
@@ -114,11 +114,11 @@ The overall theme of the game was based on the Money Heist tv show.
 
 #### Fonts:
 
-I used the font <a href="https://www.dafont.com/glades.font?af=on&text=MONEY+HEIST">Glades</a> as it showcases the rebel style of the overall series of the Money Heist design. Used in the main title of the game.
+I used the font [Glades](https://www.dafont.com/glades.font?af=on&text=MONEY+HEIST) as it showcases the rebel style of the overall series of the Money Heist design. Used in the main title of the game.
 
 #### Icons:
 
-All icons used in the Money Heist quiz game were taken from  Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from 3<a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+All icons used in the Money Heist quiz game were taken from [Smashicons](https://www.flaticon.com/authors/smashicons) and [flaticon](https://www.flaticon.com/)
 
 #### Images:
 
@@ -130,7 +130,9 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 
 #### #fefefe(White):
 
-![#fefefe](https://via.placeholder.com/15/fefefe/000000?text=+) `#fefefe`
+``` 
+![#fefefe](https://via.placeholder.com/15/fefefe/000000?text=+) #fefefe 
+```
 - Font colour of the game title on the landing page
 - Font colour of the button on the landing page
 - Font colour of all the game modals 
@@ -192,18 +194,28 @@ All wireframes were designed and produced using [Balsamiq Mockups 3](https://bal
 
 ## Testing:
 
-As i develop this game project using Javascript and API, My testing was making sure every line of the code properly functioning, looking for errors and adjusting until the code ran without any issues. This process allowed me to learn more in depth on how to work codes with Javascript and API. 
+As i develop this game project using Javascript and API, I tested every line of the codes and making sure the codes was functioning properly, looking for errors and adjusting until the code ran without any issues. This process allowed me to learn more in depth on how to work codes with Javascript and API. Halfway thru the development of my game, I was informed about a modern way of requesting data from an API, Using JavaScript fetch API function and ECMAScript 6/ES6 as i still using the old method of XHR http request. Resulting i need to redo some of my codes and made a lot of testing and adjustment to make sure the game works properly.  
 
 #### Manual testing:
 
+* The game play functionality was tested manually multiple times on different scenerios.
+
+    * Start of the game to input Name And open modals
+        - The game required a codename to start the game. changing from windows.onload to jQuery was tested for glitches or attempt override by the player. 
+        - Modals open and close smoothly and tested for different devices. 
+    * Game Timer
+        - Was adjusted from 10 seconds to 15 seconds as the time is not enough from the reviews i gathered from people who played the game while maintaing the suspense of the game.
+    * Game Music
+        - Was tested for every aspect of the games and how was affecting the game challenges and created a button on/off for people who have sound sensitivity and can be played at night time without disturbing anyone.
+    * Game Scores
+        - Was tested for continuos progress of the money prize and to show the progress of the player.
+    * Game Questions
+        - Codes was change from XHR https request to fetch Api, The array for questions was tested if the question was properly showing. I adjusted requesting 10 questions originally to 13 questions. 13 Question was more balance given i add a function of StrikeOut where a player has a 3 ahc wrong answers will end the game.
+    * Game Answer buttons
+        - Tested for Disabling and enabling for a given period of time and properly showing the multiple choices and randomly putting the right answer within the 4 options.
+    
 * The HTML code was validated with: [W3C](https://validator.w3.org/)
 * The Javascript code was validated with: [jshint](https://jshint.com/)
-* The game play functionality was tested manually multiple times on different scenerios.
-    * Game Timer
-    * Game Music
-    * Game Scores
-    * Game buttons
-    * Game Name And Modals
 * The website was tested on the following browsers:
     * Safari
     * Google Chrome
@@ -250,19 +262,23 @@ When the browser first load the page an error message is logged to the console s
 
 Error messages are logged to the console when the game start for the high scores function.
 
+TopScore saving function for Topscore button on the landing page are disable on mobile phones and tablets as the function
+
+Mobile phones and Tablets access to Topscore list are disabled as the program uses local storage of a browser. When the game played in the said devices it doesn't use/access a browsers local storage to save scores. 
+
 All the errors does not affect in any way the user experience game play.
 
 ## Credits: 
 
 * I received inspiration for this project from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw/featured) build a quiz app
 * Image for README.md multi device layouts taken from [techsini](https://techsini.com/multi-mockup/index.php)
-* Image editor online [pixlr.com](https://pixlr.com/) and [www.imgonline.com.ua](https://www.imgonline.com.ua/)
+* Image editor online [pixlr](https://pixlr.com/) and [imgonline](https://www.imgonline.com.ua/)
 * Used to make favicon [Favicon Generator](https://www.favicon-generator.org/) 
 * Used for color theme [Coolors.co](https://coolors.co/)
 * Helps my project for height and width [Unicorn Revealer](https://chrome.google.com/webstore/detail/unicorn-revealer/lmlkphhdlngaicolpmaakfmhplagoaln?hl=en-GB)
 * Sounds Effect download from [freesound.org](https://freesound.org/)
 * for css animation[Animate.css](https://animate.style/) and [CSS Gradient](https://cssgradient.io/)
-* Big Thanks to my mentor Mr. Simen Deahlin
+* Big Thanks to my mentor from CodeIstitute Mr. Simen Deahlin. You can contact him in [GitHub](https://www.github.com/Eventyret) and [LinkedIn](https://www.linkedin.com/in/simendaehlin/).
 
 ## Closing Notes:
 
