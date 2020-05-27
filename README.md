@@ -130,9 +130,9 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 
 #### #fefefe(White):
 
-``` 
+`
 ![#fefefe](https://via.placeholder.com/15/fefefe/000000?text=+) #fefefe 
-```
+`
 - Font colour of the game title on the landing page
 - Font colour of the button on the landing page
 - Font colour of all the game modals 
