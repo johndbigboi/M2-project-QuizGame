@@ -254,6 +254,7 @@ Money Heist Quiz Game was developed in Visual Studio Code, while git and GitHub 
  ```
   git clone https://github.com/johndbigboi/MoneyHeist-QuizGame.git
    ```
+   
 ## Bugs:
 
 When the browser first load the page an error message is logged to the console stating (in Promise) that the play() failed in load request. The user needs to interact with the page first for the autoplay function triggers and the sound will play. 
