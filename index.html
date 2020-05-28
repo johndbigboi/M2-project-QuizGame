@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/hover.css">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/game.css">
 
     <title>Quiz</title>
 </head>
@@ -150,7 +149,8 @@
                                                 </div>
                                             </form>
                                             <div class="form-group">
-                                                <i class="far fa-edit"></i>Message</i>
+                                                <i class="far fa-edit"> </i>
+                                                <label for="form-message">Message</label>
                                                 <textarea id="form-text" class="form-control" rows="3"
                                                     placeholder="Questions/Comments"></textarea>
                                             </div>
@@ -165,11 +165,8 @@
                                     <div class="card border-dark">
                                         <div class="card-header bg-danger">OUR OFFICE</div>
                                         <!--Google map-->
-                                        <!-- <div id="map-container-google-11" class="z-depth-1-half map-container-6"
-                                            style="height: 400px"> -->
                                         <div class="map map-container">
-                                            <iframe width="600" height="450" frameborder="0" style="border:0"
-                                                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL6wn6oAOZ0gRoHExl6nHAAo&key=AIzaSyB1BJT_hZVJPVQJye0UQmH0vtQ4-SA0DlM"
+                                            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL6wn6oAOZ0gRoHExl6nHAAo&key=AIzaSyB1BJT_hZVJPVQJye0UQmH0vtQ4-SA0DlM" frameborder="0"
                                                 allowfullscreen></iframe>
                                         </div>
                                         <div class="row border-dark  text-dark text-center m-1">
@@ -195,14 +192,12 @@
         </div>
     </div>
 
-    <!-- Music: https://www.bensound.com -->
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/index.js"></script>
     <script type="text/javascript" src="assets/js/game.js"></script>
+    <script type="text/javascript" src="assets/js/index.js"></script>
 </body>
 
 </html>
