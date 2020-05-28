@@ -1,17 +1,29 @@
-/**
- * Global CONSTANT
- **/
-const question = document.getElementById("question-box");
-const prizeText = document.getElementById('prize');
-const gamepage = document.getElementById('gamepage');
-const answercount = document.getElementById("answercount");
-const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
-const animateTimer = document.querySelector('.info-timer');
+/*jshint esversion: 6 */
+
+const question = document.querySelector("#question-box");
+const prizeText = document.querySelector('#prize');
+const answercount = document.querySelector("#answercount");
 const buttons = document.querySelectorAll('.btnchoice');
-const topName = JSON.parse(localStorage.getItem("topScores")) || [];
+const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
+const timerMusic = new Audio('assets/sounds/suspense.wav');
+const gameMusic = new Audio('assets/sounds/gamesound.mp3');
+const endMusic = new Audio('assets/sounds/police.wav');
+const correctMusic = new Audio('assets/sounds/correct.wav');
+const incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
+const victoryMusic = new Audio('assets/sounds/victorymusic.wav');
 const jackPot = 9;
 const totalQuestion = 10;
 const totalWrongAnswer = 3;
+
+let sound = true;
+let CurrentQuestionIndex = 0;
+let CurrentMoneyIndex = 0;
+let answer = 0;
+let questions = [];
+let availableQuestion = [];
+let randomQuestion;
+let playerName;
+let timer;
 
 /**
  * Money Prize in Array
@@ -29,25 +41,6 @@ const Prize = [
     '€1,000,000,000',
     '€2,400,000,000',
 ];
-/**
- * Global let 
- **/
-
-let CurrentQuestionIndex = 0;
-let CurrentMoneyIndex = 0;
-let answer = 0;
-let questions = [];
-let availableQuestion = [];
-let randomQuestion;
-let playerName;
-let timer;
-let sound = true;
-let timerMusic = new Audio('assets/sounds/suspense.wav');
-let gameMusic = new Audio('assets/sounds/gamesound.mp3');
-let endMusic = new Audio('assets/sounds/police.wav');
-let correctMusic = new Audio('assets/sounds/correct.wav');
-let incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
-let victoryMusic = new Audio('assets/sounds/victorymusic.wav');
 
 /**
  * function when the page loads 
@@ -79,26 +72,6 @@ $(document).ready(function () {
         gameMusic.play();
     }
 
-    document.getElementById("soundTimer").addEventListener("click", function () {
-        console.log("stop the music");
-        timerSoundOn = sound;
-
-        timerSoundOn ? stopSound() : startSound();
-
-        function stopSound() {
-            sound = false;
-            $('#soundTimer').addClass('soundOff');
-            $('#soundTimer').removeClass('soundOn');
-            timerMusic.pause();
-        }
-
-        function startSound() {
-            sound = true;
-            $('#soundTimer').addClass('soundOn');
-            $('#soundTimer').removeClass('soundOff');
-            timerMusic.play();
-        }
-    });
 
 });
 /** 
@@ -107,7 +80,7 @@ $(document).ready(function () {
 stopMusic = () => {
     timerMusic.pause();
 
-}
+};
 
 /**
  * function to get question from API source
@@ -160,16 +133,13 @@ nextQuestion = () => {
  **/
 showQuestion = () => {
     if (answeredCorrect === totalQuestion) {
-        console.log(answeredCorrect === totalQuestion);
         stopMusic();
         endGame();
         return;
     }
     CurrentQuestionIndex++;
-    if (currentQuestion = availableQuestion[CurrentQuestionIndex]) {
-        question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><h2>${currentQuestion["question"]}</h2> `;
-
-    }
+    currentQuestion = availableQuestion[CurrentQuestionIndex];
+    question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><h2>${currentQuestion["question"]}</h2> `;
     console.log(currentQuestion);
 
     answerButtonsElement.forEach(choice => {
@@ -187,7 +157,7 @@ showQuestion = () => {
     acceptingAnswer = true;
     enableBtn();
     return;
-}
+};
 /**
  *Function on how to place the answer and show correct/incorrect choice from the API 
  **/
@@ -202,32 +172,32 @@ answerButtonsElement.forEach(answerButtons => {
         const finalAnswer = chosenAnswer.dataset["number"];
 
 
-        setStatusClass(document.body, finalAnswer)
+        setStatusClass(document.body, finalAnswer);
 
         function setStatusClass(htmlElement, finalAnswer) {
 
             if (finalAnswer == currentQuestion.answer) {
                 clearStatusClass(htmlElement);
-                // use the classList API to add classes
-                // the viewport is at least 900 pixels wide
+                // the viewport is at least 767 pixels wide
                 if (matchMedia("(max-width: 767px)").matches) {
-                     htmlElement.classList.add('correct');
-                   $('.correct').css("height", "100%");
+                    htmlElement.classList.add('correct');
+                    $('.correct').css("height", "100%");
                     chosenAnswer.classList.add('correctanswer');
                 } else {
-                htmlElement.classList.add('correct');
-                chosenAnswer.classList.add('correctanswer');
+                    htmlElement.classList.add('correct');
+                    chosenAnswer.classList.add('correctanswer');
                 }
                 plusWin();
                 correctMusic.play();
             } else {
+                // the viewport is at least 767 pixels wide
                 if (matchMedia("(max-width: 767px)").matches) {
                     htmlElement.classList.add('incorrect');
                     $('.incorrect').css("height", "100%");
                     chosenAnswer.classList.add('incorrectanswer');
                 } else {
-                htmlElement.classList.add('incorrect');
-                chosenAnswer.classList.add('incorrectanswer');
+                    htmlElement.classList.add('incorrect');
+                    chosenAnswer.classList.add('incorrectanswer');
                 }
                 incorrectMusic.play();
                 strikeOut();
@@ -236,7 +206,6 @@ answerButtonsElement.forEach(answerButtons => {
             return;
 
         }
-        // use the classList API to remove classes
         function clearStatusClass(htmlElement) {
             htmlElement.classList.remove('correct');
             htmlElement.classList.remove('incorrect');
@@ -248,13 +217,12 @@ answerButtonsElement.forEach(answerButtons => {
             chosenAnswer.classList.remove('correctanswer');
             chosenAnswer.classList.remove('incorrectanswer');
             if (matchMedia("(max-width: 767px)").matches) {
-                 $('body').css("height", "120vh");
+                $('body').css("height", "120vh");
             }
             nextQuestion();
             buttons.forEach(button => {
                 button.disabled = true;
             });
-            //animateTimer.classList.remove('animated', 'bounceOutLeft');
         }, 1000);
     });
 });
@@ -288,7 +256,6 @@ plusWin = () => {
  **/
 strikeOut = () => {
     answer++;
-    console.log(answer);
     if (answer >= totalWrongAnswer) {
         document.body.classList.remove('incorrect');
         endMusic.play();
@@ -302,7 +269,7 @@ strikeOut = () => {
     }
 
     answercount.innerHTML = `Strike <span class="info-strike">${answer}</span> out of <span class="info-strike">${totalWrongAnswer}</span>!`;
-}
+};
 
 /** 
  * Function for Timed Questions 
@@ -326,18 +293,15 @@ startTimer = () => {
                     buttons.forEach(button => {
                         button.disabled = true;
                     });
-                    //animateTimer.classList.remove('animated', 'bounceOutLeft');
                 }, 8000);
-                animateTimer.classList.add('animated', 'flip');
             }
         },
         1000);
 
     var stopInterval = function () {
-        console.log('time is up!');
         document.getElementById("countdown-timer").innerHTML = "time is up!";
-    }
-}
+    };
+};
 
 /**
  *  Function to show disabled/hide Buttons 
@@ -354,12 +318,12 @@ enableBtn = () => {
                 button.disabled = false;
             });
             clearInterval(buttonsTimer);
-            //startTimer();
+            startTimer();
         } else {
             clearTimeout(delay, 1000);
         }
     }, 1000);
-}
+};
 
 /** 
  * Function to print the name of the Player in the Gamepage
@@ -372,6 +336,26 @@ document.getElementById("nameModalexit").addEventListener("click", function () {
         gameMusic.pause();
         $('#nameModal').modal('hide');
         $('#gamepage').show();
+        document.getElementById("soundTimer").addEventListener("click", function () {
+            console.log("stop the music");
+            timerSoundOn = sound;
+
+            timerSoundOn ? stopSound() : startSound();
+
+            function stopSound() {
+                sound = false;
+                $('#soundTimer').addClass('soundOff');
+                $('#soundTimer').removeClass('soundOn');
+                timerMusic.pause();
+            }
+
+            function startSound() {
+                sound = true;
+                $('#soundTimer').addClass('soundOn');
+                $('#soundTimer').removeClass('soundOff');
+                timerMusic.play();
+            }
+        });
         setTimeout(() => {
             startGame();
         }, 2000);
@@ -389,8 +373,6 @@ document.getElementById("nameModalexit").addEventListener("click", function () {
  **/
 endGame = () => {
     victoryMusic.play();
-    console.log(playerName);
-    //answer++;
     if (CurrentQuestionIndex >= totalQuestion) {
         stopMusic();
         document.getElementById("playerWin").innerHTML = `Well done ${playerName}!`;
@@ -399,7 +381,7 @@ endGame = () => {
         saveTopScore();
     }
 
-}
+};
 
 /** 
  * Function to save top Score
@@ -408,29 +390,11 @@ saveTopScore = () => {
     const score = {
         name: playerName,
         money: currentPrize,
-    }
+    };
 
     topScores.push(score);
     topScores.sort((a, b) => b.score - a.score);
     topScores.splice(10);
 
     localStorage.setItem("topScores", JSON.stringify(topScores));
-}
-
-document.getElementById("richList").innerHTML = topName.map(score => {
-        return `<li>${score.name} - ${score.money}</li>`;
-    })
-    .join("");
-
-
-
-
-//------------------Player Name Modal-------------------
-
-/*window.onload = function () {
-    gameMusic.play();
-    document.getElementById('nameModal').style.display = "block";
-    document.getElementById('nameModal').style.background = "url(assets/images/blur3.png) no-repeat center center fixed";
-    document.getElementById('nameModal').style.backgroundSize = "cover";
-    document.getElementById('gamepage').style.display = "none";
-};*/
+};
