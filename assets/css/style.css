@@ -132,6 +132,24 @@ span {
 
 }
 
+/* Landing Page sound toggle*/
+
+.soundOn {
+    background-image: url('../images/audio.png');
+}
+
+.soundOff {
+    background-image: url('../images/noaudio.png');
+}
+
+#infoButton {
+    background-size: cover;
+    background-image: url('../images/info.png');
+    border: 0.1rem solid #C81912;
+}
+
+/* Landing Page modal info*/
+
 .map-container {
     overflow: hidden;
     padding-bottom: 72.25%;
@@ -153,19 +171,7 @@ span {
     padding: 9px 11px 9px 11px;
 }
 
-.soundOn {
-    background-image: url('../images/audio.png');
-}
-
-.soundOff {
-    background-image: url('../images/noaudio.png');
-}
-
-#infoButton {
-    background-size: cover;
-    background-image: url('../images/info.png');
-    border: 0.1rem solid #C81912;
-}
+/* Landing Page footer*/
 
 #footer-text {
     font-size: 1rem;
@@ -326,6 +332,8 @@ span {
     }
 }
 
+/* Game Page */
+
 #gamepage {
     background-image: url("../images/MH.jpg");
     background-repeat: no-repeat;
@@ -381,128 +389,6 @@ span {
     border: 1px solid red;
 }
 
-#codename {
-    text-align: center;
-    color: #050100;
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    -webkit-box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
-    -moz-box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
-    box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
-    background: radial-gradient(circle, rgba(254, 254, 254, 1) 28%, rgba(5, 1, 0, 1) 80%);
-}
-
-.codename img {
-    height: 3rem;
-}
-
-#question-box {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 1.7rem;
-    color: white;
-    background: linear-gradient(to right, #C81912, #050100);
-}
-
-.question-case {
-    text-align: center;
-    width: 50%;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
-}
-
-.answer-choice {
-    flex-wrap: nowrap;
-    margin: 0;
-}
-
-.button:active,
-button:active,
-.button:focus,
-button:focus,
-.button:hover,
-button:hover {
-    border: none !important;
-    outline: none !important;
-}
-
-.choice-box {
-    width: 100%;
-    justify-content: space-evenly;
-    margin: auto;
-}
-
-.choice-container {
-    display: flex;
-    margin-left: 20px;
-    margin-bottom: 1rem;
-    padding: 0;
-    width: 25rem;
-    text-align: center;
-    font-size: 1rem;
-    line-height: 0.5rem;
-    -webkit-border-radius: 300px;
-    -moz-border-radius: 300px;
-    border-radius: 300px;
-    background-color: #fefefe;
-}
-
-.choice-container:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
-}
-
-.choice-prefix {
-    padding: 1.5rem 1.5rem;
-    border-radius: 18.75rem;
-    background-color: #C81912;
-    color: #050100;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 0.5);
-    border: 0;
-    background: radial-gradient(circle, rgba(200, 25, 18, 1) 44%, rgba(5, 1, 0, 1) 100%);
-}
-
-.choice-text {
-    text-align: left;
-    padding: 0.5rem 1rem;
-    line-height: 1rem;
-    width: 100%;
-    background-color: transparent;
-    border-top-right-radius: 0.825rem;
-    border-bottom-right-radius: 0.825rem;
-    border: 0;
-}
-
-button:disabled,
-button[disabled] {
-    cursor: not-allowed;
-    opacity: 0.3;
-    color: red;
-}
-
-.correct {
-    border: 20mm ridge green;
-    height: 100vh;
-
-}
-
-.correctanswer {
-    background-color: green;
-    border-radius: 0 300px 300px 0;
-}
-
-.incorrect {
-    border: 20mm ridge red;
-    height: 100vh;
-}
-
-.incorrectanswer {
-    background-color: red;
-    border-radius: 0 300px 300px 0;
-}
-
-
 /* Prize */
 
 #prize {
@@ -529,7 +415,7 @@ button[disabled] {
     z-index: -1;
 }
 
-/* INFO */
+/* 3 Info display */
 
 .info-box {
     justify-content: center;
@@ -613,6 +499,132 @@ button[disabled] {
     animation: fa-spin 2s linear infinite;
 }
 
+
+/* Game Page player name*/
+
+#codename {
+    text-align: center;
+    color: #050100;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    -webkit-box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
+    -moz-box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
+    box-shadow: 0px -7px 33px 0px rgba(200, 25, 18, 1);
+    background: radial-gradient(circle, rgba(254, 254, 254, 1) 28%, rgba(5, 1, 0, 1) 80%);
+}
+
+.codename img {
+    height: 3rem;
+}
+
+/* Game Page question*/
+
+#question-box {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.7rem;
+    color: white;
+    background: linear-gradient(to right, #C81912, #050100);
+}
+
+.question-case {
+    text-align: center;
+    width: 50%;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(254, 254, 254, 1);
+}
+
+/* Game Page answers*/
+
+.button:active,
+button:active,
+.button:focus,
+button:focus,
+.button:hover,
+button:hover {
+    border: none !important;
+    outline: none !important;
+}
+
+.choice-box {
+    width: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.choice-container {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 1rem;
+    padding: 0;
+    width: 25rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 0.5rem;
+    -webkit-border-radius: 300px;
+    -moz-border-radius: 300px;
+    border-radius: 300px;
+    background-color: #fefefe;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
+
+.choice-prefix {
+    padding: 1.5rem 1.5rem;
+    border-radius: 18.75rem;
+    background-color: #C81912;
+    color: #050100;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(248, 157, 19, 0.5);
+    border: 0;
+    background: radial-gradient(circle, rgba(200, 25, 18, 1) 44%, rgba(5, 1, 0, 1) 100%);
+}
+
+.choice-text {
+    text-align: left;
+    padding: 0.5rem 1rem;
+    line-height: 1rem;
+    width: 100%;
+    background-color: transparent;
+    border-top-right-radius: 0.825rem;
+    border-bottom-right-radius: 0.825rem;
+    border: 0;
+}
+
+button:disabled,
+button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
+    color: red;
+}
+
+/* Game Page answers colors*/
+
+.correct {
+    border: 20mm ridge green;
+    height: 100vh;
+
+}
+
+.correctanswer {
+    background-color: green;
+    border-radius: 0 300px 300px 0;
+}
+
+.incorrect {
+    border: 20mm ridge red;
+    height: 100vh;
+}
+
+.incorrectanswer {
+    background-color: red;
+    border-radius: 0 300px 300px 0;
+}
+
+
 .options-btn {
 
     margin: auto;
@@ -628,7 +640,7 @@ button[disabled] {
 
 }
 
-/* Modal */
+/* Modals */
 
 #topscoreModal {
     background: url("../images/topscore.jpg") no-repeat center center fixed;
