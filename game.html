@@ -5,25 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
-    <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/all-animation.css">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/all-animation.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Quiz</title>
 </head>
 
 <body>
-    <!-- -------------------------- Name Modal --------------------------  -->
+    <!-- Name Modal  -->
 
-    <div id="nameModal" class="p-0 modal hide fade" tabindex="-1" role="dialog"
-        aria-labelledby="nameModalTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div id="nameModal" class="p-0 modal hide fade" tabindex="-1" role="dialog" aria-labelledby="nameModal"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="modal-header d-flex justify-content-center">
@@ -44,13 +43,13 @@
                         <div class="modal-codename mb-4">
                             <p><strong>Professor: Importante! I need to hide your identity to start the
                                     game!</strong></p>
-                            <img src="assets/images/codename2.png" class="img-fluid" alt="">
+                            <img src="assets/images/codename2.png" class="img-fluid" alt="robber mask">
                             <p>Code Name: <input type="text" id="myText" class="myName" placeholder="codename"></p>
                             <p class="mt-2" id="noName"></p>
                         </div>
                         <div class="modal-info row mb-4">
                             <div class="col-6">
-                                <img src="assets/images/professor.jpg" class="img-fluid" alt="">
+                                <img src="assets/images/professor.jpg" class="img-fluid" alt="professor">
                             </div>
                             <div class="modal-qoute-box col-6">
                                 <p class="modal-qoute">“In this world, everything is governed by balance. There’s what
@@ -61,13 +60,13 @@
                         </div>
                     </div>
                     <a id="nameModalexit" class="modal-btn">PLAY</a>
-                    <a type="button" href="index.html" class="modal-btn-exit">Exit</a>
+                    <a href="index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- -------------------------- Game Page --------------------------  -->
+    <!-- Game Page  -->
 
     <div id="gamepage">
         <div class="container">
@@ -80,18 +79,10 @@
             <div id="info" class="justify-center flex-column">
                 <div class="row info-box">
                     <p id="prize" class="info-prize animated infinite swing">
-                        <img src="assets/images/euro.png"></img>
+                        <img src="assets/images/euro.png" alt="moneybag"/>
                         YOUR BANK MONEY €0
-                        <!--  <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a
-                                href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
                     </p>
                     <button type="button" class="sound soundOn" id="soundTimer"></button>
-                    <!-- <div>
-                        <button id="button_play" class="first" type="button">
-                            <i class="glyphicon glyphicon-volume-up"></i></button>
-                        <button id="button_pause" class="second" type="button">
-                            <i class="glyphicon glyphicon-volume-off"></i></button>
-                    </div> -->
                     <div class="two-info">
                         <p id="countdown-timer" class="info-timer animated infinte heartBeat"><span>
                                 <i class="fas fa-hourglass-half fa-spin"></i></span> Timer:
@@ -107,10 +98,11 @@
                 <p id="codename" class="codename justify-center"></p>
             </div>
             <div id="game" class="justify-center flex-column">
-                <div id="question-box" class="question-case"><h2>GET READY!</h2></div>
+                <div id="question-box" class="question-case">
+                    <h2>GET READY!</h2>
+                </div>
                 <div id="answers-buttons" class="btn-grid">
                 </div>
-                <!-- <div id="button"> -->
                 <div class="row choice-box">
                     <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">A</p>
@@ -120,7 +112,6 @@
 
                     <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">B</p>
-                        <!-- <p class="choice-text" data-number="2">choice 2 </p> -->
                         <button type="button" class="btnchoice choice-text shadow-none" data-number="2" disabled>choice
                             2</button>
                     </div>
@@ -128,18 +119,15 @@
                 <div class="row choice-box">
                     <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">C</p>
-                        <!-- <p class="choice-text" data-number="3">choice 3</p> -->
                         <button type="button" class="btnchoice choice-text shadow-none" data-number="3" disabled>choice
                             3</button>
                     </div>
                     <div class="col-xs-6 col-md-5 choice-container shake-little">
                         <p class="choice-prefix">D</p>
-                        <!-- <p class="choice-text" data-number="4">choice 4</p> -->
                         <button type="button" class="btnchoice choice-text shadow-none" data-number="4" disabled>choice
                             4</button>
                     </div>
                 </div>
-                <!-- </div> -->
                 <div class="row col-sm-12 mt-2">
                     <a class="options-btn" href="index.html">Restart</a>
                 </div>
@@ -147,10 +135,10 @@
         </div>
     </div>
 
-    <!-- -------------------------- Game Over Modal --------------------------  -->
+    <!-- Game Over Modal  -->
 
-    <div id="gameOverModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="gameOverModalTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div id="gameOverModal" class="modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="gameOverModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="modal-header d-flex justify-content-center">
@@ -173,21 +161,22 @@
                             </div>
                             <div class="modal-qoute-box col-6">
                                 <p class="modal-qoute">“Weakness is not in us, it is in what we have outside.”</p>
-                                <p class="modal-qoute">“All the decisions we made in the past leads us inexorably into the future.”</p>
+                                <p class="modal-qoute">“All the decisions we made in the past leads us inexorably into
+                                    the future.”</p>
                             </div>
                         </div>
                     </div>
-                    <a id="nameModalexit" href="game.html" class="modal-btn" role="button">PLAY AGAIN</a>
-                    <a type="button" href="index.html" class="modal-btn-exit">Exit</a>
+                    <a href="game.html" class="modal-btn" role="button">PLAY AGAIN</a>
+                    <a href="index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- -------------------------- Win Modal --------------------------  -->
+    <!-- Win Modal  -->
 
-    <div id="winModal" class="modal hide fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="winModalTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div id="winModal" class="modal hide fade" tabindex="-1" role="dialog"
+        aria-labelledby="winModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
                 <div class="modal-header d-flex justify-content-center">
@@ -208,21 +197,19 @@
                         </div>
                         <div class="modal-info row mb-4">
                             <div class="col-6">
-                                <img src="assets/images/victory.jpg" class="img-fluid" alt="">
+                                <img src="assets/images/victory.jpg" class="img-fluid" alt="victory">
                             </div>
                             <div class="modal-qoute-box col-6">
-                                <p class="modal-qoute">“Dear, in the end, love is what makes us see life in another color, and lately, you have only seen everything black.”</p>
+                                <p class="modal-qoute">“Dear, in the end, love is what makes us see life in another
+                                    color, and lately, you have only seen everything black.”</p>
                             </div>
                         </div>
                     </div>
-                    <a type="button" href="index.html" class="modal-btn-exit">Exit</a>
+                    <a href="index.html" class="modal-btn-exit">Exit</a>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

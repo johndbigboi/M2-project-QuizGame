@@ -51,7 +51,7 @@
 
     <!-- Tutorial Modal  -->
 
-    <div id="tutorialModal" class="p-0 modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tutorialTitle"
+    <div id="tutorialModal" class="p-0 modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tutorialModal"
         aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content text-center">
@@ -73,10 +73,10 @@
                         <div class="modal-tutorial modal-info  mb-4">
                             <p><strong>GAME RULES</strong></p>
                             <br>
-                            <img src="assets/images/tutorial.jpg" class="img-fluid" alt="">
+                            <img src="assets/images/tutorial.jpg" class="img-fluid" alt="tutorial">
                         </div>
                     </div>
-                    <a id="tutorialModalexit" class="modal-btn-topscore-exit" href="index.html" role="button">Exit</a>
+                    <a class="modal-btn-topscore-exit" href="index.html" role="button">Exit</a>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
 
     <!-- Top Score Modal  -->
 
-    <div id="topscoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle"
+    <div id="topscoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="topscoreModal"
         aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content text-center">
@@ -107,7 +107,7 @@
 
     <!-- info Modal  -->
 
-    <div id="infoModal" class="p-0 modal hide fade" tabindex="-1" role="dialog" aria-labelledby="infoModalTitle"
+    <div id="infoModal" class="p-0 modal hide fade" tabindex="-1" role="dialog" aria-labelledby="infoModal"
         aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content text-center">
@@ -126,7 +126,7 @@
                 </div>
                 <div class="modal-body mb-0 p-0">
                     <div class="container-fluid">
-                        <section class="section pb-1">
+                        <div class="interested pb-1">
                             <p class="section-heading pt-4">Enjoyed the Game? Interested?</p>
                             <p class="section-description pb-4">Have a question? Feel free to drop a line below!</p>
                             <div class="row">
@@ -143,15 +143,15 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <i class="far fa-envelope"></i>
-                                                    <label for="form-email">Email </label>
+                                                    <label for="form-email">Email</label>
                                                     <input type="text" class="form-control" id="form-email"
                                                         placeholder="Email@address.com">
                                                 </div>
                                             </form>
                                             <div class="form-group">
-                                                <i class="far fa-edit"> </i>
+                                                <i class="far fa-edit"></i>
                                                 <label for="form-message">Message</label>
-                                                <textarea id="form-text" class="form-control" rows="3"
+                                                <textarea id="form-message" class="form-control" rows="3"
                                                     placeholder="Questions/Comments"></textarea>
                                             </div>
 
@@ -166,7 +166,7 @@
                                         <div class="card-header bg-danger">OUR OFFICE</div>
                                         <!--Google map-->
                                         <div class="map map-container">
-                                            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL6wn6oAOZ0gRoHExl6nHAAo&key=AIzaSyB1BJT_hZVJPVQJye0UQmH0vtQ4-SA0DlM" frameborder="0"
+                                            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL6wn6oAOZ0gRoHExl6nHAAo&key=AIzaSyB1BJT_hZVJPVQJye0UQmH0vtQ4-SA0DlM"
                                                 allowfullscreen></iframe>
                                         </div>
                                         <div class="row border-dark  text-dark text-center m-1">
@@ -183,9 +183,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </section>
+                        </div>
                     </div>
-                    <a id="tutorialModalexit" class="modal-btn-topscore-exit m-3" href="index.html"
+                    <a class="modal-btn-topscore-exit m-3" href="index.html"
                         role="button">Exit</a>
                 </div>
             </div>
@@ -199,5 +199,4 @@
     <script type="text/javascript" src="assets/js/game.js"></script>
     <script type="text/javascript" src="assets/js/index.js"></script>
 </body>
-
 </html>
