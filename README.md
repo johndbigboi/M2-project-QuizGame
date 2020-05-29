@@ -265,6 +265,7 @@ All the errors do not affect in any way the user's game experience.
 
 ## Credits: 
 
+* I used [Stack Overflow](https://stackoverflow.com/) for guides in developing my own codes.
 * I received inspiration for this project from [James Q Quick](https://www.youtube.com/channel/UC-T8W79DN6PBnzomelvqJYw/featured) build a quiz app
 * Image for README.md multi device layouts taken from [techsini](https://techsini.com/multi-mockup/index.php)
 * Image editor online [pixlr](https://pixlr.com/) and [imgonline](https://www.imgonline.com.ua/)
