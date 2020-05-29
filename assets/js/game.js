@@ -5,6 +5,7 @@ const prizeText = document.querySelector('#prize');
 const answercount = document.querySelector("#answercount");
 const buttons = document.querySelectorAll('.btnchoice');
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
+const topScores = JSON.parse(localStorage.getItem("topScores")) || [];
 const timerMusic = new Audio('assets/sounds/suspense.wav');
 const endMusic = new Audio('assets/sounds/police.wav');
 const correctMusic = new Audio('assets/sounds/correct.wav');
@@ -120,7 +121,7 @@ showQuestion = () => {
     CurrentQuestionIndex++;
     currentQuestion = availableQuestion[CurrentQuestionIndex];
     question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><h2>${currentQuestion["question"]}</h2> `;
-
+    console.log(currentQuestion);
     answerButtonsElement.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerHTML = currentQuestion["choice" + number];
