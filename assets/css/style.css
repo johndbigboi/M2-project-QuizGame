@@ -605,7 +605,7 @@ button[disabled] {
 /* Game Page answers colors*/
 
 .correct {
-    border: 20mm ridge green;
+    border: 10mm ridge green;
     height: 100vh;
 
 }
@@ -616,7 +616,7 @@ button[disabled] {
 }
 
 .incorrect {
-    border: 20mm ridge red;
+    border: 10mm ridge red;
     height: 100vh;
 }
 
