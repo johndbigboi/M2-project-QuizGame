@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 const topName = JSON.parse(localStorage.getItem("topScores")) || [];
 const gameMusic = new Audio('assets/sounds/gamesound.mp3');
+let sounds = true;
 
 
 document.getElementById("topScoreButton").addEventListener("click", function () {
@@ -34,4 +35,26 @@ function dontShow() {
         gameMusic.play();
 
     }); 
+
+    /**
+     * button toggle when click music on/off
+     **/
+    $('#soundButton').click(() => {
+        let soundOn = sounds;
+        soundOn ? stopGameMusic() : startGameMusic();
+    });
+
+    function stopGameMusic() {
+        sounds = false;
+        $('#soundButton').addClass('soundOff');
+        $('#soundButton').removeClass('soundOn');
+         gameMusic.pause();
+    }
+
+    function startGameMusic() {
+        sounds = true;
+        $('#soundButton').addClass('soundOn');
+        $('#soundButton').removeClass('soundOff');
+         gameMusic.play();
+    }
 });
