@@ -6,11 +6,12 @@ const answercount = document.querySelector("#answercount");
 const buttons = document.querySelectorAll('.btnchoice');
 const answerButtonsElement = Array.from(document.getElementsByClassName("choice-text"));
 const timerMusic = new Audio('assets/sounds/suspense.wav');
-const gameMusic = new Audio('assets/sounds/gamesound.mp3');
 const endMusic = new Audio('assets/sounds/police.wav');
 const correctMusic = new Audio('assets/sounds/correct.wav');
 const incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
 const victoryMusic = new Audio('assets/sounds/victorymusic.wav');
+const modalMusic = new Audio('assets/sounds/gamesound.mp3');
+
 const jackPot = 9;
 const totalQuestion = 10;
 const totalWrongAnswer = 3;
@@ -46,8 +47,11 @@ const Prize = [
  * function when the page loads 
  **/
 $(document).ready(function () {
-    gameMusic.play();
+   
     $('#nameModal').modal('show');
+    $("#nameModal").on("shown.bs.modal", function () {
+        modalMusic.play();
+    });
     $('#gamepage').hide();
 
     /**
@@ -62,14 +66,14 @@ $(document).ready(function () {
         sound = false;
         $('#soundButton').addClass('soundOff');
         $('#soundButton').removeClass('soundOn');
-        gameMusic.pause();
+        modalMusic.pause();
     }
 
     function startGameMusic() {
         sound = true;
         $('#soundButton').addClass('soundOn');
         $('#soundButton').removeClass('soundOff');
-        gameMusic.play();
+        modalMusic.play();
     }
 
 
@@ -79,7 +83,6 @@ $(document).ready(function () {
  **/
 stopMusic = () => {
     timerMusic.pause();
-
 };
 
 /**
@@ -132,6 +135,7 @@ nextQuestion = () => {
  *Function on how to load the next question from the API Array 
  **/
 showQuestion = () => {
+
     if (answeredCorrect === totalQuestion) {
         stopMusic();
         endGame();
@@ -150,10 +154,12 @@ showQuestion = () => {
     });
 
     if (sound === false) {
+        
         timerMusic.pause();
     } else {
+        timerMusic.src = timerMusic.src;
         timerMusic.play();
-    }
+    }  
     acceptingAnswer = true;
     enableBtn();
     return;
@@ -333,7 +339,7 @@ document.getElementById("nameModalexit").addEventListener("click", function () {
     if (playerName.length === 0) {
         document.getElementById("noName").innerHTML = `<div style="border: 0.1rem solid #C81912; background: white;">Por favor! Tu nombre / Please! enter your codename</div>`;
     } else {
-        gameMusic.pause();
+        modalMusic.pause();
         $('#nameModal').modal('hide');
         $('#gamepage').show();
         document.getElementById("soundTimer").addEventListener("click", function () {
