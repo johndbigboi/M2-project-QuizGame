@@ -53,29 +53,6 @@ $(document).ready(function () {
     });
     $('#gamepage').hide();
 
-    /**
-     * button toggle when click music on/off
-     **/
-    $('#soundButton').click(() => {
-        let soundOn = sound;
-        soundOn ? stopGameMusic() : startGameMusic();
-    });
-
-    function stopGameMusic() {
-        sound = false;
-        $('#soundButton').addClass('soundOff');
-        $('#soundButton').removeClass('soundOn');
-        modalMusic.pause();
-    }
-
-    function startGameMusic() {
-        sound = true;
-        $('#soundButton').addClass('soundOn');
-        $('#soundButton').removeClass('soundOff');
-        modalMusic.play();
-    }
-
-
 });
 /** 
  * Function on how to stop the music 
