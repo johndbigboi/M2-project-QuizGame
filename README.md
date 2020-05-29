@@ -257,13 +257,12 @@ Money Heist Quiz Game was developed in Visual Studio Code, while git and GitHub 
    
 ## Bugs:
 
-When the browser first load the page an error message is logged to the console stating (in Promise) that the play() failed in load request. The user needs to interact with the page first for the autoplay function triggers and the sound will play. 
+In todays browsers, When the browser first load the page an error message is logged to the console stating (in Promise) that the play() failed in load request. The user needs to interact with the page first for the autoplay function triggers and the sound will play. 
+* I develop a modal to interact first on window page load. Then on closing the modal, The game music will play without errors in the console.
 
 Error messages are logged to the console when the game start for the high scores function.
 
-TopScore saving function for Topscore button on the landing page are disable on mobile phones and tablets as the function
-
-Mobile phones and Tablets access to Topscore list are disabled as the program uses local storage of a browser. When the game played in the said devices it doesn't use/access a browsers local storage to save scores. 
+Mobile phones and Tablets access to Topscore list on the landing page are disabled as the program uses local storage of a browser. When the game played in the said devices it doesn't use/access a browsers local storage to save scores. 
 
 All the errors does not affect in any way the user experience game play.
 
