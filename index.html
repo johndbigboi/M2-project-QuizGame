@@ -17,7 +17,36 @@
 </head>
 
 <body>
+
+    <!-- sound advisory -->
+
+    <div class="modal fade hidden-md-down" id="start-info-modal" data-backdrop="true">
+        <div class="modal-dialog modal-dialog-centered hidden-md-down" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header justify-content-center">
+                    <h4 class="modal-title">Gaming Experience</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <img src="assets/images/audiomodal.jpg" class="img-fluid" alt="speaker">
+                        <div class="row text-center">
+                            <div class="col-md-7 m-3">
+                                <p>Click or Tap the speaker icon to turn on/off the Sound</p>
+                            </div>
+                            <div class="col-md-3 m-3">
+                                <img src="assets/images/audio.png" class="img-fluid" alt="speaker icon">
+                            </div>
+                        </div>
+                    </div>
+                    <a id="soundIconModal" class="modal-btn-topscore-exit" href="index.html" type="checkbox"
+                        data-dismiss="modal">Exit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Start Page -->
+
     <div id="landing-page">
         <div class="container">
             <div id="landing-page-menu" class="flex-center flex-column">
@@ -42,6 +71,7 @@
                             data-target="#infoModal"></button>
                     </div>
                 </div>
+                <audio id="gameSoundPlay" src="assets/sounds/gamesound.mp3" muted></audio>
             </div>
             <footer class="fixed-bottom">
                 <div id="footer-text">FOR EDUCATIONAL PURPOSE ONLY © JOHNDBIGBOI 2020</div>
@@ -62,7 +92,8 @@
                 </div>
                 <div class="modal-header d-flex justify-content-center">
                     <div class="modal-tutorial">
-                        <p><strong> Answer 10 questions succesfully to achieve the greatest heist of all time worth €2.4
+                        <p><strong> Answer 10 questions succesfully to achieve the greatest heist of all time worth
+                                €2.4
                                 billion.
                             </strong>
                         </p>
@@ -118,7 +149,8 @@
                 </div>
                 <div class="modal-header d-flex justify-content-center">
                     <div class="modal-tutorial">
-                        <p><strong> I develop this game for the fulfillment of my 2nd Milestone project using HTML, Css
+                        <p><strong> I develop this game for the fulfillment of my 2nd Milestone project using HTML,
+                                Css
                                 And Javascript under Code Institute.
                             </strong>
                         </p>
@@ -166,14 +198,15 @@
                                         <div class="card-header bg-danger">OUR OFFICE</div>
                                         <!--Google map-->
                                         <div class="map map-container">
-                                            <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL6wn6oAOZ0gRoHExl6nHAAo&key=AIzaSyB1BJT_hZVJPVQJye0UQmH0vtQ4-SA0DlM"
+                                            <iframe
+                                                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJL6wn6oAOZ0gRoHExl6nHAAo&key=AIzaSyB1BJT_hZVJPVQJye0UQmH0vtQ4-SA0DlM"
                                                 allowfullscreen></iframe>
                                         </div>
                                         <div class="row border-dark  text-dark text-center m-1">
                                             <div class="col-sm-6">
-                                            <i class="fas fa-map-marker-alt"> Dublin, Ireland</i>
-                                            <i class="fas fa-calendar-alt"> Mon - Fri</i>
-                                                
+                                                <i class="fas fa-map-marker-alt"> Dublin, Ireland</i>
+                                                <i class="fas fa-calendar-alt"> Mon - Fri</i>
+
                                             </div>
                                             <div class="col-sm-6">
                                                 <i class="fas fa-phone-square-alt">: + 353 86 373 08</i>
@@ -185,8 +218,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="modal-btn-topscore-exit m-3" href="index.html"
-                        role="button">Exit</a>
+                    <a class="modal-btn-topscore-exit m-3" href="index.html" role="button">Exit</a>
                 </div>
             </div>
         </div>
@@ -199,4 +231,5 @@
     <script type="text/javascript" src="assets/js/game.js"></script>
     <script type="text/javascript" src="assets/js/index.js"></script>
 </body>
+
 </html>
