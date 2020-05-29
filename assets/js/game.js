@@ -11,7 +11,6 @@ const correctMusic = new Audio('assets/sounds/correct.wav');
 const incorrectMusic = new Audio('assets/sounds/incorrect.mp3');
 const victoryMusic = new Audio('assets/sounds/victorymusic.wav');
 const modalMusic = new Audio('assets/sounds/gamesound.mp3');
-
 const jackPot = 9;
 const totalQuestion = 10;
 const totalWrongAnswer = 3;
@@ -144,17 +143,13 @@ showQuestion = () => {
     CurrentQuestionIndex++;
     currentQuestion = availableQuestion[CurrentQuestionIndex];
     question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><h2>${currentQuestion["question"]}</h2> `;
-    console.log(currentQuestion);
 
     answerButtonsElement.forEach(choice => {
-
         const number = choice.dataset["number"];
         choice.innerHTML = currentQuestion["choice" + number];
-
     });
 
-    if (sound === false) {
-        
+    if (sound === false) {       
         timerMusic.pause();
     } else {
         timerMusic.src = timerMusic.src;
@@ -176,7 +171,6 @@ answerButtonsElement.forEach(answerButtons => {
         acceptingAnswer = false;
         const chosenAnswer = e.target;
         const finalAnswer = chosenAnswer.dataset["number"];
-
 
         setStatusClass(document.body, finalAnswer);
 
@@ -207,11 +201,10 @@ answerButtonsElement.forEach(answerButtons => {
                 }
                 incorrectMusic.play();
                 strikeOut();
-
             }
             return;
-
         }
+
         function clearStatusClass(htmlElement) {
             htmlElement.classList.remove('correct');
             htmlElement.classList.remove('incorrect');
@@ -247,8 +240,7 @@ plusWin = () => {
     <p class="info-prize-jackpot">THE LAST QUESTION!</p>`;
     } else {
         prizeText.innerHTML =
-            `
-         Money Heist! ${currentPrize}<n/>
+        `Money Heist! ${currentPrize}<n/>
         <br>
         <p> <span class="info-prize-correct">
         ${answeredCorrect}</span>
@@ -281,10 +273,8 @@ strikeOut = () => {
  * Function for Timed Questions 
  **/
 startTimer = () => {
-
     var count = 15;
     timer = setInterval(function () {
-            console.log(count);
             const hourGlass = document.getElementById("countdown-timer");
             hourGlass.innerHTML = `<span><i class="fas fa-hourglass-half"></i></span>Timer : ${count}`;
             count--;
@@ -315,7 +305,6 @@ startTimer = () => {
 enableBtn = () => {
     var delay = 5;
     var buttonsTimer = setInterval(() => {
-        console.log(delay);
         delay--;
         document.getElementById("countdown-timer").innerHTML = "GOODLUCK!";
         clearInterval(timer);
@@ -343,7 +332,6 @@ document.getElementById("nameModalexit").addEventListener("click", function () {
         $('#nameModal').modal('hide');
         $('#gamepage').show();
         document.getElementById("soundTimer").addEventListener("click", function () {
-            console.log("stop the music");
             timerSoundOn = sound;
 
             timerSoundOn ? stopSound() : startSound();
@@ -386,7 +374,6 @@ endGame = () => {
         $('#gamepage').hide();
         saveTopScore();
     }
-
 };
 
 /** 
