@@ -121,7 +121,7 @@ showQuestion = () => {
     CurrentQuestionIndex++;
     currentQuestion = availableQuestion[CurrentQuestionIndex];
     question.innerHTML = `<h2>Question : ${CurrentQuestionIndex}</h2><h2>${currentQuestion["question"]}</h2> `;
-    console.log(currentQuestion);
+    
     answerButtonsElement.forEach(choice => {
         const number = choice.dataset["number"];
         choice.innerHTML = currentQuestion["choice" + number];
