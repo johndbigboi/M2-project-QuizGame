@@ -56,6 +56,7 @@ p {
 /* Landing Page */
 
 #landing-page,
+#start-info-modal,
 #tutorialModal,
 #infoModal {
     background: url("../images/bldg.jpg") no-repeat center center fixed;
@@ -642,6 +643,7 @@ button[disabled] {
 
 /* Modals */
 
+
 #topscoreModal {
     background: url("../images/topscore.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -787,6 +789,10 @@ a:hover {
 
 /* small/meduim devices (phones, 767px and down) */
 @media only screen and (min-width: 200px) and (max-width: 767px) {
+
+    #start-info-modal{
+        display:none;
+    }
 
     #landing-page {
         overflow: auto;
