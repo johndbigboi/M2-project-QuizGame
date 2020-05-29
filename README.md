@@ -1,15 +1,15 @@
 
 # Money Heist QuizGame:
 
-[The live site can be viewed here](https://johndbigboi.github.io/QuizGame/index.html)
+[The live site can be viewed here](https://johndbigboi.github.io/MoneyHeist-QuizGame/index.html)
 
 ![Mutli Device Screenshot](https://github.com/johndbigboi/MoneyHeist-QuizGame/blob/master/wireframes/multidevice.png)
 
-Money Heist quiz game is an interactive game i created using HTML, CSS and JavaScript. For the requirement of Interactive Frontend Development Milestone Project.
+Money Heist quiz game is an interactive game I created using HTML, CSS and JavaScript as the Interactive Frontend Development Milestone Project.
 
-The Money Heist quiz game concept and design was based on the popular tv show Money Heist. this game was build for educational purposes only.
+The Money Heist quiz game concept and design was based on the popular tv show Money Heist. This game was build for educational purposes only.
 
-Thank you for visiting my Github page and playing my project I hope you enjoy reading about the project below. Please feel free to contact me for any questions and suggestions. You can message me thru my Github page. Have a nice day and enjoy playing my Money Heist quiz game. 
+Thank you for visiting my Github page and playing my game. I hope you enjoy reading about the project below. Please feel free to contact me for any questions and suggestions. You can message me through my Github page. Have a nice day and enjoy playing my Money Heist quiz game. 
 
 ## Contents:
 
@@ -47,19 +47,19 @@ Thank you for visiting my Github page and playing my project I hope you enjoy re
 
 ### Project Goals:
 
-The goal of this project is from the concept of the tv show Money Heist giving the user an interactive, challenging and suspense feel of a quiz game. The project is aimed towards the general knowledge questions suitable for all ages. The game needs to be visually close to the design of the show to encourage the user more interaction generating interest for continued use of the game whilst also providing a good User Experience.
+The goal of this project, from the concept of the tv show Money Heist, is to give the user an interactive, challenging and suspenseful quiz game. The project is based on general knowledge questions, suitable for all ages. The game needs to be visually close to the design of the show to encourage more user interaction, generating interest for continued use of the game, whilst also providing a good user experience.
 
-The main goal of making the project <strong>Quiz Game</strong> is to be build by using HTML, CSS, JavaScript and to use API for external files for the gameplay.
+The main goal of making the project <strong>Money Heist Quiz Game</strong> is to be developed by using HTML, CSS, JavaScript and to use API for external files for the gameplay.
 
 #### Target Audience Goals:
 
-The game aims to be played by all aged group.
+The game aims to be played by all age groups.
 
 #### User Goals:
 
 * The goal of making this project is for the users to have fun playing the game and at the same time educating
     the users from the informative questions. 
-* Feel the suspense of the show thru a quiz game.
+* Feel the suspense of the show through a quiz game.
 * Send a message via contact form.
 * Map for the developer address.
 * Interact with the website on both desktop tablet or mobile.
@@ -67,36 +67,36 @@ The game aims to be played by all aged group.
 
 #### User Stories:
 
-##### Mr Browne: 
+##### Mr. Browne: 
 * <em>"As a user and fan of the show, I want to feel the story and suspense of the show in a game."</em>
 
-##### Mr Hildebrandt: 
+##### Mr. Hildebrandt: 
 * <em>"As user and experienced gamer, I want a continuous challenge on every level of the game."</em>
 
-##### Mr Michael: 
+##### Ms. Bryant: 
 * <em>"As a user, I want a game which is informative and applicable to daily lives."</em>
 
-##### Mr James: 
+##### Mr. James: 
 * <em>"As a user, I'm always on the go using mobile to desktop, I want the game to display correctly on any screen size."</em>
 
 #### Site Owner Goals:
 
-I made this project during the COVID-19 pandemic lockdown. People where encourage for social distancing and stay at home policy. During this time the only way for people to interact away from their family and friends are thru video calls and for fun interaction is thru the form of table quizzes on video calls. 
+I made this project during the COVID-19 pandemic lockdown. People were encouraged to social distance and there was a stay at home policy. During this time the only way for people to interact with their family and friends was through video calls and for fun interactions many people held table quizzes on video calls. 
 
-* Make the game play concept adjacent to the tv show Money Heist.
-* Ensuring the user interest challenging within the game flow.
-* add more functionality and features for future expansion of the game.
-* Make the quiz game progress in to more themes.
+* Make the game concept similar to the tv show Money Heist.
+* Ensure the user interest was challenge within the game flow.
+* Add more functionality and features for future expansion of the game.
+* Enable the quiz game format to progress onto different themes.
 
 ## User Requirements and Expectations:
 
 #### Requirements:
 
-*  A smooth gameplay easy to play by all age group.
-*  A visually striking Game design.
+*  A smooth gameplay easy to play by all age groups.
+*  A visually striking game design.
 *  Information on how the game works.
 *  User friendly UI.
-*  Content displayed the progress of the game.
+*  Content displayed shows the progress through the game.
 *  Quiz Api for challenging questions.
 
 ##### Expectations:
@@ -163,7 +163,7 @@ I used [this](https://coolors.co/fefefe-b61739-f89d13-050100) colour palette fro
 
 ## Wireframes:
 
-The development of the game was modeled based from the user stories and theme of the Money Heist Tv show.
+The development of the game was modelled on the user stories and theme of the Money Heist Tv show.
 All wireframes were designed and produced using [Balsamiq Mockups 3](https://balsamiq.com/). link to my [Wireframes](https://github.com/johndbigboi/MoneyHeist-QuizGame/blob/master/wireframes/moneyheist-quizgame.png).
 
 
@@ -192,23 +192,23 @@ All wireframes were designed and produced using [Balsamiq Mockups 3](https://bal
 
 ## Testing:
 
-As i develop this project game using JavaScript and API, I tested every line of the codes and making sure the codes was functioning properly, looking for errors and adjusting until the code ran without any issues. This process allowed me to learn more in depth on how to work codes with JavaScript and API. Halfway thru the development of my game, I was informed about a modern way of requesting data from an API by using JavaScript fetch API function and ECMAScript 6/ES6, As i still using the old method of XHR http request. Resulting i need to redo some of my codes and made a lot of testing and adjustment to make sure the game works properly.  
+As I developed this project game using JavaScript and API, I tested every line of the codes and made sure the codes were functioning properly, looking for errors and adjusting until the code ran without any issues. This process allowed me to learn more in depth on how to work codes with JavaScript and API. Halfway through the development of my game, I was informed about a modern way of requesting data from an API by using JavaScript fetch API function and ECMAScript 6/ES6, as I was still using the old method of XHR http request. This resulted in me needing to redo some of my codes and I did a lot of testing and made adjustments to make sure the game worked properly.  
 
 #### Manual testing:
 
-* The game play functionality was tested manually multiple times on different scenerios.
+* The game play functionality was tested manually multiple times on different scenarios.
 
     * Start of the game to input Name And open modals
         - The game required a codename to start the game. changing from windows.onload to jQuery was tested for glitches or attempt override by the player. 
         - Modals open and close smoothly and tested for different devices. 
     * Game Timer
-        - Was adjusted from 10 seconds to 15 seconds as the time is not enough from the reviews i gathered from people who played the game while maintaing the suspense of the game.
+        - Was adjusted from 10 seconds to 15 seconds as the time was not enough from the reviews I gathered from people who played the game while maintaining the suspense of the game.
     * Game Music
-        - Was tested for every aspect of the games and how was affecting the game challenges and created a button on/off for people who have sound sensitivity and can be played at night time without disturbing anyone.
+        - Was tested for every aspect of the games and how it affected the game challenges, and I created an on/off button for people who have sound sensitivity so the game could be played at any time without disturbing anyone.
     * Game Scores
         - Was tested for continuous progress of the money prize and to show the progress of the player.
     * Game Questions
-        - Codes was change from XHR https request to fetch Api, The array for questions was tested if the question was properly showing. I adjusted requesting 10 questions originally to 13 questions. 13 Question was more balance given i add a function of StrikeOut where a player has a chance of 3 wrong answers that will prompt game over.
+        - Codes were changed from XHR https request to fetch Api. The array for questions was tested if the question was properly showing. I adjusted from 10 questions originally, to 13 questions. 13 questions was more balanced given that I added a function of StrikeOut, where a player has a chance of 3 wrong answers that will prompt game over.
     * Game Answer buttons
         - Tested for disabling and enabling for a given period of time and properly showing the multiple choices and randomly putting the right answer within the 4 options.
     
@@ -222,8 +222,7 @@ As i develop this project game using JavaScript and API, I tested every line of 
 
 #### Further testing:
 
-I asked my family and friends for any issues they can find and what the page looks and feel to their mobile and desktop devices. All the issues they found was already fix and tested again.
-
+I asked my family and friends for any issues they could find and what the page looked and felt like on their mobile and desktop devices. All the issues they found were fixed and tested again.
 
 ## Deployment:
 
@@ -257,14 +256,12 @@ Money Heist Quiz Game was developed in Visual Studio Code, while git and GitHub 
    
 ## Bugs:
 
-In todays browsers, When the browser first load the page an error message is logged to the console stating (in Promise) that the play() failed in load request. The user needs to interact with the page first for the autoplay function triggers and the sound will play. 
-* I develop a modal to interact first on window page load. Then on closing the modal, The game music will play without errors in the console.
+In todays browsers, when the browser first loads the page, an error message is logged to the console stating (in Promise) that the play() failed in load request. The user needs to interact with the page first for the autoplay function triggers and the sound will play. 
+* I developed a modal to interact first on window page load. Then on closing the modal, the game music will play without errors in the console.
 
-Error messages are logged to the console when the game start for the high scores function.
+Mobile phones and tablets access to Topscore list on the landing page are disabled as the program uses local storage of a browser. When the game is played on the said devices it doesn't use/access a browser's local storage to save scores. 
 
-Mobile phones and Tablets access to Topscore list on the landing page are disabled as the program uses local storage of a browser. When the game played in the said devices it doesn't use/access a browsers local storage to save scores. 
-
-All the errors does not affect in any way the user experience game play.
+All the errors do not affect in any way the user's game experience.
 
 ## Credits: 
 
@@ -280,8 +277,7 @@ All the errors does not affect in any way the user experience game play.
 
 ## Closing Notes:
 
-On the process of developing this project it builds up my confidence on solving logical problems around JavaScript and API's, pushing my knowledge further and help me understand how the codes work. 
-
+Through the process of developing this project my confidence in solving logical problems around JavaScript and API's increased, pushing my knowledge further and this helped me understand how codes work. 
 
 ## Disclaimer:
 
